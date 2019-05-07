@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>JOME</title>
+</head>
+
+<body class="first">
+  <section>
+    <!-- <img src="./assets/logo/logo.svg" alt="logojome"> -->
+    <img class="jomelogo" src="./assets/logo/jome.svg" alt="logojome">
+    <h1>Jokes On MEme</h1>
+  </section>
+  <section>
+    <button>registreren</button>
+    <button>aanmelden</button>
+  </section>
+  <section>
+    <h2>Registreren</h2>
+    <article class="">
+      Om gebruik te maken van deze app dient u de volgende gegevens in te vullen.
+    </article>
+  </section>
+
+  <form action="register" method="get" class="form-personal">
+    <fieldset>
+      <legend>Personal</legend>
+      <label for="name">naam</label>
+      <input type="text" name="name" id="name" placeholder="Ruben" value="" required>
+      <label for="age">leeftijd</label>
+      <input type="number" name="age" id="age" placeholder="23" value="" required>
+
+      <label for="state">geslacht</label>
+      <select id="state">
+        <option>man</option>
+        <option>vrouw</option>
+      </select>
+
+    </fieldset>
+    <fieldset>
+      <legend>Inloggen</legend>
+      <label for="username">gebruikersnaam</label>
+      <input type="text" name="username" id="username" placeholder="Ruben23" value="" required>
+      <label for="email">email</label>
+      <input type="email" name="user-email" id="email" placeholder="abc@gmail.com" value="" required>
+      <label for="re-email">herhaal email</label>
+      <input type="email" name="repeat-email" id="re-email" placeholder="abc@gmail.com" value="" required>
+      <label for="pass">wachtwoord</label>
+      <input type="password" name="pass" id="pass" placeholder="****" value="" required>
+      <label for="re-pass">herhaal wachtwoord</label>
+      <input type="password" name="repeat-pass" id="re-pass" placeholder="****" value="" required>
+    </fieldset>
+
+    <button>Upload memes</button>
+
+  </form>
+</body>
+
+</html>

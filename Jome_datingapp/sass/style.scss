@@ -1,0 +1,99 @@
+body {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  justify-content: center;
+  display: block;
+  position: relative;
+  font-family: Quicksand;
+  background-color: mediumpurple;
+  color: white;
+}
+
+body.first {
+  section.intro {
+    text-align: center;
+
+    .jomelogo {
+      width: 30em;
+    }
+  }
+
+  section .regis {
+    article {
+      width: 20em;
+    }
+  }
+
+  form {
+    padding-bottom: 2em;
+    width: 20em;
+    margin: auto;
+
+    fieldset {
+      border: solid white 0.12em;
+
+      label {
+        width: 100%;
+        display: block;
+        margin: 0.5em;
+      }
+
+      input {
+        padding: 0.5em;
+        width: 90%;
+      }
+    }
+  }
+}
+
+body.swipe {
+  h1 {
+    text-align: center;
+  }
+
+  .contain {
+    width: 25em;
+    height: 30em;
+    // background-color: green;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .picture {
+   object-fit: contain;
+    img{
+      object-fit: scale-down;
+      justify-content: center;
+      display: block;
+      margin: auto;
+      height: 25em;
+      background-color: white;
+      width: 20em;
+      transform: translateY(2em);
+      z-index: -1;
+    }
+  }
+
+  .no {
+    width: 6em;
+    height: 6em;
+    background-color: red;
+    border-radius: 10em;
+    float: left;
+    position: relative;
+    transform: translateX(1em)translateY(-3em);
+  }
+
+  .yes {
+    img {
+      // background-color: white;
+      width: 8em;
+      height: 8em;
+      position: relative;
+      border-radius: 30em;
+      transform: translateX(10em) translateY(-4em);
+    }
+  }
+}
