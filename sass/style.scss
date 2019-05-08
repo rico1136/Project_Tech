@@ -97,11 +97,8 @@ body.swipe {
   }
 
   .containyesno {
-    top: 7em;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    right: 0.5em;
+    position: absolute;
+    top: 4em;
   }
 
   img {
@@ -114,32 +111,23 @@ body.swipe {
     height: 3em;
     margin: 2em;
     border-radius: 10em;
-    float: left;
-    position: relative;
-    transform: translateX(6em) translateY(-5em);
   }
 
   .no {
     width: 4em;
     height: 4em;
     border-radius: 10em;
-    float: left;
-    position: relative;
-    transform: translateX(6em)translateY(-4em);
   }
 
   .yes {
     height: 4em;
-    position: relative;
     border-radius: 30em;
-    transform: translateX(6em) translateY(-4em);
   }
 }
 
 body.chatpage {
   width: 100%;
   overflow-x: hidden;
-
 
   section.profile {
     width: 100%;
@@ -158,13 +146,11 @@ body.chatpage {
     margin: 2em;
     text-align: left;
     width: 20em;
-    top: -3em;
     position: relative;
-
   }
 
   .containyesno {
-    top:2em;
+    top: 2em;
     position: relative;
     display: block;
     margin: 0 auto;
