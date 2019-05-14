@@ -11,7 +11,7 @@ body {
   color: black;
 }
 
-body.first {
+body.one {
   section.logo {
     width: 18em;
     margin: 0 auto;
@@ -37,7 +37,7 @@ body.first {
   form {
     padding-bottom: 2em;
     width: 20em;
-    margin: auto;
+    margin: auto auto 4em;
 
     fieldset {
       border: solid white 0.12em;
@@ -56,9 +56,9 @@ body.first {
   }
 
   .meldaan {
-    padding: 1.5em;
-    border-radius: 1em;
-    margin: .3em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    margin: 0.3em;
     position: relative;
     right: 0;
     display: block;
@@ -136,9 +136,7 @@ body.swipe {
     transform: translateX(6em) translateY(-4em);
   }
 
-  .inputfile{
-
-  }
+  .inputfile {}
 }
 
 body.chatpage {
@@ -200,13 +198,14 @@ body.chatpage {
 
 nav {
   margin: 0 auto;
-  display: flex;
+  display: block;
   position: fixed;
   height: 4em;
   bottom: 0;
-  left:0;
+  left: 0;
   background: #e4e4e4;
   width: 100%;
+  z-index: 1;
 
   ul {
     padding: 0;
@@ -228,6 +227,45 @@ nav {
     img {
       max-width: 100%;
       max-height: 100%;
+    }
+  }
+}
+
+body.list {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: space-evenly;
+
+    .category {
+      object-fit: cover;
+      width: 45%;
+      height: 50%;
+      top: -4em;
+      border-radius: .3em;
+      margin: 0.2em;
+
+      img {
+        object-fit: cover;
+        width: 96%;
+        height: 50%;
+        top: -4em;
+        border-radius:.3em;
+
+      }
+
+
+      h2 {
+        overflow-wrap: break-word;
+        text-align: center;
+        color: #5f5f5f;
+        word-wrap: break-word;
+        background: #9b9b9b36;
+        border-radius: 0.2em;
+        padding: 0.3em;
+      }
     }
   }
 }
