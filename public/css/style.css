@@ -7,50 +7,72 @@ body {
   display: block;
   position: relative;
   font-family: Quicksand;
-  color: black; }
+  color: black;
+}
 
 body.one section.logo {
   width: 18em;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+}
+
 body.one .button {
   width: 20em;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+}
+
 body.one section.regis {
   margin: 0 auto;
   text-align: center;
-  width: 20em; }
-  body.one section.regis article {
-    margin: 2em; }
+  width: 20em;
+}
+
+body.one section.regis article {
+  margin: 2em;
+}
+
 body.one form {
   padding-bottom: 2em;
   width: 20em;
-  margin: auto auto 4em; }
-  body.one form fieldset {
-    border: solid white 0.12em; }
-    body.one form fieldset label {
-      width: 100%;
-      display: block;
-      margin: 0.5em; }
-    body.one form fieldset input {
-      padding: 0.5em;
-      width: 90%; }
+  margin: auto auto 4em;
+}
+
+body.one form fieldset {
+  border: solid white 0.12em;
+}
+
+body.one form fieldset label {
+  width: 100%;
+  display: block;
+  margin: 0.5em;
+}
+
+body.one form fieldset input {
+  padding: 0.5em;
+  width: 90%;
+}
+
 body.one .meldaan {
   padding: 0.5em;
   border-radius: 0.3em;
   margin: 0.3em;
   position: relative;
   right: 0;
-  display: block; }
+  display: block;
+}
 
 body.swipe h1 {
-  text-align: center; }
+  text-align: center;
+}
+
 body.swipe .contain {
   width: 25em;
   height: 30em;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
+
 body.swipe .picture {
   object-fit: scale-down;
   justify-content: center;
@@ -62,20 +84,28 @@ body.swipe .picture {
   transform: translateY(2em);
   z-index: -1;
   border-radius: 2em;
-  border: solid mediumpurple 0.2em; }
-  body.swipe .picture img {
-    max-height: 100%;
-    max-width: 100%;
-    margin-top: 4em; }
+  border: solid mediumpurple 0.2em;
+}
+
+body.swipe .picture img {
+  max-height: 90%;
+  max-width: 90%;
+  margin-top: 4em;
+}
+
 body.swipe .containyesno {
   top: 7em;
   position: relative;
   display: block;
   margin: 0 auto;
-  right: 0.5em; }
+  right: 0.5em;
+}
+
 body.swipe img {
   max-width: 100%;
-  max-height: 100%; }
+  max-height: 100%;
+}
+
 body.swipe .redo {
   width: 2em;
   height: 3em;
@@ -83,55 +113,77 @@ body.swipe .redo {
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-5em); }
+  transform: translateX(6em) translateY(-5em);
+}
+
 body.swipe .no {
   width: 4em;
   height: 4em;
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
+
 body.swipe .yes {
   height: 4em;
   border-radius: 30em;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
 
 body.chatpage {
   width: 100%;
-  overflow-x: hidden; }
-  body.chatpage section.profile {
-    width: 100%;
-    height: 50%;
-    display: block; }
-    body.chatpage section.profile img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%; }
-  body.chatpage section.info {
-    display: block;
-    margin: 2em;
-    text-align: left;
-    width: 20em;
-    position: relative; }
-  body.chatpage .containyesno {
-    position: absolute;
-    top: 6em;
-    right: 0; }
-    body.chatpage .containyesno img {
-      max-width: 100%;
-      max-height: 100%; }
-    body.chatpage .containyesno .redo {
-      width: 2em;
-      height: 3em;
-      margin: 2em;
-      border-radius: 10em; }
-    body.chatpage .containyesno .no {
-      width: 4em;
-      height: 4em;
-      border-radius: 10em; }
-    body.chatpage .containyesno .yes {
-      height: 5em;
-      border-radius: 30em; }
+  overflow-x: hidden;
+}
+
+body.chatpage section.profile {
+  width: 100%;
+  height: 50%;
+  display: block;
+}
+
+body.chatpage section.profile img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body.chatpage section.info {
+  display: block;
+  margin: 2em;
+  text-align: left;
+  width: 20em;
+  position: relative;
+}
+
+body.chatpage .containyesno {
+  position: absolute;
+  top: 6em;
+  right: 0;
+}
+
+body.chatpage .containyesno img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.chatpage .containyesno .redo {
+  width: 2em;
+  height: 3em;
+  margin: 2em;
+  border-radius: 10em;
+}
+
+body.chatpage .containyesno .no {
+  width: 4em;
+  height: 4em;
+  border-radius: 10em;
+}
+
+body.chatpage .containyesno .yes {
+  height: 5em;
+  border-radius: 30em;
+}
 
 nav {
   margin: 0 auto;
@@ -142,49 +194,66 @@ nav {
   left: 0;
   background: #e4e4e4;
   width: 100%;
-  z-index: 1; }
-  nav ul {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-  nav li {
-    list-style-type: none;
-    width: 2em; }
-    nav li:hover {
-      cursor: pointer; }
-    nav li img {
-      max-width: 100%;
-      max-height: 100%; }
+  z-index: 1;
+}
+
+nav ul {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+nav li {
+  list-style-type: none;
+  width: 2em;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+nav li img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 body.list section {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   text-align: center;
-  justify-content: space-evenly; }
-  body.list section .category {
-    object-fit: cover;
-    width: 45%;
-    height: 50%;
-    top: -4em;
-    border-radius: .3em;
-    margin: 0.2em; }
-    body.list section .category img {
-      object-fit: cover;
-      width: 96%;
-      height: 50%;
-      top: -4em;
-      border-radius: .3em; }
-    body.list section .category h2 {
-      overflow-wrap: break-word;
-      text-align: center;
-      color: #5f5f5f;
-      word-wrap: break-word;
-      background: #9b9b9b36;
-      border-radius: 0.2em;
-      padding: 0.3em; }
+  justify-content: space-evenly;
+  margin-bottom: 7em;
+}
+
+body.list section .category {
+  object-fit: cover;
+  width: 45%;
+  height: 50%;
+  top: -4em;
+  border-radius: .3em;
+  margin: 0.2em;
+}
+
+body.list section .category img {
+  object-fit: cover;
+  width: 96%;
+  height: 50%;
+  top: -4em;
+  border-radius: .3em;
+}
+
+body.list section .category h2 {
+  overflow-wrap: break-word;
+  text-align: center;
+  color: #5f5f5f;
+  word-wrap: break-word;
+  background: #9b9b9b36;
+  border-radius: 0.2em;
+  padding: 0.3em;
+}
 
 /*# sourceMappingURL=style.css.map */

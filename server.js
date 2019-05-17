@@ -1,5 +1,4 @@
 const camelCase = require('camelcase'); // test package installed
-console.log(camelCase('werkt-dit-of-totaal-niet3'));
 
 const express = require('express');
 const app = express();
@@ -15,19 +14,38 @@ app.use('/public', express.static('public'));
 
 //index.ejs package
 
-app.get('/', function (req, res){
-  res.render('pages/index');
+app.get('/index', function(req, res) {
+  res.render('pages/index',{user:'Joan Padolina'});
 });
 
 //profile page
 
-app.get('/profile', function(req, res){
+app.get('/profile', function(req, res) {
   res.render('pages/profile');
 });
 
+// 404 error  not found
+
+app.use(function(req, res){
+  res.status(404).render('pages/404');
+
+});
+
+
+
+
+//// Testing dynamic data
+
+
+
+
+//Start Server
+///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/', function(request, response) {
-   response.send('red')
+  response.send('red')
 });
 
 app.listen(port, function() {
