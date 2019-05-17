@@ -16,6 +16,10 @@ body.one {
     width: 18em;
     margin: 0 auto;
     text-align: center;
+
+    h1 {
+      font-size: 1.4em;
+    }
   }
 
   .button {
@@ -238,26 +242,23 @@ body.list {
     margin: 0 auto;
     text-align: center;
     justify-content: space-evenly;
-    margin-bottom:7em;
+    margin-bottom: 7em;
 
     .category {
       object-fit: cover;
       width: 45%;
       height: 50%;
       top: -4em;
-      border-radius: .3em;
+      border-radius: 0.3em;
       margin: 0.2em;
-      
 
       img {
         object-fit: cover;
         width: 96%;
         height: 50%;
         top: -4em;
-        border-radius:.3em;
-
+        border-radius: 0.3em;
       }
-
 
       h2 {
         overflow-wrap: break-word;
@@ -269,5 +270,64 @@ body.list {
         padding: 0.3em;
       }
     }
+  }
+}
+
+body.feed {
+  h1 {
+    color: white;
+
+    &::after {
+      content: "";
+      background: #D75555;
+      width: 15em;
+      height: 15em;
+      display: block;
+      position: absolute;
+      border-radius: 30em;
+      z-index: -1;
+      top: -5em;
+      right: -3em;
+    }
+  }
+
+  div.containfeed {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .avatar {
+    img {
+      height: 11em;
+      width: 11em;
+      object-fit: cover;
+      border-radius: 1em 1em 0 0;
+    }
+  }
+  section{
+    margin: .4em;
+  }
+
+  h2 {
+    &::before {
+      content: "";
+      background: white;
+      height: 3em;
+      width: 11em;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -1em;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      border-radius: 0 0 0.5em 0.5em;
+    }
+    font-size: 1em;
+    font-weight: 100;
+    position: relative;
+    display: flex;
+    max-width: 11em;
+    justify-content: center;
   }
 }
