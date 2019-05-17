@@ -11,6 +11,10 @@ body {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
 body.one {
   section.logo {
     width: 18em;
@@ -274,12 +278,17 @@ body.list {
 }
 
 body.feed {
+  background: #D75555;
+  color: white;
+  text-align: center;
+  padding: .1em;
+
   h1 {
     color: white;
+    margin-left: 1em;
 
     &::after {
       content: "";
-      background: #D75555;
       width: 15em;
       height: 15em;
       display: block;
@@ -287,7 +296,7 @@ body.feed {
       border-radius: 30em;
       z-index: -1;
       top: -5em;
-      right: -3em;
+      right: 1em;
     }
   }
 
@@ -306,8 +315,9 @@ body.feed {
       border-radius: 1em 1em 0 0;
     }
   }
-  section{
-    margin: .4em;
+
+  section {
+    margin: 0.4em;
   }
 
   h2 {
@@ -319,7 +329,7 @@ body.feed {
       display: block;
       position: absolute;
       z-index: -1;
-      top: -1em;
+      top: -1.2em;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
       border-radius: 0 0 0.5em 0.5em;
     }

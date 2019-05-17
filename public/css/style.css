@@ -9,6 +9,9 @@ body {
   font-family: Quicksand;
   color: black; }
 
+a {
+  text-decoration: none; }
+
 body.one section.logo {
   width: 18em;
   margin: 0 auto;
@@ -190,48 +193,53 @@ body.list section {
       border-radius: 0.2em;
       padding: 0.3em; }
 
-body.feed h1 {
-  color: white; }
-  body.feed h1::after {
-    content: "";
-    background: #D75555;
-    width: 15em;
-    height: 15em;
-    display: block;
-    position: absolute;
-    border-radius: 30em;
-    z-index: -1;
-    top: -5em;
-    right: -3em; }
-body.feed div.containfeed {
-  margin: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; }
-body.feed .avatar img {
-  height: 11em;
-  width: 11em;
-  object-fit: cover;
-  border-radius: 1em 1em 0 0; }
-body.feed section {
-  margin: .4em; }
-body.feed h2 {
-  font-size: 1em;
-  font-weight: 100;
-  position: relative;
-  display: flex;
-  max-width: 11em;
-  justify-content: center; }
-  body.feed h2::before {
-    content: "";
-    background: white;
-    height: 3em;
+body.feed {
+  background: #D75555;
+  color: white;
+  text-align: center;
+  padding: .1em; }
+  body.feed h1 {
+    color: white;
+    margin-left: 1em; }
+    body.feed h1::after {
+      content: "";
+      width: 15em;
+      height: 15em;
+      display: block;
+      position: absolute;
+      border-radius: 30em;
+      z-index: -1;
+      top: -5em;
+      right: 1em; }
+  body.feed div.containfeed {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  body.feed .avatar img {
+    height: 11em;
     width: 11em;
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -1em;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-    border-radius: 0 0 0.5em 0.5em; }
+    object-fit: cover;
+    border-radius: 1em 1em 0 0; }
+  body.feed section {
+    margin: 0.4em; }
+  body.feed h2 {
+    font-size: 1em;
+    font-weight: 100;
+    position: relative;
+    display: flex;
+    max-width: 11em;
+    justify-content: center; }
+    body.feed h2::before {
+      content: "";
+      background: white;
+      height: 3em;
+      width: 11em;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -1.2em;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      border-radius: 0 0 0.5em 0.5em; }
 
 /*# sourceMappingURL=style.css.map */
