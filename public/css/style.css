@@ -192,7 +192,7 @@ body.chatpage {
       background-color: #D75555;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      right: -2em; }
+      right: -.8em; }
   body.chatpage section.decline {
     width: 15em;
     height: 4em;
@@ -210,7 +210,7 @@ body.chatpage {
       transform: translateX(6em); }
     body.chatpage section.decline:hover {
       background-color: #D75555;
-      left: -9em;
+      left: -10.6em;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
   body.chatpage section.profile {
@@ -246,6 +246,19 @@ body.chatpage {
     body.chatpage .containyesno .yes {
       height: 5em;
       border-radius: 30em; }
+  body.chatpage div.addmeme {
+    max-width: 100%;
+    margin-bottom: 10em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    body.chatpage div.addmeme .sendmeme {
+      width: 10em;
+      height: 12em;
+      border-radius: 2em;
+      background: #ededed;
+      margin: 1em;
+      object-fit: cover; }
 
 nav {
   margin: 0 auto;

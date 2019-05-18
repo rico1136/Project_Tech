@@ -250,9 +250,11 @@ body.swipe {
 body.chatpage {
   width: 30em;
   overflow-x: hidden;
+
   div.cont_yesno {
     margin-top: -3em;
   }
+
   section.accept {
     width: 15em;
     height: 4.2em;
@@ -273,7 +275,7 @@ body.chatpage {
       background-color: $primarycolor;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      right: -2em;
+      right: -.8em;
     }
   }
 
@@ -297,7 +299,7 @@ body.chatpage {
 
     &:hover {
       background-color: $primarycolor;
-      left: -9em;
+      left: -10.6em;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
     }
@@ -349,6 +351,23 @@ body.chatpage {
     .yes {
       height: 5em;
       border-radius: 30em;
+    }
+  }
+
+  div.addmeme {
+    max-width: 100%;
+    margin-bottom: 10em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .sendmeme {
+      width: 10em;
+      height: 12em;
+      border-radius: 2em;
+      background: #ededed;
+      margin: 1em;
+      object-fit: cover;
     }
   }
 }
