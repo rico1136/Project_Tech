@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
-  <g fill="none" fill-rule="evenodd">
-    <circle cx="90" cy="90" r="90" fill="#CF2F43"/>
-    <g stroke="#FFF" stroke-linecap="round" stroke-width="20" transform="rotate(45 33.665 113.335)">
-      <path d="M57,0.504424779 L57,113.693353"/>
-      <path d="M56.9019786,0.901978627 L56.9019786,113.098021" transform="rotate(90 56.902 57)"/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
+  <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-linecap="round" stroke-width="8" transform="rotate(45 25.121 19.086)">
+    <path d="M22.699115,0.203539823 L22.699115,45.8762652"/>
+    <path d="M22.6600886,0.660071423 L22.6600886,45.3399113" transform="rotate(90 22.66 23)"/>
   </g>
 </svg>

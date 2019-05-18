@@ -171,30 +171,46 @@ body.swipe .yes {
   transform: translateX(6em) translateY(-4em); }
 
 body.chatpage {
-  width: 100%;
+  width: 30em;
   overflow-x: hidden; }
-  body.chatpage section.tryme {
-    line-height: 4em;
-    width: 11em;
-    height: 4em;
+  body.chatpage div.cont_yesno {
+    margin-top: -3em; }
+  body.chatpage section.accept {
+    width: 15em;
+    height: 4.2em;
     background: #F66C96;
     border-radius: 20em;
-    text-align: center;
     margin: auto auto 2em;
-    transition: ease 200ms; }
-    body.chatpage section.tryme a {
-      color: white;
-      font-size: 1.5em;
-      font-weight: bold; }
-      body.chatpage section.tryme a::after {
-        content: url("../assets/logo/heart.svg");
-        height: 0.5em;
-        width: 0.5em;
-        display: inline-block;
-        position: relative;
-        top: 0.3em; }
-    body.chatpage section.tryme:hover {
+    transition: ease 200ms;
+    display: block;
+    position: relative;
+    float: right;
+    right: -1em; }
+    body.chatpage section.accept img {
+      margin: 1em 0 0 1em; }
+    body.chatpage section.accept:hover {
       background-color: #D75555;
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      right: -2em; }
+  body.chatpage section.decline {
+    width: 15em;
+    height: 4em;
+    background: #4EA8D9;
+    border-radius: 20em;
+    margin: auto auto 2em;
+    transition: ease 200ms;
+    display: block;
+    position: relative;
+    left: -11em; }
+    body.chatpage section.decline img {
+      width: 2em;
+      margin: 1em;
+      float: right;
+      transform: translateX(6em); }
+    body.chatpage section.decline:hover {
+      background-color: #D75555;
+      left: -9em;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
   body.chatpage section.profile {
