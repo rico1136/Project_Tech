@@ -1,3 +1,6 @@
+$primarycolor : #D75555;
+$secondary : #F66C96;
+
 body {
   margin: auto;
   padding: 0;
@@ -16,8 +19,12 @@ a {
 }
 
 body.one {
+  .containlogo{
+    position: relative;
+    top:22%;
+  }
   section.logo {
-    width: 18em;
+    width: 13em;
     margin: 0 auto;
     text-align: center;
 
@@ -41,7 +48,28 @@ body.one {
       margin: 2em;
     }
   }
-
+.tryme{
+  line-height: 4em;
+  width: 11em;
+  height: 4em;
+  background: $secondary;
+  border-radius: 20em;
+  text-align: center;
+  margin: auto;
+  a{
+    color:white;
+    font-size:1.5em;
+    font-weight: bold;
+    &::after{
+      content:url('../assets/logo/heart.svg');
+      height:.5em;
+      width:.5em;
+      display: inline-block;
+      position: relative;
+      top:.3em;
+    }
+  }
+}
   form {
     padding-bottom: 2em;
     width: 20em;
