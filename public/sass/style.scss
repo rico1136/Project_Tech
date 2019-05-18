@@ -1,5 +1,5 @@
-$primarycolor : #D75555;
-$secondary : #F66C96;
+$primarycolor: #D75555;
+$secondary: #F66C96;
 
 body {
   margin: auto;
@@ -19,10 +19,11 @@ a {
 }
 
 body.one {
-  .containlogo{
+  .containlogo {
     position: relative;
-    top:22%;
+    top: 22%;
   }
+
   section.logo {
     width: 13em;
     margin: 0 auto;
@@ -34,9 +35,33 @@ body.one {
   }
 
   .button {
-    width: 20em;
     margin: auto;
     text-align: center;
+
+    .login,
+    .registreren {
+      border-radius: 2em;
+      padding: 0.4em;
+      margin: 1em;
+      border: solid 0.1em rgb(224, 224, 224);
+      transition: ease 400ms;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      }
+    }
+
+    .login {
+      width: 10em;
+      height: 3em;
+    }
+
+    .registreren {
+      background: #876FEE;
+      width: 5em;
+      color: white;
+    }
   }
 
   section.regis {
@@ -48,31 +73,49 @@ body.one {
       margin: 2em;
     }
   }
-.tryme{
-  line-height: 4em;
-  width: 11em;
-  height: 4em;
-  background: $secondary;
-  border-radius: 20em;
-  text-align: center;
-  margin: auto;
-  a{
-    color:white;
-    font-size:1.5em;
-    font-weight: bold;
-    &::after{
-      content:url('../assets/logo/heart.svg');
-      height:.5em;
-      width:.5em;
-      display: inline-block;
-      position: relative;
-      top:.3em;
+
+  .tryme {
+    line-height: 4em;
+    width: 11em;
+    height: 4em;
+    background: $secondary;
+    border-radius: 20em;
+    text-align: center;
+    margin: auto auto 2em;
+    transition: ease 200ms;
+
+    a {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+
+      &::after {
+        content: url("../assets/logo/heart.svg");
+        height: 0.5em;
+        width: 0.5em;
+        display: inline-block;
+        position: relative;
+        top: 0.3em;
+      }
+    }
+
+    &:hover {
+      background-color: $primarycolor;
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
     }
   }
 }
+
+body.regis {
+  width: 25em;
+
+  .reg {
+    margin-bottom: 1em;
+  }
+
   form {
     padding-bottom: 2em;
-    width: 20em;
     margin: auto auto 4em;
 
     fieldset {
@@ -92,11 +135,40 @@ body.one {
   }
 
   .meldaan {
+    width: 10em;
+    height: 2.5em;
     padding: 0.5em;
-    border-radius: 0.3em;
+    border-radius: 5em;
     margin: 0.3em;
     position: relative;
     right: 0;
+    display: block;
+    font-size: 1.2em;
+    background: $primarycolor;
+    color: white;
+    font-weight: 200;
+    font-family: Quicksand;
+    transition: ease 200ms;
+    margin-top: 1em;
+    left: 0;
+
+    &::after {
+      content: " >";
+      font-size: 1em;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: green;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+    }
+
+    &:hover::after {
+      color: $secondary;
+    }
+  }
+
+  .file {
     display: block;
   }
 }
@@ -178,7 +250,38 @@ body.swipe {
 body.chatpage {
   width: 100%;
   overflow-x: hidden;
+  
+  section.tryme {
+    line-height: 4em;
+    width: 11em;
+    height: 4em;
+    background: $secondary;
+    border-radius: 20em;
+    text-align: center;
+    margin: auto auto 2em;
+    transition: ease 200ms;
 
+    a {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+
+      &::after {
+        content: url("../assets/logo/heart.svg");
+        height: 0.5em;
+        width: 0.5em;
+        display: inline-block;
+        position: relative;
+        top: 0.3em;
+      }
+    }
+
+    &:hover {
+      background-color: $primarycolor;
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+    }
+  }
   section.profile {
     width: 100%;
     height: 50%;
@@ -306,30 +409,18 @@ body.list {
 }
 
 body.feed {
-  background: #D75555;
   color: white;
   text-align: center;
-  padding: .1em;
+  padding: 0.1em;
 
   h1 {
-    color: white;
-    margin-left: 1em;
-
-    &::after {
-      content: "";
-      width: 15em;
-      height: 15em;
-      display: block;
-      position: absolute;
-      border-radius: 30em;
-      z-index: -1;
-      top: -5em;
-      right: 1em;
-    }
+    color: $primarycolor;
+    margin-left: 0.3em;
+    font-size: 1em;
   }
 
   div.containfeed {
-    margin: 1em;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -337,8 +428,8 @@ body.feed {
 
   .avatar {
     img {
-      height: 11em;
-      width: 11em;
+      height: 8em;
+      width: 8em;
       object-fit: cover;
       border-radius: 1em 1em 0 0;
     }
@@ -346,26 +437,37 @@ body.feed {
 
   section {
     margin: 0.4em;
+    width: 8em;
+    transition: 200ms ease;
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:2em;
+
+    &:hover {
+      cursor: pointer;
+      
+    }
   }
 
   h2 {
-    &::before {
-      content: "";
-      background: white;
-      height: 3em;
-      width: 11em;
-      display: block;
-      position: absolute;
-      z-index: -1;
-      top: -1.2em;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      border-radius: 0 0 0.5em 0.5em;
-    }
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 100;
+    flex: 100%;
+    color: black;
+    display: inline-block;
     position: relative;
-    display: flex;
-    max-width: 11em;
-    justify-content: center;
+    // &::after {
+    //   content: "";
+    //   background: #D75555;
+    //   height: 3em;
+    //   width: 10em;
+    //   display: block;
+    //   position: absolute;
+    //   z-index: -1;
+    //   top: -1.2em;
+    //   border-radius: 0 0 0.5em 0.5em;
+    //   object-fit: contain;
+    // }
   }
 }

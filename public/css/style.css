@@ -22,9 +22,26 @@ body.one section.logo {
   body.one section.logo h1 {
     font-size: 1.4em; }
 body.one .button {
-  width: 20em;
   margin: auto;
   text-align: center; }
+  body.one .button .login,
+  body.one .button .registreren {
+    border-radius: 2em;
+    padding: 0.4em;
+    margin: 1em;
+    border: solid 0.1em #e0e0e0;
+    transition: ease 400ms; }
+    body.one .button .login:hover,
+    body.one .button .registreren:hover {
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+  body.one .button .login {
+    width: 10em;
+    height: 3em; }
+  body.one .button .registreren {
+    background: #876FEE;
+    width: 5em;
+    color: white; }
 body.one section.regis {
   margin: 0 auto;
   text-align: center;
@@ -38,38 +55,68 @@ body.one .tryme {
   background: #F66C96;
   border-radius: 20em;
   text-align: center;
-  margin: auto; }
+  margin: auto auto 2em;
+  transition: ease 200ms; }
   body.one .tryme a {
     color: white;
     font-size: 1.5em;
     font-weight: bold; }
     body.one .tryme a::after {
       content: url("../assets/logo/heart.svg");
-      height: .5em;
-      width: .5em;
+      height: 0.5em;
+      width: 0.5em;
       display: inline-block;
       position: relative;
-      top: .3em; }
-body.one form {
-  padding-bottom: 2em;
-  width: 20em;
-  margin: auto auto 4em; }
-  body.one form fieldset {
-    border: solid white 0.12em; }
-    body.one form fieldset label {
-      width: 100%;
-      display: block;
-      margin: 0.5em; }
-    body.one form fieldset input {
-      padding: 0.5em;
-      width: 90%; }
-body.one .meldaan {
-  padding: 0.5em;
-  border-radius: 0.3em;
-  margin: 0.3em;
-  position: relative;
-  right: 0;
-  display: block; }
+      top: 0.3em; }
+  body.one .tryme:hover {
+    background-color: #D75555;
+    cursor: pointer;
+    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+
+body.regis {
+  width: 25em; }
+  body.regis .reg {
+    margin-bottom: 1em; }
+  body.regis form {
+    padding-bottom: 2em;
+    margin: auto auto 4em; }
+    body.regis form fieldset {
+      border: solid white 0.12em; }
+      body.regis form fieldset label {
+        width: 100%;
+        display: block;
+        margin: 0.5em; }
+      body.regis form fieldset input {
+        padding: 0.5em;
+        width: 90%; }
+  body.regis .meldaan {
+    width: 10em;
+    height: 2.5em;
+    padding: 0.5em;
+    border-radius: 5em;
+    margin: 0.3em;
+    position: relative;
+    right: 0;
+    display: block;
+    font-size: 1.2em;
+    background: #D75555;
+    color: white;
+    font-weight: 200;
+    font-family: Quicksand;
+    transition: ease 200ms;
+    margin-top: 1em;
+    left: 0; }
+    body.regis .meldaan::after {
+      content: " >";
+      font-size: 1em; }
+    body.regis .meldaan:hover {
+      cursor: pointer;
+      background: green;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+    body.regis .meldaan:hover::after {
+      color: #F66C96; }
+  body.regis .file {
+    display: block; }
 
 body.swipe h1 {
   text-align: center; }
@@ -126,6 +173,30 @@ body.swipe .yes {
 body.chatpage {
   width: 100%;
   overflow-x: hidden; }
+  body.chatpage section.tryme {
+    line-height: 4em;
+    width: 11em;
+    height: 4em;
+    background: #F66C96;
+    border-radius: 20em;
+    text-align: center;
+    margin: auto auto 2em;
+    transition: ease 200ms; }
+    body.chatpage section.tryme a {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold; }
+      body.chatpage section.tryme a::after {
+        content: url("../assets/logo/heart.svg");
+        height: 0.5em;
+        width: 0.5em;
+        display: inline-block;
+        position: relative;
+        top: 0.3em; }
+    body.chatpage section.tryme:hover {
+      background-color: #D75555;
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
   body.chatpage section.profile {
     width: 100%;
     height: 50%;
@@ -216,52 +287,39 @@ body.list section {
       padding: 0.3em; }
 
 body.feed {
-  background: #D75555;
   color: white;
   text-align: center;
-  padding: .1em; }
+  padding: 0.1em; }
   body.feed h1 {
-    color: white;
-    margin-left: 1em; }
-    body.feed h1::after {
-      content: "";
-      width: 15em;
-      height: 15em;
-      display: block;
-      position: absolute;
-      border-radius: 30em;
-      z-index: -1;
-      top: -5em;
-      right: 1em; }
+    color: #D75555;
+    margin-left: 0.3em;
+    font-size: 1em; }
   body.feed div.containfeed {
-    margin: 1em;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; }
   body.feed .avatar img {
-    height: 11em;
-    width: 11em;
+    height: 8em;
+    width: 8em;
     object-fit: cover;
     border-radius: 1em 1em 0 0; }
   body.feed section {
-    margin: 0.4em; }
-  body.feed h2 {
-    font-size: 1em;
-    font-weight: 100;
-    position: relative;
+    margin: 0.4em;
+    width: 8em;
+    transition: 200ms ease;
+    border-radius: 1em;
     display: flex;
-    max-width: 11em;
-    justify-content: center; }
-    body.feed h2::before {
-      content: "";
-      background: white;
-      height: 3em;
-      width: 11em;
-      display: block;
-      position: absolute;
-      z-index: -1;
-      top: -1.2em;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      border-radius: 0 0 0.5em 0.5em; }
+    flex-wrap: wrap;
+    margin-top: 2em; }
+    body.feed section:hover {
+      cursor: pointer; }
+  body.feed h2 {
+    font-size: 0.8em;
+    font-weight: 100;
+    flex: 100%;
+    color: black;
+    display: inline-block;
+    position: relative; }
 
 /*# sourceMappingURL=style.css.map */
