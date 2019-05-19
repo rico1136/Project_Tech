@@ -1,16 +1,29 @@
-Dating website
+#Dating website
 Joan Padolina
+## Jokes on Me 
 
-## Installed Packages
+A dating app for the ones seeking for a partner. A good partner is who you share intimate things with but the most important is a good laugh together.
 
-1. express  //for routing
-2. nodemon // live update without restarting node
-3. camelcase // tested if npm package worked on my own server.
+Obviously a good humor is where you can share weird jokes with eachother. Laugh together is stay together.
 
-## Templating
-Templating is another language for a more dynamic page. When your requesting files from a database and want to show it on the browser, the templating engine (in my case EJS) will convert the code to HTML to be read in the browser.
+# True Love Through Laugh
 
-Why EJS?
-This engine was the first mentioned in the list, so I will stick with this the in my Dating app.
+## Wiki
 
-##
+Follow the progress on my [wiki](https://github.com/joanpadolina/Project_Tech.wiki.git).
+
+# Interested? Clone the following on your terminal:
+```
+git clone https://github.com/joanpadolina/Project_Tech
+```
+Install used npm
+```
+npm install
+```
+Run the application
+```
+npm run dev
+```
+
+
+
