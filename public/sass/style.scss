@@ -12,11 +12,18 @@ body {
   font-family: Quicksand;
   // background-color: mediumpurple;
   color: black;
+  a {
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+  }
+  span {
+    font-weight: 600;
+    color:$secondary;
+  }
 }
 
-a {
-  text-decoration: none;
-}
+
 
 body.one {
   .containlogo {
@@ -243,8 +250,6 @@ body.swipe {
     border-radius: 30em;
     transform: translateX(6em) translateY(-4em);
   }
-
-  .inputfile {}
 }
 
 body.chatpage {
@@ -265,7 +270,7 @@ body.chatpage {
     display: block;
     position: relative;
     float: right;
-    right: -1em;
+    transform: translateX(1em);
 
     img {
       margin: 1em 0 0 1em;
@@ -275,7 +280,7 @@ body.chatpage {
       background-color: $primarycolor;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      right: -.8em;
+      transform: translateX(0.3em);
     }
   }
 
@@ -325,49 +330,30 @@ body.chatpage {
     position: relative;
   }
 
-  .containyesno {
-    position: absolute;
-    top: 6em;
-    right: 0;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .redo {
-      width: 2em;
-      height: 3em;
-      margin: 2em;
-      border-radius: 10em;
-    }
-
-    .no {
-      width: 4em;
-      height: 4em;
-      border-radius: 10em;
-    }
-
-    .yes {
-      height: 5em;
-      border-radius: 30em;
-    }
-  }
-
   div.addmeme {
+    margin-left: 2em;
     max-width: 100%;
     margin-bottom: 10em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    float: left;
+    color: white;
 
     .sendmeme {
       width: 10em;
-      height: 12em;
+      height: 10em;
       border-radius: 2em;
       background: #ededed;
-      margin: 1em;
-      object-fit: cover;
+      margin: 0.3em;
+      padding: 0.08em;
+      object-fit: contain;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2em;
+      }
     }
   }
 }
@@ -418,6 +404,10 @@ body.list {
     text-align: center;
     justify-content: space-evenly;
     margin-bottom: 7em;
+    h1{
+      width:100%;
+      display: block;
+    }
 
     .category {
       object-fit: cover;
@@ -508,5 +498,132 @@ body.feed {
     //   border-radius: 0 0 0.5em 0.5em;
     //   object-fit: contain;
     // }
+  }
+}
+
+body.chatmatch {
+  width: 100%;
+
+  section.match {
+    background: $primarycolor;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 1em;
+    height: 12em;
+
+    div.prof_match {
+      float: left;
+      margin: 1em;
+
+      img {
+        width: 7em;
+        height: 7em;
+        border-radius: 100%;
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  section.chat_list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em;
+
+    h2 {
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      font-weight: 200;
+    }
+
+    .prof_chat {
+      display: block;
+      float: left;
+    }
+
+    .cont_chatprof {
+      width: 100%;
+      display: inline-flex;
+      position: relative;
+      float: left;
+    }
+
+    img {
+      width: 5em;
+      height: 5em;
+      border-radius: 100%;
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    div.chat {
+      background: lightblue;
+      height: 4em;
+      width: 15em;
+      border-radius: 10em;
+      transform: translateX(2em);
+      text-align: left;
+
+      h4.name {
+        font-size: 0.8em;
+        position: absolute;
+        transform: translateX(2em) translateY(-.8em);
+      }
+
+      p.chat_text {
+        font-size: 0.7em;
+        transform: translateX(2em) translateY(1.5em);
+        width: 17em;
+      }
+    }
+  }
+}
+
+body.user {
+  width: 100%;
+  padding: 1em;
+
+  div.user-prof {
+    text-align: center;
+
+    img {
+      width: 10em;
+      height: 10em;
+      border-radius: 100%;
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .cont-meme {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8em;
+
+    div.addmeme {
+
+      .sendmeme {
+        width: 8em;
+        height: 8em;
+        border-radius: 2em;
+        background: #ededed;
+        margin: 0.3em;
+        padding: 0.08em;
+        object-fit: contain;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 2em;
+        }
+      }
+    }
   }
 }

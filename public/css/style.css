@@ -8,9 +8,13 @@ body {
   position: relative;
   font-family: Quicksand;
   color: black; }
-
-a {
-  text-decoration: none; }
+  body a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500; }
+  body span {
+    font-weight: 600;
+    color: #F66C96; }
 
 body.one .containlogo {
   position: relative;
@@ -185,14 +189,14 @@ body.chatpage {
     display: block;
     position: relative;
     float: right;
-    right: -1em; }
+    transform: translateX(1em); }
     body.chatpage section.accept img {
       margin: 1em 0 0 1em; }
     body.chatpage section.accept:hover {
       background-color: #D75555;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      right: -.8em; }
+      transform: translateX(0.3em); }
   body.chatpage section.decline {
     width: 15em;
     height: 4em;
@@ -227,38 +231,27 @@ body.chatpage {
     text-align: left;
     width: 20em;
     position: relative; }
-  body.chatpage .containyesno {
-    position: absolute;
-    top: 6em;
-    right: 0; }
-    body.chatpage .containyesno img {
-      max-width: 100%;
-      max-height: 100%; }
-    body.chatpage .containyesno .redo {
-      width: 2em;
-      height: 3em;
-      margin: 2em;
-      border-radius: 10em; }
-    body.chatpage .containyesno .no {
-      width: 4em;
-      height: 4em;
-      border-radius: 10em; }
-    body.chatpage .containyesno .yes {
-      height: 5em;
-      border-radius: 30em; }
   body.chatpage div.addmeme {
+    margin-left: 2em;
     max-width: 100%;
     margin-bottom: 10em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    float: left;
+    color: white; }
     body.chatpage div.addmeme .sendmeme {
       width: 10em;
-      height: 12em;
+      height: 10em;
       border-radius: 2em;
       background: #ededed;
-      margin: 1em;
-      object-fit: cover; }
+      margin: 0.3em;
+      padding: 0.08em;
+      object-fit: contain; }
+      body.chatpage div.addmeme .sendmeme img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2em; }
 
 nav {
   margin: 0 auto;
@@ -293,6 +286,9 @@ body.list section {
   text-align: center;
   justify-content: space-evenly;
   margin-bottom: 7em; }
+  body.list section h1 {
+    width: 100%;
+    display: block; }
   body.list section .category {
     object-fit: cover;
     width: 45%;
@@ -350,5 +346,95 @@ body.feed {
     color: black;
     display: inline-block;
     position: relative; }
+
+body.chatmatch {
+  width: 100%; }
+  body.chatmatch section.match {
+    background: #D75555;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 1em;
+    height: 12em; }
+    body.chatmatch section.match div.prof_match {
+      float: left;
+      margin: 1em; }
+      body.chatmatch section.match div.prof_match img {
+        width: 7em;
+        height: 7em;
+        border-radius: 100%;
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%; }
+  body.chatmatch section.chat_list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em; }
+    body.chatmatch section.chat_list h2 {
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      font-weight: 200; }
+    body.chatmatch section.chat_list .prof_chat {
+      display: block;
+      float: left; }
+    body.chatmatch section.chat_list .cont_chatprof {
+      width: 100%;
+      display: inline-flex;
+      position: relative;
+      float: left; }
+    body.chatmatch section.chat_list img {
+      width: 5em;
+      height: 5em;
+      border-radius: 100%;
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%; }
+    body.chatmatch section.chat_list div.chat {
+      background: lightblue;
+      height: 4em;
+      width: 15em;
+      border-radius: 10em;
+      transform: translateX(2em);
+      text-align: left; }
+      body.chatmatch section.chat_list div.chat h4.name {
+        font-size: 0.8em;
+        position: absolute;
+        transform: translateX(2em) translateY(-0.8em); }
+      body.chatmatch section.chat_list div.chat p.chat_text {
+        font-size: 0.7em;
+        transform: translateX(2em) translateY(1.5em);
+        width: 17em; }
+
+body.user {
+  width: 100%;
+  padding: 1em; }
+  body.user div.user-prof {
+    text-align: center; }
+    body.user div.user-prof img {
+      width: 10em;
+      height: 10em;
+      border-radius: 100%;
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%; }
+  body.user .cont-meme {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8em; }
+    body.user .cont-meme div.addmeme .sendmeme {
+      width: 8em;
+      height: 8em;
+      border-radius: 2em;
+      background: #ededed;
+      margin: 0.3em;
+      padding: 0.08em;
+      object-fit: contain; }
+      body.user .cont-meme div.addmeme .sendmeme img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2em; }
 
 /*# sourceMappingURL=style.css.map */
