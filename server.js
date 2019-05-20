@@ -4,6 +4,18 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//Testing
+
+let testing = {
+  1: 'joan',
+  2: 'Jannos',
+  3: 'Eoois'
+}
+
+app.get('/index/:id', function(req, res) {
+  res.render('testing', { name : [req.params.id]});
+})
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 // use res.render to load up an ejs view file
@@ -14,19 +26,29 @@ app.use('/public', express.static('public'));
 
 //index.ejs package
 
-app.get('/index', function(req, res) {
-  res.render('pages/index',{user:'Joan Padolina'});
+app.get('/', function(req, res) {
+  res.render('pages/index');
 });
 
-//profile page
+// --------- Pages ------------//
 
 app.get('/profile', function(req, res) {
   res.render('pages/profile');
 });
 
-// 404 error  not found
+app.get('/list', function(req, res) {
+  res.render('pages/list');
+});
 
-app.use(function(req, res){
+
+app.get('/register', function(req, res) {
+  res.render('pages/register')
+});
+
+
+// --------- 404 ERROR ------------//
+
+app.use(function(req, res) {
   res.status(404).render('pages/404');
 
 });

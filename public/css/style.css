@@ -7,51 +7,76 @@ body {
   display: block;
   position: relative;
   font-family: Quicksand;
-  color: black; }
-  body a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500; }
-  body span {
-    font-weight: 600;
-    color: #F66C96; }
+  color: black;
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+body span {
+  font-weight: 600;
+  color: #F66C96;
+}
 
 body.one .containlogo {
   position: relative;
-  top: 22%; }
+  top: 22%;
+}
+
 body.one section.logo {
   width: 13em;
   margin: 0 auto;
-  text-align: center; }
-  body.one section.logo h1 {
-    font-size: 1.4em; }
+  text-align: center;
+}
+
+body.one section.logo h1 {
+  font-size: 1.4em;
+}
+
 body.one .button {
   margin: auto;
-  text-align: center; }
-  body.one .button .login,
-  body.one .button .registreren {
-    border-radius: 2em;
-    padding: 0.4em;
-    margin: 1em;
-    border: solid 0.1em #e0e0e0;
-    transition: ease 400ms; }
-    body.one .button .login:hover,
-    body.one .button .registreren:hover {
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-  body.one .button .login {
-    width: 10em;
-    height: 3em; }
-  body.one .button .registreren {
-    background: #876FEE;
-    width: 5em;
-    color: white; }
+  text-align: center;
+}
+
+body.one .button .login,
+body.one .button .registreren {
+  border-radius: 2em;
+  padding: 0.4em;
+  margin: 1em;
+  border: solid 0.1em #e0e0e0;
+  transition: ease 400ms;
+}
+
+body.one .button .login:hover,
+body.one .button .registreren:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+body.one .button .login {
+  width: 10em;
+  height: 3em;
+}
+
+body.one .button .registreren {
+  background: #876FEE;
+  width: 5em;
+  color: white;
+}
+
 body.one section.regis {
   margin: 0 auto;
   text-align: center;
-  width: 20em; }
-  body.one section.regis article {
-    margin: 2em; }
+  width: 20em;
+}
+
+body.one section.regis article {
+  margin: 2em;
+}
+
 body.one .tryme {
   line-height: 4em;
   width: 11em;
@@ -60,75 +85,107 @@ body.one .tryme {
   border-radius: 20em;
   text-align: center;
   margin: auto auto 2em;
-  transition: ease 200ms; }
-  body.one .tryme a {
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold; }
-    body.one .tryme a::after {
-      content: url("../assets/logo/heart.svg");
-      height: 0.5em;
-      width: 0.5em;
-      display: inline-block;
-      position: relative;
-      top: 0.3em; }
-  body.one .tryme:hover {
-    background-color: #D75555;
-    cursor: pointer;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+  transition: ease 200ms;
+}
+
+body.one .tryme a {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+body.one .tryme a::after {
+  content: url("../assets/logo/heart.svg");
+  height: 0.5em;
+  width: 0.5em;
+  display: inline-block;
+  position: relative;
+  top: 0.3em;
+}
+
+body.one .tryme:hover {
+  background-color: #D75555;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
 
 body.regis {
-  width: 25em; }
-  body.regis .reg {
-    margin-bottom: 1em; }
-  body.regis form {
-    padding-bottom: 2em;
-    margin: auto auto 4em; }
-    body.regis form fieldset {
-      border: solid white 0.12em; }
-      body.regis form fieldset label {
-        width: 100%;
-        display: block;
-        margin: 0.5em; }
-      body.regis form fieldset input {
-        padding: 0.5em;
-        width: 90%; }
-  body.regis .meldaan {
-    width: 10em;
-    height: 2.5em;
-    padding: 0.5em;
-    border-radius: 5em;
-    margin: 0.3em;
-    position: relative;
-    right: 0;
-    display: block;
-    font-size: 1.2em;
-    background: #D75555;
-    color: white;
-    font-weight: 200;
-    font-family: Quicksand;
-    transition: ease 200ms;
-    margin-top: 1em;
-    left: 0; }
-    body.regis .meldaan::after {
-      content: " >";
-      font-size: 1em; }
-    body.regis .meldaan:hover {
-      cursor: pointer;
-      background: green;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-    body.regis .meldaan:hover::after {
-      color: #F66C96; }
-  body.regis .file {
-    display: block; }
+  width: 25em;
+}
+
+body.regis .reg {
+  margin-bottom: 1em;
+}
+
+body.regis form {
+  padding-bottom: 2em;
+  margin: auto auto 4em;
+}
+
+body.regis form fieldset {
+  border: solid white 0.12em;
+}
+
+body.regis form fieldset label {
+  width: 100%;
+  display: block;
+  margin: 0.5em;
+}
+
+body.regis form fieldset input {
+  padding: 0.5em;
+  width: 90%;
+}
+
+body.regis .meldaan {
+  width: 10em;
+  height: 2.5em;
+  padding: 0.5em;
+  border-radius: 5em;
+  margin: 0.3em;
+  position: relative;
+  right: 0;
+  display: block;
+  font-size: 1.2em;
+  background: #D75555;
+  color: white;
+  font-weight: 200;
+  font-family: Quicksand;
+  transition: ease 200ms;
+  margin-top: 1em;
+  left: 0;
+}
+
+body.regis .meldaan::after {
+  content: " >";
+  font-size: 1em;
+}
+
+body.regis .meldaan:hover {
+  cursor: pointer;
+  background: green;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+body.regis .meldaan:hover::after {
+  color: #F66C96;
+}
+
+body.regis .file {
+  display: block;
+}
 
 body.swipe h1 {
-  text-align: center; }
+  text-align: center;
+}
+
 body.swipe .contain {
   width: 25em;
   height: 30em;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
+
 body.swipe .picture {
   object-fit: scale-down;
   justify-content: center;
@@ -140,20 +197,28 @@ body.swipe .picture {
   transform: translateY(2em);
   z-index: -1;
   border-radius: 2em;
-  border: solid mediumpurple 0.2em; }
-  body.swipe .picture img {
-    max-height: 90%;
-    max-width: 90%;
-    margin-top: 4em; }
+  border: solid mediumpurple 0.2em;
+}
+
+body.swipe .picture img {
+  max-height: 90%;
+  max-width: 90%;
+  margin-top: 4em;
+}
+
 body.swipe .containyesno {
   top: 7em;
   position: relative;
   display: block;
   margin: 0 auto;
-  right: 0.5em; }
+  right: 0.5em;
+}
+
 body.swipe img {
   max-width: 100%;
-  max-height: 100%; }
+  max-height: 100%;
+}
+
 body.swipe .redo {
   width: 2em;
   height: 3em;
@@ -161,97 +226,129 @@ body.swipe .redo {
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-5em); }
+  transform: translateX(6em) translateY(-5em);
+}
+
 body.swipe .no {
   width: 4em;
   height: 4em;
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
+
 body.swipe .yes {
   height: 4em;
   border-radius: 30em;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
 
 body.chatpage {
   width: 30em;
-  overflow-x: hidden; }
-  body.chatpage div.cont_yesno {
-    margin-top: -3em; }
-  body.chatpage section.accept {
-    width: 15em;
-    height: 4.2em;
-    background: #F66C96;
-    border-radius: 20em;
-    margin: auto auto 2em;
-    transition: ease 200ms;
-    display: block;
-    position: relative;
-    float: right;
-    transform: translateX(1em); }
-    body.chatpage section.accept img {
-      margin: 1em 0 0 1em; }
-    body.chatpage section.accept:hover {
-      background-color: #D75555;
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      transform: translateX(0.3em); }
-  body.chatpage section.decline {
-    width: 15em;
-    height: 4em;
-    background: #4EA8D9;
-    border-radius: 20em;
-    margin: auto auto 2em;
-    transition: ease 200ms;
-    display: block;
-    position: relative;
-    left: -11em; }
-    body.chatpage section.decline img {
-      width: 2em;
-      margin: 1em;
-      float: right;
-      transform: translateX(6em); }
-    body.chatpage section.decline:hover {
-      background-color: #D75555;
-      left: -10.6em;
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-  body.chatpage section.profile {
-    width: 100%;
-    height: 50%;
-    display: block; }
-    body.chatpage section.profile img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%; }
-  body.chatpage section.info {
-    display: block;
-    margin: 2em;
-    text-align: left;
-    width: 20em;
-    position: relative; }
-  body.chatpage div.addmeme {
-    margin-left: 2em;
-    max-width: 100%;
-    margin-bottom: 10em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    float: left;
-    color: white; }
-    body.chatpage div.addmeme .sendmeme {
-      width: 10em;
-      height: 10em;
-      border-radius: 2em;
-      background: #ededed;
-      margin: 0.3em;
-      padding: 0.08em;
-      object-fit: contain; }
-      body.chatpage div.addmeme .sendmeme img {
-        width: 100%;
-        height: 100%;
-        border-radius: 2em; }
+  overflow-x: hidden;
+}
+
+body.chatpage div.cont_yesno {
+  margin-top: -3em;
+}
+
+body.chatpage section.accept {
+  width: 15em;
+  height: 4.2em;
+  background: #F66C96;
+  border-radius: 20em;
+  margin: auto auto 2em;
+  transition: ease 200ms;
+  display: block;
+  position: relative;
+  float: right;
+  transform: translateX(1em);
+}
+
+body.chatpage section.accept img {
+  margin: 1em 0 0 1em;
+}
+
+body.chatpage section.accept:hover {
+  background-color: #D75555;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+  transform: translateX(0.3em);
+}
+
+body.chatpage section.decline {
+  width: 15em;
+  height: 4em;
+  background: #4EA8D9;
+  border-radius: 20em;
+  margin: auto auto 2em;
+  transition: ease 200ms;
+  display: block;
+  position: relative;
+  left: -11em;
+}
+
+body.chatpage section.decline img {
+  width: 2em;
+  margin: 1em;
+  float: right;
+  transform: translateX(6em);
+}
+
+body.chatpage section.decline:hover {
+  background-color: #D75555;
+  left: -10.6em;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+body.chatpage section.profile {
+  width: 100%;
+  height: 50%;
+  display: block;
+}
+
+body.chatpage section.profile img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body.chatpage section.info {
+  display: block;
+  margin: 2em;
+  text-align: left;
+  width: 20em;
+  position: relative;
+}
+
+body.chatpage div.addmeme {
+  margin-left: 2em;
+  max-width: 100%;
+  margin-bottom: 10em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  float: left;
+  color: white;
+}
+
+body.chatpage div.addmeme .sendmeme {
+  width: 10em;
+  height: 10em;
+  border-radius: 2em;
+  background: #ededed;
+  margin: 0.3em;
+  padding: 0.08em;
+  object-fit: contain;
+}
+
+body.chatpage div.addmeme .sendmeme img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+}
 
 nav {
   margin: 0 auto;
@@ -262,22 +359,31 @@ nav {
   left: 0;
   background: #e4e4e4;
   width: 100%;
-  z-index: 1; }
-  nav ul {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-  nav li {
-    list-style-type: none;
-    width: 2em; }
-    nav li:hover {
-      cursor: pointer; }
-    nav li img {
-      max-width: 100%;
-      max-height: 100%; }
+  z-index: 1;
+}
+
+nav ul {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+nav li {
+  list-style-type: none;
+  width: 2em;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+nav li img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 body.list section {
   display: flex;
@@ -285,156 +391,212 @@ body.list section {
   margin: 0 auto;
   text-align: center;
   justify-content: space-evenly;
-  margin-bottom: 7em; }
-  body.list section h1 {
-    width: 100%;
-    display: block; }
-  body.list section .category {
-    object-fit: cover;
-    width: 45%;
-    height: 50%;
-    top: -4em;
-    border-radius: 0.3em;
-    margin: 0.2em; }
-    body.list section .category img {
-      object-fit: cover;
-      width: 96%;
-      height: 50%;
-      top: -4em;
-      border-radius: 0.3em; }
-    body.list section .category h2 {
-      overflow-wrap: break-word;
-      text-align: center;
-      color: #5f5f5f;
-      word-wrap: break-word;
-      background: #9b9b9b36;
-      border-radius: 0.2em;
-      padding: 0.3em; }
+  margin-bottom: 7em;
+}
+
+body.list section h1 {
+  width: 100%;
+  display: block;
+}
+
+body.list section .category {
+  object-fit: cover;
+  width: 45%;
+  height: 50%;
+  top: -4em;
+  border-radius: 0.3em;
+  margin: 0.2em;
+}
+
+body.list section .category img {
+  object-fit: cover;
+  width: 96%;
+  height: 50%;
+  top: -4em;
+  border-radius: 0.3em;
+}
+
+body.list section .category h2 {
+  overflow-wrap: break-word;
+  text-align: center;
+  color: #5f5f5f;
+  word-wrap: break-word;
+  background: #9b9b9b36;
+  border-radius: 0.2em;
+  padding: 0.3em;
+}
 
 body.feed {
   color: white;
   text-align: center;
-  padding: 0.1em; }
-  body.feed h1 {
-    color: #D75555;
-    margin-left: 0.3em;
-    font-size: 1em; }
-  body.feed div.containfeed {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-  body.feed .avatar img {
-    height: 8em;
-    width: 8em;
-    object-fit: cover;
-    border-radius: 1em 1em 0 0; }
-  body.feed section {
-    margin: 0.4em;
-    width: 8em;
-    transition: 200ms ease;
-    border-radius: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2em; }
-    body.feed section:hover {
-      cursor: pointer; }
-  body.feed h2 {
-    font-size: 0.8em;
-    font-weight: 100;
-    flex: 100%;
-    color: black;
-    display: inline-block;
-    position: relative; }
+  padding: 0.1em;
+}
+
+body.feed h1 {
+  color: #D75555;
+  margin-left: 0.3em;
+  font-size: 1em;
+}
+
+body.feed div.containfeed {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+body.feed .avatar img {
+  height: 8em;
+  width: 8em;
+  object-fit: cover;
+  border-radius: 1em 1em 0 0;
+}
+
+body.feed section {
+  margin: 0.4em;
+  width: 8em;
+  transition: 200ms ease;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+body.feed section:hover {
+  cursor: pointer;
+}
+
+body.feed h2 {
+  font-size: 0.8em;
+  font-weight: 100;
+  flex: 100%;
+  color: black;
+  display: inline-block;
+  position: relative;
+}
 
 body.chatmatch {
-  width: 100%; }
-  body.chatmatch section.match {
-    background: #D75555;
-    color: white;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    padding: 1em;
-    height: 12em; }
-    body.chatmatch section.match div.prof_match {
-      float: left;
-      margin: 1em; }
-      body.chatmatch section.match div.prof_match img {
-        width: 7em;
-        height: 7em;
-        border-radius: 100%;
-        object-fit: cover;
-        max-width: 100%;
-        max-height: 100%; }
-  body.chatmatch section.chat_list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 1em; }
-    body.chatmatch section.chat_list h2 {
-      display: block;
-      width: 100%;
-      font-size: 1em;
-      font-weight: 200; }
-    body.chatmatch section.chat_list .prof_chat {
-      display: block;
-      float: left; }
-    body.chatmatch section.chat_list .cont_chatprof {
-      width: 100%;
-      display: inline-flex;
-      position: relative;
-      float: left; }
-    body.chatmatch section.chat_list img {
-      width: 5em;
-      height: 5em;
-      border-radius: 100%;
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%; }
-    body.chatmatch section.chat_list div.chat {
-      background: lightblue;
-      height: 4em;
-      width: 15em;
-      border-radius: 10em;
-      transform: translateX(2em);
-      text-align: left; }
-      body.chatmatch section.chat_list div.chat h4.name {
-        font-size: 0.8em;
-        position: absolute;
-        transform: translateX(2em) translateY(-0.8em); }
-      body.chatmatch section.chat_list div.chat p.chat_text {
-        font-size: 0.7em;
-        transform: translateX(2em) translateY(1.5em);
-        width: 17em; }
+  width: 100%;
+}
+
+body.chatmatch section.match {
+  background: #D75555;
+  color: white;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  padding: 1em;
+  height: 12em;
+}
+
+body.chatmatch section.match div.prof_match {
+  float: left;
+  margin: 1em;
+}
+
+body.chatmatch section.match div.prof_match img {
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.chatmatch section.chat_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1em;
+}
+
+body.chatmatch section.chat_list h2 {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+body.chatmatch section.chat_list .prof_chat {
+  display: block;
+  float: left;
+}
+
+body.chatmatch section.chat_list .cont_chatprof {
+  width: 100%;
+  display: inline-flex;
+  position: relative;
+  float: left;
+}
+
+body.chatmatch section.chat_list img {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.chatmatch section.chat_list div.chat {
+  background: lightblue;
+  height: 4em;
+  width: 15em;
+  border-radius: 10em;
+  transform: translateX(2em);
+  text-align: left;
+}
+
+body.chatmatch section.chat_list div.chat h4.name {
+  font-size: 0.8em;
+  position: absolute;
+  transform: translateX(2em) translateY(-0.8em);
+}
+
+body.chatmatch section.chat_list div.chat p.chat_text {
+  font-size: 0.7em;
+  transform: translateX(2em) translateY(1.5em);
+  width: 17em;
+}
 
 body.user {
   width: 100%;
-  padding: 1em; }
-  body.user div.user-prof {
-    text-align: center; }
-    body.user div.user-prof img {
-      width: 10em;
-      height: 10em;
-      border-radius: 100%;
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%; }
-  body.user .cont-meme {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 8em; }
-    body.user .cont-meme div.addmeme .sendmeme {
-      width: 8em;
-      height: 8em;
-      border-radius: 2em;
-      background: #ededed;
-      margin: 0.3em;
-      padding: 0.08em;
-      object-fit: contain; }
-      body.user .cont-meme div.addmeme .sendmeme img {
-        width: 100%;
-        height: 100%;
-        border-radius: 2em; }
+  padding: 1em;
+}
+
+body.user div.user-prof {
+  text-align: center;
+}
+
+body.user div.user-prof img {
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.user .cont-meme {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8em;
+}
+
+body.user .cont-meme div.addmeme .sendmeme {
+  width: 8em;
+  height: 8em;
+  border-radius: 2em;
+  background: #ededed;
+  margin: 0.3em;
+  padding: 0.08em;
+  object-fit: contain;
+}
+
+body.user .cont-meme div.addmeme .sendmeme img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+}
 
 /*# sourceMappingURL=style.css.map */

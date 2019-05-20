@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <% include ../partials/head %>
 
-<body class="chatpage">
-<% include ../partials/header %>
+<body class="user">
+  <% include ../partials/navbar %>
 
-<section class="profile">
-  <img src="public/assets/img/profile/testplaatje.jpeg" alt="profiel">
-</section>
-
-<div class="containyesno">
-  <div class="no"><img src="/public/assets/logo/dislike.svg" alt=""></div>
-  <div class="redo"><img src="/public/assets/logo/redo.svg" alt=""></div>
-  <div class="yes">
-    <img class="jomelogo" src="/public/assets/logo/like.svg" alt="logojome">
+  <div class="user-prof">
+    <div class="prof-cont">
+      <img src="./public/assets/img/profile/testplaatje.jpeg" alt="img">
+    </div>
+    <div><a href="../index.html">log out</a></div>
   </div>
-</div>
+  <section class="user-bio">
+    <h1><span>26</span>Joan Padolina</h1>
+    <p>
+      Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
+    </p>
+    <h2>Vrije tijd</h2>
+    <p>
 
-<section class="info">
-  <h2>
-    Jessica Marilo
-  </h2>
-  <article>
-    Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
-  </article>
-  <h3>laughs</h3>
-  <article class="extrainfo">
-    <ul>
-      <li> Obscure/absurd</li>
-      <li> Racial and sex jokes</li>
-      <li> Dark</li>
-    </ul>
-  </article>
-</section>
+
+      Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
+    </p>
+  </section>
+  <h3>Your laughs</h3>
+  <ul>
+    <li> Obscure/absurd</li>
+    <li> Sarcastic</li>
+    <li> Dark</li>
+  </ul>
+  <label for="file">Add more</label>
+  <input type="file" name="file" id="file" class="inputfile" />
+
+  <div class="cont-meme">
+    <div class="addmeme">
+      <div class="sendmeme">
+        <img src="./public/assets/img/memes/1.jpg" alt="">
+      </div>
+    </div>
+    <div class="addmeme">
+      <div class="sendmeme">
+        <img src="./public/assets/img/categorie/sarcastic.jpg" alt="">
+      </div>
+    </div>
+  </div>
 </body>
+
+</html>
