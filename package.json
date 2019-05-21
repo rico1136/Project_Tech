@@ -19,8 +19,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "camelcase": "^5.3.1",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "get-age": "^1.0.1",
     "multer": "^1.4.1",
     "nodemon": "^1.19.0",
     "slug": "^1.1.0"
