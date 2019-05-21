@@ -9,27 +9,53 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const getAge = require('get-age');
 
+const upload = multer({
+  dest: 'public/upload/'
+});
+// 
+// app.set('view engine', 'ejs');
+// app.set('views', 'view');
+// app.use(express.static('public'));
+// app.use(bodyParser.urlencoded({extended: true}));
+// 
+// app.get('/', index);
+// app.get('/account', account);
+// app.get('/list', listItem);
+// app.get('/register', register);
+// 
+// app.use(errorSend);
+// 
+// function index(req, res){
+//     res.render('/pages/index', {title: 'Home' });
+// }
+// function account(req, res){
+//     res.render('/pages/account', {title: 'Account' });
+// }
+// function listItem(req, res){
+//     res.render('/pages/list', {title: 'Categorie' });
+// }
+// function register(req, res){
+//     res.render('/pages/register', {title: 'Registreren' });
+// }
 
 
-//Testing data 
-
-let accounts =[
-  {
-    id:1,
-    name:'joan',
+// //Testing data 
+let accounts = [{
+    id: 1,
+    name: 'joan',
     age: '26',
-    state:'woman',
-    email:'joanpadolina@gmail.com',
-    password:'1234'
+    state: 'woman',
+    email: 'joanpadolina@gmail.com',
+    password: '1234'
 
   },
   {
-    id:2,
-    name:'jan',
+    id: 2,
+    name: 'jan',
     age: '27',
-    state:'man',
-    email:'janno@hotmail.com',
-    password:'4321'
+    state: 'man',
+    email: 'janno@hotmail.com',
+    password: '4321'
   }
 ];
 // multer
@@ -38,10 +64,7 @@ let accounts =[
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-// use res.render to load up an ejs view file
 
-// using app.use to serve up static CSS files in public/assets/ folder when /public link is called in ejs files
-// app.use("/route", express.static("foldername"));
 app.use('/public', express.static('public'));
 
 
@@ -49,12 +72,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-
-//////////// APP - USE GET 
-
-
-
-//index.ejs package
 
 app.get('/', function(req, res) {
   res.render('pages/index');
@@ -74,10 +91,15 @@ app.get('/list', function(req, res) {
 app.get('/register', function(req, res) {
   res.render('pages/register')
 });
-app.post('/register', function(req, res, next){
-  
+
+// --------------  POST -------------// 
+
+app.post('/register', function(req, res, next) {
+  let id = slug(req.body.name).toLowerCase();
   accounts.push({
-    id: 3,
+
+
+    id: id,
     name: req.body.name,
     age: req.body.age,
     state: req.body.state,
@@ -85,16 +107,15 @@ app.post('/register', function(req, res, next){
     password: req.body.password
 
   });
-  console.log(accounts);
-  res.redirect('/');
+  console.log(req.body);
+  res.redirect('/' + id);
 });
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.render('/pages/index')
 });
 
 
-// --------------  POST -------------// 
 
 
 
