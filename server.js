@@ -9,9 +9,36 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const getAge = require('get-age');
 const arrayFind = require('array-find');
+const mongo = require('mongodb');
+const mongoose = require('mongoose');
 const upload = multer({
   dest: 'public/upload/'
 });
+
+require('dotenv').config();
+
+mongoose
+  .connect(
+    'mongodb://localhost:27017/auth', {
+      useNewUrlParser: true
+    }
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log('Mongo Error:'));
+
+var db = null;
+var url = 'mongodb://localhost:27017/Project_Tech' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+
+mongo.MongoClient.connect(url, {
+  useNewUrlParser: true
+}, function(err, client) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('You now have access to ' + url);
+  }
+  db = client.db(process.env.DB_NAME)
+})
 
 // 
 // app.set('view engine', 'ejs');
@@ -109,28 +136,42 @@ app.get('/:id', function(req, res) { // Rico
 
 // --------------  POST -------------// 
 
-app.post('/register', upload.single('file'), function(req, res) {
-  // console.log(req.body.name);
+app.post('/register', upload.single('file'), function(req, res, next) {
+  console.log(req.body.name);
   let id = slug(req.body.name).toLowerCase();
+  // 
+  // accounts.push({
+  // 
+  // 
+  //   id: id,
+  //   name: req.body.name,
+  //   age: req.body.age,
+  //   state: req.body.state,
+  //   email: req.body.email,
+  //   password: req.body.password,
+  //   file: req.file ? req.file.filename : null, // if else
+  // 
+  // });
+  
+  db.collection('account').insertOne({
+    
+      name: req.body.name,
+      age: req.body.age,
+      state: req.body.state,
+      email: req.body.email,
+      file: req.file ? req.file.filename : null, // if else
+  }, done)
 
-  accounts.push({
+  function done(err, data ) {
+    if (err) {
+      console.log(next(err))
+    } else {
+      res.render('/public/profile.ejs' + data)
+    
+    }
+  }
 
-
-    id: id,
-    name: req.body.name,
-    age: req.body.age,
-    state: req.body.state,
-    email: req.body.email,
-    password: req.body.password,
-    file: req.file ? req.file.filename : null, // if else
-
-  });
-
-  console.log(req.body);
-  res.redirect('/' + id);
 });
-
-
 
 
 
