@@ -8,10 +8,11 @@ const slug = require('slug');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const getAge = require('get-age');
-
+const arrayFind = require('array-find');
 const upload = multer({
   dest: 'public/upload/'
 });
+
 // 
 // app.set('view engine', 'ejs');
 // app.set('views', 'view');
@@ -46,7 +47,8 @@ let accounts = [{
     age: '26',
     state: 'woman',
     email: 'joanpadolina@gmail.com',
-    password: '1234'
+    password: '1234',
+    file: ''
 
   },
   {
@@ -55,7 +57,8 @@ let accounts = [{
     age: '27',
     state: 'man',
     email: 'janno@hotmail.com',
-    password: '4321'
+    password: '4321',
+    file: ''
   }
 ];
 // multer
@@ -71,13 +74,15 @@ app.use('/public', express.static('public'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
 // --------- Pages ------------//
+app.get('/', function(req, res) {
+  res.render('/pages/index')
+});
 
 app.get('/profile', function(req, res) {
   res.render('pages/profile');
@@ -89,13 +94,25 @@ app.get('/list', function(req, res) {
 
 
 app.get('/register', function(req, res) {
-  res.render('pages/register')
+  res.render('pages/register');
+});
+
+app.get('/:id', function(req, res) { // Rico 
+  let obj;
+  obj = accounts.find(obj => obj.id == req.params.id);
+  res.render('pages/profile.ejs', {
+    title: `Profile of ${obj.name}`,
+    obj: obj
+  });
+  console.log(id);
 });
 
 // --------------  POST -------------// 
 
-app.post('/register', function(req, res, next) {
+app.post('/register', upload.single('file'), function(req, res) {
+  // console.log(req.body.name);
   let id = slug(req.body.name).toLowerCase();
+
   accounts.push({
 
 
@@ -104,15 +121,13 @@ app.post('/register', function(req, res, next) {
     age: req.body.age,
     state: req.body.state,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    file: req.file ? req.file.filename : null, // if else
 
   });
+
   console.log(req.body);
   res.redirect('/' + id);
-});
-
-app.get('/', function(req, res) {
-  res.render('/pages/index')
 });
 
 

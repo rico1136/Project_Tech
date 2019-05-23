@@ -8,18 +8,19 @@
 
   <div class="user-prof">
     <div class="prof-cont">
-      <img src="./public/assets/img/profile/kelly.jpg" alt="img">
+      <% if (obj.file) { %>
+      <img src="/public/upload/<%= obj.file %>" alt="img">
+      <% } %>
     </div>
-    <div><a href="../index.html">log out</a></div>
+    <div><a href="/">log out</a></div>
   </div>
   <section class="user-bio">
-    <h1><span>26</span>Joan Padolina</h1>
+    <h1 id="username"><span id="age"><%= obj.age%></span><%= obj.name %></h1>
     <p>
       Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
     </p>
     <h2>Vrije tijd</h2>
     <p>
-
 
       Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
     </p>
@@ -46,8 +47,8 @@
     </div>
   </div>
   <div id="add">
-    <a href=/add>add here</a>
-  </div>
+    <a href=/add>add here</a> </div> <% include tail.ejs %>
 </body>
+
 
 </html>

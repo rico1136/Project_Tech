@@ -12,18 +12,18 @@ body {
   font-family: Quicksand;
   // background-color: mediumpurple;
   color: black;
+
   a {
     text-decoration: none;
-    color:black;
+    color: black;
     font-weight: 500;
   }
+
   span {
     font-weight: 600;
-    color:$secondary;
+    color: $secondary;
   }
 }
-
-
 
 body.one {
   .containlogo {
@@ -253,58 +253,55 @@ body.swipe {
 }
 
 body.chatpage {
-  width: 30em;
-  overflow-x: hidden;
-
   div.cont_yesno {
     margin-top: -3em;
+    margin-bottom: 5em;
   }
 
   section.accept {
-    width: 15em;
     height: 4.2em;
     background: #F66C96;
-    border-radius: 20em;
+    border-radius: 20em 0 0 20em;
+    padding-left: 5em;
     margin: auto auto 2em;
     transition: ease 200ms;
     display: block;
     position: relative;
     float: right;
-    transform: translateX(1em);
 
     img {
       margin: 1em 0 0 1em;
+      
     }
 
     &:hover {
       background-color: $primarycolor;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      transform: translateX(0.3em);
+      padding-left:6
     }
   }
 
   section.decline {
-    width: 15em;
-    height: 4em;
+    border-radius: 0 20em 20em 0;
+    height: 4.2em;
     background: #4EA8D9;
-    border-radius: 20em;
+    padding-left: 5em;
     margin: auto auto 2em;
     transition: ease 200ms;
     display: block;
     position: relative;
-    left: -11em;
+    float: left;
 
     img {
       width: 2em;
       margin: 1em;
       float: right;
-      transform: translateX(6em);
     }
 
     &:hover {
       background-color: $primarycolor;
-      left: -10.6em;
+      padding-left:6em;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
     }
@@ -324,10 +321,9 @@ body.chatpage {
 
   section.info {
     display: block;
-    margin: 2em;
     text-align: left;
-    width: 20em;
     position: relative;
+    padding: 0.4em;
   }
 
   div.addmeme {
@@ -404,8 +400,9 @@ body.list {
     text-align: center;
     justify-content: space-evenly;
     margin-bottom: 7em;
-    h1{
-      width:100%;
+
+    h1 {
+      width: 100%;
       display: block;
     }
 
@@ -608,7 +605,6 @@ body.user {
     margin-bottom: 8em;
 
     div.addmeme {
-
       .sendmeme {
         width: 8em;
         height: 8em;
