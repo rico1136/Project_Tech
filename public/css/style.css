@@ -363,8 +363,6 @@ body.chatmatch {
         max-width: 100%;
         max-height: 100%; }
   body.chatmatch section.chat_list {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
     padding: 1em; }
     body.chatmatch section.chat_list h2 {
@@ -377,8 +375,6 @@ body.chatmatch {
       float: left; }
     body.chatmatch section.chat_list .cont_chatprof {
       width: 100%;
-      display: inline-flex;
-      position: relative;
       float: left; }
     body.chatmatch section.chat_list img {
       width: 5em;
@@ -390,9 +386,9 @@ body.chatmatch {
     body.chatmatch section.chat_list div.chat {
       background: lightblue;
       height: 4em;
-      width: 15em;
+      width: 13em;
       border-radius: 10em;
-      transform: translateX(2em);
+      transform: translateX(6em);
       text-align: left; }
       body.chatmatch section.chat_list div.chat h4.name {
         font-size: 0.8em;
@@ -401,7 +397,9 @@ body.chatmatch {
       body.chatmatch section.chat_list div.chat p.chat_text {
         font-size: 0.7em;
         transform: translateX(2em) translateY(1.5em);
-        width: 17em; }
+        width: 17em;
+        float: left;
+        position: absolute; }
 
 body.user {
   width: 100%;

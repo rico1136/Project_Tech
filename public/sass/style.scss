@@ -271,14 +271,13 @@ body.chatpage {
 
     img {
       margin: 1em 0 0 1em;
-      
     }
 
     &:hover {
       background-color: $primarycolor;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      padding-left:6
+      padding-left: 6;
     }
   }
 
@@ -301,7 +300,7 @@ body.chatpage {
 
     &:hover {
       background-color: $primarycolor;
-      padding-left:6em;
+      padding-left: 6em;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
     }
@@ -526,8 +525,6 @@ body.chatmatch {
   }
 
   section.chat_list {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
     padding: 1em;
 
@@ -545,8 +542,6 @@ body.chatmatch {
 
     .cont_chatprof {
       width: 100%;
-      display: inline-flex;
-      position: relative;
       float: left;
     }
 
@@ -562,9 +557,9 @@ body.chatmatch {
     div.chat {
       background: lightblue;
       height: 4em;
-      width: 15em;
+      width: 13em;
       border-radius: 10em;
-      transform: translateX(2em);
+      transform: translateX(6em);
       text-align: left;
 
       h4.name {
@@ -577,6 +572,8 @@ body.chatmatch {
         font-size: 0.7em;
         transform: translateX(2em) translateY(1.5em);
         width: 17em;
+        float: left;
+        position: absolute;
       }
     }
   }

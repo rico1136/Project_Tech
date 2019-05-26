@@ -2,7 +2,7 @@ const camelCase = require('camelcase'); // test package installed
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 27017;
 const dotenv = require('dotenv');
 const slug = require('slug');
 const bodyParser = require('body-parser');
@@ -102,6 +102,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
 app.get('/', function(req, res) {
   res.render('pages/index');
 });
@@ -111,9 +112,9 @@ app.get('/', function(req, res) {
   res.render('/pages/index')
 });
 
-app.get('/profile', function(req, res) {
-  res.render('pages/profile');
-});
+// app.get('/profile', function(req, res) {
+//   res.render('pages/profile');
+// });
 
 app.get('/list', function(req, res) {
   res.render('pages/list');
@@ -166,7 +167,7 @@ app.post('/register', upload.single('file'), function(req, res, next) {
     if (err) {
       console.log(next(err))
     } else {
-      res.render('/public/profile.ejs' + data)
+      res.redirect('/public/profile.ejs' + data.insertedId)
     
     }
   }
