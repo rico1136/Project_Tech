@@ -2,7 +2,7 @@ const camelCase = require('camelcase'); // test package installed
 
 const express = require('express');
 const app = express();
-const port = 27017;
+const port = 3000;
 const dotenv = require('dotenv');
 const slug = require('slug');
 const bodyParser = require('body-parser');
@@ -40,33 +40,6 @@ mongo.MongoClient.connect(url, {
   db = client.db(process.env.DB_NAME)
 })
 
-// 
-// app.set('view engine', 'ejs');
-// app.set('views', 'view');
-// app.use(express.static('public'));
-// app.use(bodyParser.urlencoded({extended: true}));
-// 
-// app.get('/', index);
-// app.get('/account', account);
-// app.get('/list', listItem);
-// app.get('/register', register);
-// 
-// app.use(errorSend);
-// 
-// function index(req, res){
-//     res.render('/pages/index', {title: 'Home' });
-// }
-// function account(req, res){
-//     res.render('/pages/account', {title: 'Account' });
-// }
-// function listItem(req, res){
-//     res.render('/pages/list', {title: 'Categorie' });
-// }
-// function register(req, res){
-//     res.render('/pages/register', {title: 'Registreren' });
-// }
-
-
 // //Testing data 
 let accounts = [{
     id: 1,
@@ -88,8 +61,6 @@ let accounts = [{
     file: ''
   }
 ];
-// multer
-
 
 
 // set the view engine to ejs
@@ -138,24 +109,11 @@ app.get('/:id', function(req, res) { // Rico
 // --------------  POST -------------// 
 
 app.post('/register', upload.single('file'), function(req, res, next) {
-  console.log(req.body.name);
-  let id = slug(req.body.name).toLowerCase();
-  // 
-  // accounts.push({
-  // 
-  // 
-  //   id: id,
-  //   name: req.body.name,
-  //   age: req.body.age,
-  //   state: req.body.state,
-  //   email: req.body.email,
-  //   password: req.body.password,
-  //   file: req.file ? req.file.filename : null, // if else
-  // 
-  // });
+  
+    // ---- account toevoegen aan collectie moongo Compass ----//
   
   db.collection('account').insertOne({
-    
+
       name: req.body.name,
       age: req.body.age,
       state: req.body.state,
@@ -167,14 +125,37 @@ app.post('/register', upload.single('file'), function(req, res, next) {
     if (err) {
       console.log(next(err))
     } else {
-      res.redirect('/public/profile.ejs' + data.insertedId)
-    
+      console.log(id+' is added to the database.');
+      // res.redirect('/' + data.insertedId)
+
     }
   }
+  
+  
+  console.log(req.body.name);
+  let id = slug(req.body.name).toLowerCase();
+
+  accounts.push({
+
+
+    id: id,
+    name: req.body.name,
+    age: req.body.age,
+    state: req.body.state,
+    email: req.body.email,
+    password: req.body.password,
+    file: req.file ? req.file.filename : null, // if else
+
+  });
+  // 
+  // console.log(req.body);
+  res.redirect('/' + id);
+  
+
+
+
 
 });
-
-
 
 // --------- 404 ERROR ------------//
 
