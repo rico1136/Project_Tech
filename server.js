@@ -1,16 +1,16 @@
-const camelCase = require('camelcase'); // test package installed
-
-const express = require('express');
+const camelCase = require('camelcase');     // test package installed
+const express = require('express');        //https://expressjs.com/
 const app = express();
 const port = 3000;
-const dotenv = require('dotenv');
-const slug = require('slug');
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const getAge = require('get-age');
-const arrayFind = require('array-find');
-const mongo = require('mongodb');
-const mongoose = require('mongoose');
+const dotenv = require('dotenv');          //https://www.npmjs.com/package/dotenv
+const slug = require('slug');              //https://www.npmjs.com/package/slug
+const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
+const multer = require('multer');          //https://www.npmjs.com/package/multer
+const arrayFind = require('array-find');   //https://www.npmjs.com/package/array-find
+const mongo = require('mongodb');          //https://www.mongodb.com/
+const mongoose = require('mongoose');      //https://www.npmjs.com/package/mongoose
+
+// ---- opslaan van foto's in deze map --//
 const upload = multer({
   dest: 'public/upload/'
 });
@@ -40,7 +40,7 @@ mongo.MongoClient.connect(url, {
   db = client.db(process.env.DB_NAME)
 })
 
-// //Testing data 
+// -- Data array -- //
 let accounts = [{
     id: 1,
     name: 'joan',
@@ -63,12 +63,13 @@ let accounts = [{
 ];
 
 
-// set the view engine to ejs
+// -- templating engine EJS -- //
 app.set('view engine', 'ejs');
 
+// -- statische website --//
 app.use('/public', express.static('public'));
 
-
+// -- formlezer en slaat het op in een js code --/
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -78,14 +79,10 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
-// --------- Pages ------------//
+// --------- Pagina's ------------//
 app.get('/', function(req, res) {
   res.render('/pages/index')
 });
-
-// app.get('/profile', function(req, res) {
-//   res.render('pages/profile');
-// });
 
 app.get('/list', function(req, res) {
   res.render('pages/list');
@@ -95,6 +92,9 @@ app.get('/list', function(req, res) {
 app.get('/register', function(req, res) {
   res.render('pages/register');
 });
+
+
+//-- opgeslagen ID's ophalen --//
 
 app.get('/:id', function(req, res) { // Rico 
   let obj;
@@ -106,11 +106,11 @@ app.get('/:id', function(req, res) { // Rico
   console.log(id);
 });
 
-// --------------  POST -------------// 
+// --- Register form posten ---// 
 
 app.post('/register', upload.single('file'), function(req, res, next) {
   
-    // ---- account toevoegen aan collectie moongo Compass ----//
+// ---- account toevoegen aan collectie moongo Compass ----//
   
   db.collection('account').insertOne({
 
@@ -131,7 +131,7 @@ app.post('/register', upload.single('file'), function(req, res, next) {
     }
   }
   
-  
+// --- Data wordt verzonden naar de EJS template ---//  
   console.log(req.body.name);
   let id = slug(req.body.name).toLowerCase();
 
@@ -149,7 +149,7 @@ app.post('/register', upload.single('file'), function(req, res, next) {
   });
   // 
   // console.log(req.body);
-  res.redirect('/' + id);
+  return res.redirect('/'+ id);
   
 
 

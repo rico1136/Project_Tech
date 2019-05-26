@@ -620,3 +620,13 @@ body.user {
     }
   }
 }
+// --------- Mediaqueries ------------//
+@media only screen and (min-width: 48.0625em) and (max-width:90em) {
+  body {
+    width: 50em;
+    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+  }
+  nav{
+    display: none;
+  }
+}
