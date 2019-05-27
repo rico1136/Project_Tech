@@ -444,6 +444,19 @@ body.feed {
     margin-left: 0.3em;
     font-size: 1em;
   }
+  a.genrelink{
+    background:$primarycolor;
+    border-radius: 1em;
+    padding:.5em;
+    color:white;
+    transition:200ms ease;
+    
+    &:hover{
+      cursor:pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      
+    }
+  }
 
   div.containfeed {
     margin: 0;

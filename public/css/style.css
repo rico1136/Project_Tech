@@ -314,6 +314,15 @@ body.feed {
     color: #D75555;
     margin-left: 0.3em;
     font-size: 1em; }
+  body.feed a.genrelink {
+    background: #D75555;
+    border-radius: 1em;
+    padding: .5em;
+    color: white;
+    transition: 200ms ease; }
+    body.feed a.genrelink:hover {
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
   body.feed div.containfeed {
     margin: 0;
     display: flex;
