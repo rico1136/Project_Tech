@@ -35,6 +35,9 @@ body.one .button {
     margin: 1em;
     border: solid 0.1em #e0e0e0;
     transition: ease 400ms; }
+    body.one .button .login a,
+    body.one .button .registreren a {
+      color: white; }
     body.one .button .login:hover,
     body.one .button .registreren:hover {
       cursor: pointer;
@@ -441,8 +444,7 @@ body.user {
 
 @media only screen and (min-width: 48.0625em) and (max-width: 90em) {
   body {
-    width: 50em;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+    width: 50em; }
 
   nav {
     display: none; } }

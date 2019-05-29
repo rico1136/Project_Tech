@@ -52,6 +52,10 @@ body.one {
       margin: 1em;
       border: solid 0.1em rgb(224, 224, 224);
       transition: ease 400ms;
+      
+      a{
+        color:white;
+      }
 
       &:hover {
         cursor: pointer;
@@ -637,7 +641,6 @@ body.user {
 @media only screen and (min-width: 48.0625em) and (max-width:90em) {
   body {
     width: 50em;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
   }
   nav{
     display: none;
