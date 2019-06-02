@@ -28,27 +28,35 @@ body.one section.logo {
 body.one .button {
   margin: auto;
   text-align: center; }
-  body.one .button .login,
+  body.one .button .login {
+    border-radius: 2em;
+    width: 10em;
+    height: 3em;
+    transition: 400ms ease; }
+    body.one .button .login:hover {
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+      color: white; }
   body.one .button .registreren {
     border-radius: 2em;
     padding: 0.4em;
     margin: 1em;
+    background: #c7c2e0;
+    width: 7em;
+    color: white;
+    padding: 1em;
     border: solid 0.1em #e0e0e0;
     transition: ease 400ms; }
-    body.one .button .login a,
-    body.one .button .registreren a {
-      color: white; }
-    body.one .button .login:hover,
     body.one .button .registreren:hover {
+      background: #876FEE;
+      color: white;
+      font-weight: 600;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-  body.one .button .login {
-    width: 10em;
-    height: 3em; }
-  body.one .button .registreren {
-    background: #876FEE;
-    width: 5em;
-    color: white; }
+    body.one .button .registreren a {
+      color: white;
+      width: 2em; }
 body.one section.regis {
   margin: 0 auto;
   text-align: center;
@@ -80,30 +88,38 @@ body.one .tryme {
     cursor: pointer;
     box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
 
+.login,
 body.regis {
   width: 25em; }
-  body.regis .reg {
-    margin-bottom: 1em; }
+  .login .reg,
+  .login p,
+  body.regis .reg,
+  body.regis p {
+    margin-bottom: 1em;
+    text-align: center; }
+  .login form,
   body.regis form {
     padding-bottom: 2em;
     margin: auto auto 4em; }
+    .login form fieldset,
     body.regis form fieldset {
       border: solid white 0.12em; }
+      .login form fieldset label,
       body.regis form fieldset label {
         width: 100%;
         display: block;
         margin: 0.5em; }
+      .login form fieldset input,
       body.regis form fieldset input {
         padding: 0.5em;
         width: 90%; }
+  .login .meldaan,
   body.regis .meldaan {
-    width: 10em;
-    height: 2.5em;
+    width: 8em;
     padding: 0.5em;
     border-radius: 5em;
     margin: 0.3em;
     position: relative;
-    right: 0;
     display: block;
     font-size: 1.2em;
     background: #D75555;
@@ -112,16 +128,21 @@ body.regis {
     font-family: Quicksand;
     transition: ease 200ms;
     margin-top: 1em;
-    left: 0; }
+    text-align: center;
+    float: right; }
+    .login .meldaan::after,
     body.regis .meldaan::after {
       content: " >";
       font-size: 1em; }
+    .login .meldaan:hover,
     body.regis .meldaan:hover {
       cursor: pointer;
       background: green;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+    .login .meldaan:hover::after,
     body.regis .meldaan:hover::after {
       color: #F66C96; }
+  .login .file,
   body.regis .file {
     display: block; }
 
@@ -320,7 +341,7 @@ body.feed {
   body.feed a.genrelink {
     background: #D75555;
     border-radius: 1em;
-    padding: .5em;
+    padding: 0.5em;
     color: white;
     transition: 200ms ease; }
     body.feed a.genrelink:hover {
@@ -330,29 +351,35 @@ body.feed {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    margin-top: 2em; }
   body.feed .avatar img {
     height: 8em;
     width: 8em;
     object-fit: cover;
     border-radius: 1em 1em 0 0; }
   body.feed section {
-    margin: 0.4em;
     width: 8em;
     transition: 200ms ease;
     border-radius: 1em;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2em; }
+    margin: 1em;
+    background-color: white; }
     body.feed section:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      box-shadow: 2px 4px 0px 2px #c9c9c9; }
   body.feed h2 {
     font-size: 0.8em;
     font-weight: 100;
     flex: 100%;
-    color: black;
+    color: white;
     display: inline-block;
-    position: relative; }
+    position: relative;
+    top: -1em;
+    padding: .5em;
+    background: #4EA8D9;
+    border-radius: 0 0 .5em .5em; }
 
 body.chatmatch {
   width: 100%; }
@@ -442,7 +469,7 @@ body.user {
         height: 100%;
         border-radius: 2em; }
 
-@media only screen and (min-width: 48.0625em) and (max-width: 90em) {
+@media only screen and (min-width: 48.0625em) and (max-width: 100em) {
   body {
     width: 50em; }
 

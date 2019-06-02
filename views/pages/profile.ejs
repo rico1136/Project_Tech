@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <% include ../partials/head %>
 
@@ -8,14 +8,14 @@
 
   <div class="user-prof">
     <div class="prof-cont">
-      <% if (obj.file) { %>
-      <img src="/public/upload/<%= obj.file %>" alt="img">
+      <% if (data.file) { %>
+      <img src="/upload/<%= data.file %>" alt="img">
       <% } %>
     </div>
     <div><a href="/">log out</a></div>
   </div>
   <section class="user-bio">
-    <h1 id="username"><span id="age"><%= obj.age%></span><%= obj.name %></h1>
+    <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
     <p>
       Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
     </p>
@@ -32,17 +32,22 @@
     <li> Dark</li>
   </ul>
   <label for="file">Add more</label>
-  <input type="file" name="file" id="file" class="inputfile" />
+  <form method="post" enctype="multipart/form-data">  
+    <input type='file' name='image' />
+  </form>
+
+
+<!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
   <div class="cont-meme">
     <div class="addmeme">
       <div class="sendmeme">
-        <img src="./public/assets/img/memes/1.jpg" alt="">
+        <img src="/assets/img/memes/1.jpg" alt="">
       </div>
     </div>
     <div class="addmeme">
       <div class="sendmeme">
-        <img src="./public/assets/img/categorie/sarcastic.jpg" alt="">
+        <img src="/assets/img/categorie/sarcastic.jpg" alt="">
       </div>
     </div>
   </div>

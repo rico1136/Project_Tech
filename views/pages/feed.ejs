@@ -18,36 +18,19 @@
     </ul>
   </nav>
   <h1>Matches for you</h1>
-  <a href="./list.html" class="genrelink">Sarcastic</a>
+  <a href="/list" class="genrelink">Sarcastic</a>
   <div class="containfeed">
+    <% for(var i = 0; i < data.length; i++)  {%>
     <section>
+    
       <div class="avatar">
-        <img src="../assets/img/profile/jan.jpeg" alt="img">
+        <img src="/upload/<%= data[i].file %>" alt="img">
       </div>
-      <h2 class="addname">Janno de Jonker</h2>
+      <h2 class="addname"><%= data[i].name %> </h2>
+    
     </section>
-    <section>
-      <a href="profile_others.html">
-        <div class="avatar">
-          <img src="../assets/img/profile/testplaatje.jpeg" alt="img">
-        </div>
-      </a>
-      <h2 class="addname">Joanie Pansie</h2>
-    </section>
-    <section>
-      <div class="avatar">
-        <img src="../assets/img/profile/jan.jpeg" alt="img">
+    <% } %>
       </div>
-      <h2 class="addname">Janno de Jonker</h2>
-    </section>
-    <section>
-      <div class="avatar">
-        <img src="../assets/img/profile/jan.jpeg" alt="img">
-      </div>
-      <h2 class="addname">Janno de Jonker</h2>
-    </section>
-      
-    </div>
     <script src="../js/index.js"></script>
 </body>
 

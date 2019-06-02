@@ -1,5 +1,6 @@
 $primarycolor: #D75555;
 $secondary: #F66C96;
+$blue:#4EA8D9;
 
 body {
   margin: auto;
@@ -45,33 +46,43 @@ body.one {
     margin: auto;
     text-align: center;
 
-    .login,
+    .login {
+      border-radius: 2em;
+      width: 10em;
+      height: 3em;
+      transition: 400ms ease;
+
+      &:hover {
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+        color: white;
+      }
+    }
+
     .registreren {
       border-radius: 2em;
       padding: 0.4em;
       margin: 1em;
+      background: #c7c2e0;
+      width: 7em;
+      color: white;
+      padding: 1em;
       border: solid 0.1em rgb(224, 224, 224);
       transition: ease 400ms;
-      
-      a{
-        color:white;
-      }
 
       &:hover {
+        background: #876FEE;
+        color: white;
+        font-weight: 600;
         cursor: pointer;
         box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
       }
-    }
 
-    .login {
-      width: 10em;
-      height: 3em;
-    }
-
-    .registreren {
-      background: #876FEE;
-      width: 5em;
-      color: white;
+      a {
+        color: white;
+        width: 2em;
+      }
     }
   }
 
@@ -118,11 +129,14 @@ body.one {
   }
 }
 
+.login,
 body.regis {
   width: 25em;
 
-  .reg {
+  .reg,
+  p {
     margin-bottom: 1em;
+    text-align: center;
   }
 
   form {
@@ -146,22 +160,21 @@ body.regis {
   }
 
   .meldaan {
-    width: 10em;
-    height: 2.5em;
+    width: 8em;
     padding: 0.5em;
     border-radius: 5em;
     margin: 0.3em;
     position: relative;
-    right: 0;
     display: block;
     font-size: 1.2em;
-    background: $primarycolor;
+    background: #D75555;
     color: white;
     font-weight: 200;
     font-family: Quicksand;
     transition: ease 200ms;
     margin-top: 1em;
-    left: 0;
+    text-align: center;
+    float: right;
 
     &::after {
       content: " >";
@@ -448,17 +461,17 @@ body.feed {
     margin-left: 0.3em;
     font-size: 1em;
   }
-  a.genrelink{
-    background:$primarycolor;
+
+  a.genrelink {
+    background: $primarycolor;
     border-radius: 1em;
-    padding:.5em;
-    color:white;
-    transition:200ms ease;
-    
-    &:hover{
-      cursor:pointer;
+    padding: 0.5em;
+    color: white;
+    transition: 200ms ease;
+
+    &:hover {
+      cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      
     }
   }
 
@@ -467,6 +480,7 @@ body.feed {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top:2em;
   }
 
   .avatar {
@@ -479,16 +493,19 @@ body.feed {
   }
 
   section {
-    margin: 0.4em;
     width: 8em;
     transition: 200ms ease;
     border-radius: 1em;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2em;
+    margin:1em;
+    background-color: white;
+
 
     &:hover {
       cursor: pointer;
+    box-shadow: 2px 4px 0px 2px rgba(201,201,201,1);
+      
     }
   }
 
@@ -496,21 +513,14 @@ body.feed {
     font-size: 0.8em;
     font-weight: 100;
     flex: 100%;
-    color: black;
+    color: white;
     display: inline-block;
     position: relative;
-    // &::after {
-    //   content: "";
-    //   background: #D75555;
-    //   height: 3em;
-    //   width: 10em;
-    //   display: block;
-    //   position: absolute;
-    //   z-index: -1;
-    //   top: -1.2em;
-    //   border-radius: 0 0 0.5em 0.5em;
-    //   object-fit: contain;
-    // }
+    top: -1em;
+    padding:.5em;
+    background:$blue;
+    border-radius: 0 0 .5em .5em;
+    
   }
 }
 
@@ -638,11 +648,12 @@ body.user {
   }
 }
 // --------- Mediaqueries ------------//
-@media only screen and (min-width: 48.0625em) and (max-width:90em) {
+@media only screen and (min-width: 48.0625em) and (max-width:100em) {
   body {
     width: 50em;
   }
-  nav{
+
+  nav {
     display: none;
   }
 }
