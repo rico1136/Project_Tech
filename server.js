@@ -85,6 +85,13 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(errNotFound);
 
+// session //
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET
+}))
+app.listen(8000);
 
 
 app.listen(port, servermsg);
