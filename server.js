@@ -1,7 +1,7 @@
 const camelCase = require('camelcase'); // test package installed
 const express = require('express'); //https://expressjs.com/
 const app = express();
-const port = 3000;
+const port = process.env.PORT ||  3000;
 const dotenv = require('dotenv'); //https://www.npmjs.com/package/dotenv
 const slug = require('slug'); //https://www.npmjs.com/package/slug
 const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
