@@ -26,3 +26,5 @@ Run the application
 ```
 npm run dev
 ```
+# MIT
+[MIT](https://github.com/joanpadolina/Project_Tech/blob/master/LICENSE)
