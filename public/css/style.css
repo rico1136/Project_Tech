@@ -37,7 +37,7 @@ body.one .button {
       font-weight: 600;
       cursor: pointer;
       box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      color: white; }
+      color: black; }
   body.one .button .registreren {
     border-radius: 2em;
     padding: 0.4em;
