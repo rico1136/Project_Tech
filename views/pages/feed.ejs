@@ -2,32 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/style.css">
+<% include ../partials/head %>
   <title>feedmatches</title>
 </head>
 
 <body class="feed">
-  <nav>
-    <ul>
-      <li><a href="./user_settings.html"><img src="../assets/logo/SVG/user.svg" alt="usersvg"></a></li>
-      <li><a href="./feed.html"><img src="../assets/logo/logo.svg" alt="logosvg"></a></li>
-      <li><a href="chatmatch.html"><img src="../assets/logo/SVG/chat.svg" alt="chatsvg"></a></li>
-    </ul>
-  </nav>
+<% include ../partials/navbar %>
   <h1>Matches for you</h1>
   <a href="/list" class="genrelink">Sarcastic</a>
   <div class="containfeed">
     <% for(var i = 0; i < data.length; i++)  {%>
     <section>
-    
+    <a href="/matchprofile/<%= data[i]._id %>">
       <div class="avatar">
         <img src="/upload/<%= data[i].file %>" alt="img">
       </div>
       <h2 class="addname"><%= data[i].name %> </h2>
-    
+    </a>
     </section>
     <% } %>
       </div>

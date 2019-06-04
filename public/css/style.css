@@ -368,7 +368,7 @@ body.feed {
     background-color: white; }
     body.feed section:hover {
       cursor: pointer;
-      box-shadow: 2px 4px 0px 2px #c9c9c9; }
+      box-shadow: 2px 4px 0 2px #c9c9c9; }
   body.feed h2 {
     font-size: 0.8em;
     font-weight: 100;
@@ -377,9 +377,10 @@ body.feed {
     display: inline-block;
     position: relative;
     top: -1em;
-    padding: .5em;
+    padding: 0.5em;
     background: #4EA8D9;
-    border-radius: 0 0 .5em .5em; }
+    width: 9em;
+    border-radius: 0 0 0.5em 0.5em; }
 
 body.chatmatch {
   width: 100%; }

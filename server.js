@@ -11,40 +11,8 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const validator = require('express-validator');
+
 require('dotenv').config(); // gegeven voor de mongodb server
-
-
-// == data accounts array == //
-
-let accounts = [{
-    id: 1,
-    name: 'joan',
-    age: '26',
-    state: 'woman',
-    email: 'joanpadolina@gmail.com',
-    password: '1234',
-    file: ''
-
-  },
-  {
-    id: 2,
-    name: 'jan',
-    age: '27',
-    state: 'man',
-    email: 'janno@hotmail.com',
-    password: '4321',
-    file: ''
-  },
-  {
-    id: 3,
-    name: 'jess',
-    age: '27',
-    state: 'man',
-    email: 'janno@hotmail.com',
-    password: '4321',
-    file: ''
-  }
-];
 
 // foto's opslaan in een map //
 const upload = multer({
@@ -71,14 +39,14 @@ mongo.MongoClient.connect(url, {
 app.set('view engine', 'ejs');
 
 
+
 // session //
+app.set('trust proxy', 1) // vetrouw de eerste server
 app.use(session({
+  secret: 'supergeheimedingen',
   resave: false,
-  saveUninitialized: false,
-  secret: process.env.SESSION_SECRET,
-  cookie: {
-    secure: true
-  }
+  saveUninitialized: true,
+  cookie: { secure: true }
 }))
 app.use(bodyParser.urlencoded({
   extended: true
@@ -87,10 +55,9 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', index);
 app.use(express.static('public'));
-// app.get('/login', login);
 app.get('/profile/:id', findProfile);
-app.get('/profile', ownProfile);
-app.get('/matchprofile', matchProfile);
+app.get('/profile', findProfile);
+app.get('/matchprofile', redirectFeed);
 app.get('/list', listPage);
 app.get('/feed', feedList)
 app.get('/register', register);
@@ -106,11 +73,6 @@ app.post('/login', loginData);
 
 
 app.use(errNotFound);
-
-
-app.listen(8000);
-
-
 app.listen(port, servermsg);
 
 //--- pagina render---//
@@ -124,13 +86,6 @@ function register(req, res, next) {
 }
 
 function login(req, res) {
-  // req.session.user = accounts[0].name;
-  // if(req.session.user) {
-  //   res.render('pages/login');  
-  // } else {
-  //   res.redirect(401).send('Geen session!')
-  // }
-  // console.log(req.session);
   res.render('pages/login');
 
 }
@@ -183,7 +138,7 @@ function addRegis(req, res, next) {
   }
 }
 
-function loginData(req, res, next) {
+function loginData(req, res, next) { // hulp van bas
   const password = req.body.password;
   const email = req.body.email;
   db.collection('account').findOne({
@@ -193,7 +148,7 @@ function loginData(req, res, next) {
 
   function done(err, data) {
     if (!data) {
-      res.send('Email wordt niet herkend')
+      res.status(404).send('Email of wachtwoordt wordt niet herkend')
     } else {
       if(email === data.email){
         req.session.user = {name: data._id}
@@ -201,10 +156,35 @@ function loginData(req, res, next) {
       }else{
         res.status(401).send('Account wordt niet herkend')
       }
+      req.session.save
     }
   }
   console.log(password)
+  // req.session.user = accounts[0].name;
+  // if(req.session.user) {
+  //   res.render('pages/login');  
+  // } else {
+  //   res.redirect(401).send('Geen session!')
+  // }
+  // console.log(req.session);
+}
 
+function redirectFeed(req, res, next){
+  if(!req.session.user){
+    res.redirect('/login')
+  }else(res.render('/feed'));
+}
+
+function logOut(req, res, next){
+  if(req.session){
+    req.session.destroy(function(err){
+      if(err){
+        return next(err);
+      }else{
+        return res.redirect('/');
+      }
+    })
+  }
 }
 
 
@@ -219,9 +199,7 @@ function findProfile(req, res, next) {
     if (err) {
       next(err)
     } else {
-      res.render('pages/profile.ejs', {
-        data: data,
-      })
+      res.render('pages/profile.ejs', {data: data})
     }
   }
 }
@@ -236,7 +214,10 @@ function getmatch(req, res, next) {
   function done(err, data) {
     if (err) {
       next(err)
-    } else {
+    } if(!req.session.user){
+      
+      res.redirect('/login');
+    }else {
       res.render('pages/matchprofile.ejs', {
         data: data
       })
@@ -255,20 +236,6 @@ function feedList(req, res, next) {
 }
 
 
-// function deleteAccount(req, res, next){
-//   let id = req.params.id 
-//   db.collection('account').deleteOne({
-//     _id:mongo.ObjectID(id)
-//   }, done)
-// 
-//   function done(err){
-//     if(err){
-//       next(err)
-//     }else{
-//       res.json({status:'ok'})
-//     }
-//   }
-// }
 
 
 
