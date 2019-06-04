@@ -1,7 +1,10 @@
 #ignore packages installed by npm
+.gitignore
 node_modules
 *~
 .DS_Store
 credentials.js
 .env
 db
+serverbackup.js
+controls
