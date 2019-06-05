@@ -3,9 +3,7 @@ const express = require('express'); //https://expressjs.com/
 const app = express();
 const port = process.env.PORT ||  3000;
 const dotenv = require('dotenv'); //https://www.npmjs.com/package/dotenv
-const slug = require('slug'); //https://www.npmjs.com/package/slug
 const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
-const multer = require('multer'); //https://www.npmjs.com/package/multer
 const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-find
 const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
@@ -14,10 +12,6 @@ const validator = require('express-validator');
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
-// foto's opslaan in een map //
-const upload = multer({
-  dest: 'public/upload'
-});
 
 // ---- CMD-BT Slides MongoDB ---//
 
@@ -35,11 +29,15 @@ mongo.MongoClient.connect(url, {
   db = client.db(process.env.DB_NAME)
 })
 
+
+// controls gebruiken 
+const loginTest = require('./controls/logindata.js');
+const addRegis = require('./controls/register.js');
+
+
+
 // express engine //
 app.set('view engine', 'ejs');
-
-
-
 // session //
 app.set('trust proxy', 1) // vetrouw de eerste server
 app.use(session({
@@ -51,10 +49,15 @@ app.use(session({
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 // routing van de pagina's //
 
 app.get('/', index);
 app.use(express.static('public'));
+app.use(loginTest);
+app.use(addRegis);
+
+
 app.get('/profile/:id', findProfile);
 app.get('/profile', findProfile);
 app.get('/matchprofile', redirectFeed);
@@ -63,15 +66,8 @@ app.get('/feed', feedList)
 app.get('/register', register);
 app.get('/login', login)
 app.get('/matchprofile/:id', getmatch);
-
-app.post('/register', upload.single('file'), addRegis);
 app.post('/profile/:id', addRegis);
-app.post('/login', loginData);
-
-
 // leest de form en slaat het op in een js code
-
-
 app.use(errNotFound);
 app.listen(port, servermsg);
 
@@ -110,64 +106,6 @@ function dbCollect(req, res, next) { // require, response, alles tussen de req e
   db.collecction('account');
 }
 
-
-// mongodb 
-
-function addRegis(req, res, next) {
-  //slugify url friendly
-  let id = slug(req.body.name).toLowerCase()
-  // ---- account toevoegen aan collectie moongo Compass ----//
-
-  db.collection('account').insertOne({
-    name: req.body.name,
-    age: req.body.age,
-    state: req.body.state,
-    email: req.body.email,
-    password: req.body.password,
-    file: req.file ? req.file.filename : null, // if else
-  }, done)
-
-  function done(err, data) {
-    if (err) {
-      console.log(next(err))
-    } else {
-      console.log(id + ' is added to the database.');
-      res.redirect('/profile/' + data.insertedId)
-
-    }
-  }
-}
-
-function loginData(req, res, next) { // hulp van bas
-  const password = req.body.password;
-  const email = req.body.email;
-  db.collection('account').findOne({
-    email: req.body.email,
-    password: req.body.password
-  }, done);
-
-  function done(err, data) {
-    if (!data) {
-      res.status(404).send('Email of wachtwoordt wordt niet herkend')
-    } else {
-      if(email === data.email){
-        req.session.user = {name: data._id}
-        res.redirect('/feed')
-      }else{
-        res.status(401).send('Account wordt niet herkend')
-      }
-      req.session.save
-    }
-  }
-  console.log(password)
-  // req.session.user = accounts[0].name;
-  // if(req.session.user) {
-  //   res.render('pages/login');  
-  // } else {
-  //   res.redirect(401).send('Geen session!')
-  // }
-  // console.log(req.session);
-}
 
 function redirectFeed(req, res, next){
   if(!req.session.user){
