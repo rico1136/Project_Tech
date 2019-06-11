@@ -1,0 +1,7 @@
+#ignore packages installed by npm
+node_modules
+*~
+.DS_Store
+.env
+.idea/*
+db
