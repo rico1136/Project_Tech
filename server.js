@@ -51,7 +51,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
-}))
+}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));

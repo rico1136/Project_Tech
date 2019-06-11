@@ -18,7 +18,7 @@ let userSchema = new mongoose.Schema({
   },
   profilePic: String,
   memeCategory: String
-})
+});
 
 let User = mongoose.model('account', userSchema);
 module.exports = User;
