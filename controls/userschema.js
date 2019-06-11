@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/Project_Tech', { useNewUrlParser: true });
-mongoose.set('useCreateIndex', true);
+require('mongoose-type-email');
 
 let userSchema = new mongoose.Schema({
   name: String,
   age: Number,
   sex: String,
   email: {
-    type: String,
+    type: mongoose.SchemaTypes.Email,
     unique: true,
     required: true
   },
