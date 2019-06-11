@@ -36,9 +36,10 @@ db.once('open', function() {
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-// controls gebruiken 
+// controls gebruiken
 const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
+const deleteUser = require('./controls/delete.js');
 
 
 
@@ -62,6 +63,7 @@ app.get('/', index);
 app.use(express.static('public'));
 app.use(loginTest);
 app.use(addRegis);
+app.use(deleteUser);
 
 
 app.get('/profile/:id', findProfile);
@@ -159,7 +161,7 @@ function getmatch(req, res, next) {
     if (err) {
       next(err)
     } if(!req.session.user){
-      
+
       res.redirect('/login');
     }else {
       res.render('pages/matchprofile.ejs', {
