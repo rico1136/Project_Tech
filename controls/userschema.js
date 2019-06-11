@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const express = require('express');
-const db = require('mongodb');
 
 console.log('----------- userSchema added ----------------')
 
@@ -8,26 +6,21 @@ mongoose.connect('mongodb://localhost/Project_Tech', { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 
 let userSchema = new mongoose.Schema({
-  name:{
-    type:String
-  },
-  age:{
-    type: Number
-  },
-  state:{
-    type: String
-  },
-  email:{
+  name: String,
+  age: Number,
+  sex: String,
+  email: {
     type: String,
-    unique: true
+    unique: true,
+    required: true
   },
-  password:{
-    type: String
-  },
-  file:{
+  password: {
     type: String,
-  }
-}) 
+    required: true
+  },
+  profilePic: String,
+  memeCategory: String
+})
 
 let user = mongoose.model('account', userSchema);
 module.exports = user;
