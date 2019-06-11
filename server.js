@@ -9,25 +9,26 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const validator = require('express-validator');
+const fetch = require('node-fetch');
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
 
 // ---- CMD-BT Slides MongoDB ---//
 
-var db = null;
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+// var db = null;
+// var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
 
-mongo.MongoClient.connect(url, {
-  useNewUrlParser: true
-}, function(err, client) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('You now have access to ' + url);
-  }
-  db = client.db(process.env.DB_NAME)
-})
+// mongo.MongoClient.connect(url, {
+//   useNewUrlParser: true
+// }, function(err, client) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('You now have access to ' + url);
+//   }
+//   db = client.db(process.env.DB_NAME)
+// })
 
 
 // controls gebruiken 
@@ -66,7 +67,12 @@ app.get('/feed', feedList)
 app.get('/register', register);
 app.get('/login', login)
 app.get('/matchprofile/:id', getmatch);
+app.get('/memetest', (req, res) => {
+  randommeme()
+  res.render('pages/memetest', { memesrc: memesrc })
+})
 app.post('/profile/:id', addRegis);
+
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -174,6 +180,16 @@ function feedList(req, res, next) {
 }
 
 
+
+let memesrc = 'https://i.redd.it/jtxgfmm95h331.jpg'; //placeholder
+const randommeme = () => {
+  fetch('https://meme-api.herokuapp.com/gimme')
+  .then(res => res.json())
+  .then(json => {
+        memesrc = json.url; 
+        return memesrc;
+    });
+};
 
 
 
