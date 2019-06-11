@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-console.log('----------- userSchema added ----------------')
-
 mongoose.connect('mongodb://localhost/Project_Tech', { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 

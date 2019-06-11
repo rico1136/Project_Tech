@@ -1,11 +1,11 @@
-const express  = require('express');
+const express = require('express');
 const app = express();
 const router = express.Router();
 const mongo = require('mongodb'); //https://www.mongodb.com/
 
 
 
-router.post('/login', function(req, res, next) { // hulp van bas
+router.post('/login', function (req, res, next) { // hulp van bas
   const password = req.body.password;
   const email = req.body.email;
   db.collection('account').findOne({
@@ -13,7 +13,7 @@ router.post('/login', function(req, res, next) { // hulp van bas
     password: req.body.password
   }, done);
 
-  function done(err, data) {
+  function done (err, data) {
     if (!data) {
       res.status(404).send('Email of wachtwoordt wordt niet herkend')
     } else {
@@ -29,7 +29,7 @@ router.post('/login', function(req, res, next) { // hulp van bas
   console.log(password)
   // req.session.user = accounts[0].name;
   // if(req.session.user) {
-  //   res.render('pages/login');  
+  //   res.render('pages/login');
   // } else {
   //   res.redirect(401).send('Geen session!')
   // }
