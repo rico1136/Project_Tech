@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/Project_Tech', { useNewUrlParser: true });
-mongoose.set('useCreateIndex', true);
-
 let userSchema = new mongoose.Schema({
   name: String,
   age: Number,
