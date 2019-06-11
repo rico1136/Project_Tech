@@ -36,12 +36,6 @@ db.once('open', function() {
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-// controls gebruiken 
-const loginTest = require('./controls/logindata.js');
-const addRegis = require('./controls/register.js');
-
-
-
 // express engine //
 app.set('view engine', 'ejs');
 // session //
@@ -50,29 +44,30 @@ app.use(session({
   secret: 'supergeheimedingen',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
 }));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// routing van de pagina's //
+// controls gebruiken
+const loginTest = require('./controls/logindata.js');
+const addRegis = require('./controls/register.js');
+const profile = require('./controls/profile.js');
 
+// routing van de pagina's //
 app.get('/', index);
 app.use(express.static('public'));
 app.use(loginTest);
 app.use(addRegis);
+app.use(profile);
 
 
-app.get('/profile/:id', findProfile);
-app.get('/profile', findProfile);
 app.get('/matchprofile', redirectFeed);
 app.get('/list', listPage);
 app.get('/feed', feedList)
 app.get('/register', register);
 app.get('/login', login)
 app.get('/matchprofile/:id', getmatch);
-app.post('/profile/:id', addRegis);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -117,35 +112,6 @@ function redirectFeed(req, res, next){
   if(!req.session.user){
     res.redirect('/login')
   }else(res.render('/feed'));
-}
-
-function logOut(req, res, next){
-  if(req.session){
-    req.session.destroy(function(err){
-      if(err){
-        return next(err);
-      }else{
-        return res.redirect('/');
-      }
-    })
-  }
-}
-
-
-function findProfile(req, res, next) {
-  let id = req.params.id
-  db.collection('account').findOne({
-    _id: new mongo.ObjectID(id)
-  }, done)
-
-
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.render('pages/profile.ejs', {data: data})
-    }
-  }
 }
 
 function getmatch(req, res, next) {

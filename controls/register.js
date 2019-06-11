@@ -35,7 +35,8 @@ router.post('/register', upload.single('profilePic'), function (req, res) {
       // res.redirect('/profile-overview')
       console.log('Gelukt!')
       console.log(savedUser)
-      return res.status(200).send
+      req.session.user = savedUser;
+      res.redirect(`/profile/${req.session.user._id}`)
     }
   })
 })
