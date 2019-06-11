@@ -20,5 +20,5 @@ let userSchema = new mongoose.Schema({
   memeCategory: String
 })
 
-let user = mongoose.model('account', userSchema);
-module.exports = user;
+let User = mongoose.model('account', userSchema);
+module.exports = User;
