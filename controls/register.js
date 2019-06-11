@@ -10,21 +10,7 @@ const upload = multer({
   dest: 'public/upload'
 });
 
-// ---- CMD-BT Slides MongoDB ---//
 
-var db = null;
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
-
-mongo.MongoClient.connect(url, {
-  useNewUrlParser: true
-}, function(err, client) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('You now have access to ' + url);
-  }
-  db = client.db(process.env.DB_NAME)
-})
 
 router.post('/register', upload.single('file'), function(req, res, next) {
   //slugify url friendly

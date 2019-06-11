@@ -16,19 +16,27 @@ require('dotenv').config(); // gegeven voor de mongodb server
 // ---- CMD-BT Slides MongoDB ---//
 
 var db = null;
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+// var url = "mongodb+srv://harm:buckettest@buckettest-pw7xg.mongodb.net/Memedatingapp?retryWrites=true&w=majority"
 
-mongo.MongoClient.connect(url, {
-  useNewUrlParser: true
-}, function(err, client) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('You now have access to ' + url);
-  }
-  db = client.db(process.env.DB_NAME)
-})
+// mongo.MongoClient.connect(url, {
+//   useNewUrlParser: true
+// }, function(err, client) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('You now have access to ' + url);
+//   }
+//   db = client.db(process.env.DB_NAME)
+// })
 
+mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
+var db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
+
+db.once('open', function() {
+  console.log("connected mongodb")
+}); // check if we are connected to mongodb
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 // controls gebruiken 
 const loginTest = require('./controls/logindata.js');
