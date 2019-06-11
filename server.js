@@ -1,4 +1,3 @@
-const camelCase = require('camelcase'); // test package installed
 const express = require('express'); //https://expressjs.com/
 const app = express();
 const port = process.env.PORT ||  3000;
@@ -8,7 +7,6 @@ const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-f
 const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
-const validator = require('express-validator');
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
