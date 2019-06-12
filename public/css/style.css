@@ -381,6 +381,71 @@ body.feed {
     background: #4EA8D9;
     width: 9em;
     border-radius: 0 0 0.5em 0.5em; }
+   
+
+    .question {
+    max-width: 600px;
+      width: 100%;
+      background: #49A7DB;
+      color: white;
+      width: 80%;
+      box-sizing: border-box;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 15px;
+      padding: 3em;
+      margin-bottom: 2em;
+      box-shadow: -3px 3px 10px 0px rgba(0,0,0,0.31);
+  }
+.question:nth-of-type(2){
+background:#D75555;
+}
+.question:nth-of-type(3){
+background: #876BF1;
+}
+.question:nth-of-type(4){
+background: #F86A95;
+margin-bottom: 2em;
+}
+
+form.buckettest {
+  margin-bottom: 5em;
+}
+
+#submitbutton{
+line-height: 4em;
+width: 11em;
+height: 4em;
+background: #D75555;
+color: #fff;
+font-size: 10pt;
+font-weight: bolder;
+border-radius: 10px;
+text-align: center;
+margin: auto auto 2em;
+transition: ease 200ms;
+}
+
+        .question input[type="radio"] {
+          display:none;
+      } 
+
+      .question label img {
+        margin-bottom: 1em;
+      }
+
+      .question input[type="radio"]:checked+label img {
+        border: solid 10px green;
+        box-sizing: border-box;
+    }
+
+    .question input[type="radio"]:not(:checked)+label img{
+      border: solid 10px white;
+      box-sizing: border-box;
+    } 
+label img {
+  max-width: 100%;}        
 
 body.chatmatch {
   width: 100%; }
