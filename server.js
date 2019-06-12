@@ -73,6 +73,7 @@ app.get('/register', register);
 app.get('/login', login)
 app.get('/matchprofile/:id', getmatch);
 app.post('/profile/:id', addRegis);
+app.get('/memetest', memetest);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -85,6 +86,10 @@ function index(req, res) {
 
 function register(req, res, next) {
   res.render('pages/register');
+}
+
+function memetest(req, res, next) {
+  res.render('pages/memetest');
 }
 
 function login(req, res) {
