@@ -444,6 +444,10 @@ transition: ease 200ms;
       border: solid 10px white;
       box-sizing: border-box;
     } 
+    .question input[type="radio"]:not(:checked)+label img:hover{
+      box-shadow: 2px 4px 2px 2px #ffffff70;
+    } 
+    
 label img {
   max-width: 100%;}        
 
