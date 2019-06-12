@@ -1,6 +1,6 @@
 {
   "name": "memedatingapp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Dating app ",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,6 @@
     "mongoose": "^5.5.12",
     "mongoose-type-email": "^1.0.11",
     "multer": "^1.4.1",
-    "nodemon": "^1.19.1",
     "slug": "^1.1.0"
   },
   "devDependencies": {
