@@ -14,18 +14,6 @@ require('dotenv').config(); // gegeven voor de mongodb server
 // ---- CMD-BT Slides MongoDB ---//
 
 var db = null;
-// var url = "mongodb+srv://harm:buckettest@buckettest-pw7xg.mongodb.net/Memedatingapp?retryWrites=true&w=majority"
-
-// mongo.MongoClient.connect(url, {
-//   useNewUrlParser: true
-// }, function(err, client) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('You now have access to ' + url);
-//   }
-//   db = client.db(process.env.DB_NAME)
-// })
 
 mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
 var db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
@@ -57,9 +45,11 @@ const profile = require('./controls/profile.js');
 // routing van de pagina's //
 app.get('/', index);
 app.use(express.static('public'));
+app.use(express.static('upload'))
 app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
+
 
 
 app.get('/matchprofile', redirectFeed);
