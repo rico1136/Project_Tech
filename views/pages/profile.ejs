@@ -11,7 +11,7 @@
       <img src="<%= data.profilePic %>" alt="img">
       <% } %>
     </div>
-    <div><a href="/edit">edit</a></div>
+    <div><a href="/update">edit</a></div>
     <div><a href="/logout">log out</a></div>
   </div>
   <section class="user-bio">
@@ -25,12 +25,12 @@
       Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
     </p>
   </section>
-  <h3>Your laughs</h3>
+  <h3>Meme category</h3>
   <ul>
-    <li> Obscure/absurd</li>
-    <li> Sarcastic</li>
-    <li> Dark</li>
+    <li><%= data.memeCategory%></li>
   </ul>
+  <a href='/memecategory'>Klik hier om de test opnieuw te doen.</a>
+  <h3>Your Laughs</h3>
   <label for="file">Add more</label>
   <form method="POST" enctype="multipart/form-data">  
     <input type='file' name='image' />

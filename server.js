@@ -8,7 +8,7 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const fetch = require('node-fetch');
-const User = require('./controls/userschema')
+
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
@@ -16,6 +16,7 @@ require('dotenv').config(); // gegeven voor de mongodb server
 // ---- CMD-BT Slides MongoDB ---//
 
 var db = null;
+
 
 mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
 var db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
@@ -44,16 +45,10 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
-
-// routing van de pagina's //
-app.get('/', index);
-app.use(express.static('public'));
-app.use(express.static('upload'));
-app.use(loginTest);
-app.use(addRegis);
-app.use(profile);
-app.use(matches);
-
+const deleteUser = require('./controls/deleteUser.js');
+const logOut = require('./controls/logOut.js');
+const updateUser = require('./controls/update.js');
+const memeCategory = require('./controls/memeCategory.js')
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -66,8 +61,25 @@ app.get('/memetest', (req, res) => {
   randommeme()
   res.render('pages/memetest', { memesrc: memesrc })
 })
+app.get('/update', function(req, res){
+  res.render('pages/update', {user: req.session.user});
+})
+
+// routing van de pagina's //
+app.get('/', index);
+app.use(express.static('public'));
+app.use(express.static('upload'));
+app.use(loginTest);
+app.use(addRegis);
+app.use(profile);
+app.use(matches);
+app.use(deleteUser);
+app.use(logOut);
+app.use(updateUser);
+app.use(memeCategory)
+
+
 app.post('/profile/:id', addRegis);
-app.post('/meme', saveMeme)
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -148,6 +160,8 @@ function feedList(req, res, next) {
     console.log(req.session);
   });
 }
+
+
 
 let memesrc = 'https://i.redd.it/jtxgfmm95h331.jpg'; //placeholder
 const randommeme = () => {
