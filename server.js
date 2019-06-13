@@ -44,7 +44,7 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
-const memeTest = require('./controls/memeCategory.js');
+const memeCategory = require('./controls/memeCategory.js');
 
 // routing van de pagina's //
 app.get('/', index);
@@ -54,7 +54,7 @@ app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
 app.use(matches);
-app.use(memeTest);
+app.use(memeCategory);
 
 // Standard routes
 app.get('/profile', redirectProfile);
@@ -69,7 +69,7 @@ app.get('/memetest', (req, res) => {
   res.render('pages/memetest', { memesrc: memesrc })
 })
 app.post('/profile/:id', addRegis);
-app.get('/memecategory', memeCategory);
+// app.get('/memecategory', memeCategory);
 app.post('/meme', saveMeme)
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
@@ -89,9 +89,9 @@ function register(req, res, next) {
   res.render('pages/register');
 }
 
-function memeCategory(req, res, next) {
-  res.render('pages/memecategory');
-}
+// function memeCategory(req, res, next) {
+//   res.render('pages/memecategory');
+// }
 
 
 function login(req, res) {
