@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../controls/userschema');
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 
-router.post('/memetest',function (req, res) { // when / gets post method
+router.post('/memecategory',function (req, res) { // when / gets post method
     console.log('new memetest data');
     console.log(req.body);
     var memeCategory = req.body.outcomeInput; // gets input from form bucketlist
