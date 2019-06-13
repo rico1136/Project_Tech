@@ -8,7 +8,7 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const fetch = require('node-fetch');
-const User = require('./controls/userschema')
+
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
@@ -16,6 +16,7 @@ require('dotenv').config(); // gegeven voor de mongodb server
 // ---- CMD-BT Slides MongoDB ---//
 
 var db = null;
+
 
 mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
 var db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
@@ -44,18 +45,9 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
-const memeCategory = require('./controls/memeCategory.js');
-
-// routing van de pagina's //
-app.get('/', index);
-app.use(express.static('public'));
-app.use(express.static('upload'));
-app.use(loginTest);
-app.use(addRegis);
-app.use(profile);
-app.use(matches);
-app.use(memeCategory);
-
+const deleteUser = require('./controls/deleteUser.js');
+const logOut = require('./controls/logOut.js');
+const updateUser = require('./controls/update.js');
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -86,8 +78,6 @@ app.use(updateUser);
 
 
 app.post('/profile/:id', addRegis);
-// app.get('/memecategory', memeCategory);
-app.post('/meme', saveMeme)
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -106,13 +96,9 @@ function register(req, res, next) {
   res.render('pages/register');
 }
 
-// function memeCategory(req, res, next) {
-//   res.render('pages/memecategory');
-// }
-
-
 function login(req, res) {
   res.render('pages/login');
+
 }
 
 function ownProfile(req, res) {
@@ -173,6 +159,8 @@ function feedList(req, res, next) {
   });
 }
 
+
+
 let memesrc = 'https://i.redd.it/jtxgfmm95h331.jpg'; //placeholder
 const randommeme = () => {
   fetch('https://meme-api.herokuapp.com/gimme')
@@ -183,37 +171,8 @@ const randommeme = () => {
     });
 };
 
-function saveMeme(req, res) {
-  const id = req.session.user._id;
-  let memesrc = req.body.src;
-  console.log('line: 158 -> ' + id)
-  console.log(memesrc)
-  res.send(req.body.src)
-  User.findOne({ _id: id }, (err, foundObject) => {
-    if (err) {
-      console.log(err)
-      res.status(500).send()
-    } else {
-      if (!foundObject) {
-        console.log('User not found in database')
-        res.status(404).send()
-      } else {
-        console.log(foundObject)
-        foundObject.memes.push(memesrc)
-        console.log(foundObject)
-        foundObject.save((err, updatedObject) => {
-          if (err) {
-            console.log(err)
-            res.status(500).send()
-          } else {
-            console.log('user saved' + updatedObject)
-            res.status(200).send()
-          }
-        })
-      }
-    }
-  })
-} 
+
+
 
 ////////////////////////////////////////////////////
 
