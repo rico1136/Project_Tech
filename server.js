@@ -48,6 +48,7 @@ const matches = require('./controls/matches.js');
 const deleteUser = require('./controls/deleteUser.js');
 const logOut = require('./controls/logOut.js');
 const updateUser = require('./controls/update.js');
+const memeCategory = require('./controls/memeCategory.js')
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -75,6 +76,7 @@ app.use(matches);
 app.use(deleteUser);
 app.use(logOut);
 app.use(updateUser);
+app.use(memeCategory)
 
 
 app.post('/profile/:id', addRegis);
