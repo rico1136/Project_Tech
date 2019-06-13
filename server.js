@@ -49,7 +49,7 @@ const matches = require('./controls/matches.js');
 // routing van de pagina's //
 app.get('/', index);
 app.use(express.static('public'));
-app.use(express.static('upload'))
+app.use(express.static('upload'));
 app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
