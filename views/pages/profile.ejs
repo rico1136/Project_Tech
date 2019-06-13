@@ -51,6 +51,14 @@
       </div>
     </div>
   </div>
+  <h3>Your memes</h3>
+  <% if (data.memes){ %>
+    <div class="meme-slider">
+    <% data.memes.forEach(function (meme) { %>
+        <div style="background-image:url('');"><img src="<%=meme%>" alt=""></div>
+    <% }) %>
+    </div>
+  <% } %>
   <div id="add">
     <a href=/add>add here</a> </div> <% include tail.ejs %>
     <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
