@@ -15,7 +15,6 @@ require('dotenv').config(); // gegeven voor de mongodb server
 
 // ---- CMD-BT Slides MongoDB ---//
 
-
 var db = null;
 
 mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
