@@ -43,17 +43,19 @@ app.use(bodyParser.urlencoded({
 const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
+const matches = require('./controls/matches.js');
 
 // routing van de pagina's //
 app.get('/', index);
 app.use(express.static('public'));
-app.use(express.static('upload'))
+app.use(express.static('upload'));
 app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
+app.use(matches);
 
 // Standard routes
-app.get('/profile', (req, res) => res.redirect(`/profile/${req.session.user._id}`));
+app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
 app.get('/list', listPage);
 app.get('/feed', feedList);
@@ -71,6 +73,10 @@ app.use(errNotFound);
 app.listen(port, servermsg);
 
 //--- pagina render---//
+
+function redirectProfile(req,res){
+  res.redirect(`/profile/${req.session.user._id}`);
+}
 
 function index(req, res) {
   res.render('pages/index');
