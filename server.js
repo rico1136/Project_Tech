@@ -56,7 +56,7 @@ app.use(profile);
 app.use(matches);
 
 // Standard routes
-app.get('/profile', (req, res) => res.redirect(`/profile/${req.session.user._id}`));
+app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
 app.get('/list', listPage);
 app.get('/feed', feedList);
@@ -73,6 +73,10 @@ app.use(errNotFound);
 app.listen(port, servermsg);
 
 //--- pagina render---//
+
+function redirectProfile(req,res){
+  res.redirect(`/profile/${req.session.user._id}`);
+}
 
 function index(req, res) {
   res.render('pages/index');

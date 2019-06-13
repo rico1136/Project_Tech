@@ -8,7 +8,8 @@ router.get('/matches', function (req, res, next){
     res.redirect('/login');
     return
   }
-    User.find({ _id: {$ne: req.session.user._id}, }, function (err, profiles) {
+    User.find({ _id: {$ne: req.session.user._id},
+    }, function (err, profiles) {
         res.render('pages/matches', {profiles : profiles, currentUser : req.session.user})
     });
 });
