@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
 <% include ../partials/head %>
+  <title>Memetest</title>
+</head>
 
-<body class="list">
+<body class="meme_favorite">
   <% include ../partials/navbar %>
-  <img src="<%= memesrc %>" alt="">
+  <main>
+      <div>
+          <img src="<%= memesrc %>" alt="">
+        </div>
+    <form action="/meme" type="post" method="POST">
+        <input type="text" id="src" name="src" value="<%= memesrc %>">
+        <input type="submit">
+    </form>
+  </main>
   <% include tail.ejs %>
 </body>
 

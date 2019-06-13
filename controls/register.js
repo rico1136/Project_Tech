@@ -43,7 +43,7 @@ router.post('/register', upload.single('profilePic'), function (req, res, next) 
             console.log('Gelukt!')
             console.log(savedUser)
             req.session.user = savedUser;
-            res.redirect(`/profile/${req.session.user._id}`)
+            res.redirect(`/memecategory`)
         }
     })
 })

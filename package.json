@@ -4,9 +4,10 @@
   "description": "Dating app ",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "testing",
     "dev": "nodemon server.js",
-    "build": "node-sass --watch public/sass -o css"
+    "build": "node-sass --watch public/sass -o public/css"
   },
   "repository": {
     "type": "git",
