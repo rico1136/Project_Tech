@@ -66,7 +66,7 @@ app.get('/memetest', (req, res) => {
   res.render('pages/memetest', { memesrc: memesrc })
 })
 app.post('/profile/:id', addRegis);
-
+app.post('/profile/meme', saveMeme)
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -144,8 +144,6 @@ function feedList(req, res, next) {
   });
 }
 
-
-
 let memesrc = 'https://i.redd.it/jtxgfmm95h331.jpg'; //placeholder
 const randommeme = () => {
   fetch('https://meme-api.herokuapp.com/gimme')
@@ -156,8 +154,10 @@ const randommeme = () => {
     });
 };
 
-
-
+function saveMeme(req, res) {
+  console.log(req.body)
+  res.redirect('memetest')
+}
 
 ////////////////////////////////////////////////////
 

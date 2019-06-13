@@ -3,9 +3,16 @@
 
 <% include ../partials/head %>
 
-<body class="list">
+<body class="meme_favorite">
   <% include ../partials/navbar %>
-  <img src="<%= memesrc %>" alt="">
+  <main>
+    <form action="/profile/meme">
+      <div>
+        <img src="<%= memesrc %>" alt="">
+      </div>
+        <input type="submit">
+    </form>
+  </main>
   <% include tail.ejs %>
 </body>
 

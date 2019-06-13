@@ -660,6 +660,20 @@ body.user {
     }
   }
 }
+
+.meme_favorite {
+  main {
+    div {
+      overflow-y: scroll;
+      max-height: 30em;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
 // --------- Mediaqueries ------------//
 @media only screen and (min-width: 48.0625em) and (max-width:100em) {
   body {
