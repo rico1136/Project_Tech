@@ -15,7 +15,8 @@ let userSchema = new mongoose.Schema({
     required: true
   },
   profilePic: String,
-  memeCategory: String
+  memeCategory: String,
+  memes: [],
 });
 
 let User = mongoose.model('account', userSchema);

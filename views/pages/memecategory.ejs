@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<% include ../partials/head %>
+  <title>Memetest</title>
+</head>
+
+<body class="feed">
+<% include ../partials/navbar %>
+  <h1>Meme test!</h1>
+  <form class="memetest" method="post">
+    <div class="question">
+
+        <h4>Which one do you like the most?</h4>
+        <div class="formcontainer">
+            <div class="forminput">
+              <div class="input2images"> 
+                <input type="radio" name="q1" value="3" id="apocalypse">
+                <label for="apocalypse"><img src="assets/img/memesimg/Childish/apocalypse.png"></label><br>
+                <input type="radio" name="q1" value="6" id="bully">
+                <label class="bully" for="bully"><img class="bully" src="assets/img/memesimg/Awkward/bully.png"></label><br>
+                <input type="radio" name="q1" value="9" id="dishwasher">
+                <label for="dishwasher"><img src="assets/img/memesimg/Dark/dishwasher.png"></label><br>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+
+      <h4>Which one do you like the most?</h4>
+      <div class="formcontainer">
+          <div class="forminput">
+            <div class="input2images"> 
+              <input type="radio" name="q2" value="3" id="bassbassist">
+              <label for="bassbassist"><img src="assets/img/memesimg/Childish/bassbassist.png"></label><br>
+              <input type="radio" name="q2" value="6" id="dinnersready">
+              <label class="dinnersready" for="dinnersready"><img class="dinnersready" src="assets/img/memesimg/Awkward/dinnersready.png"></label><br>
+              <input type="radio" name="q2" value="9" id="needforsleep">
+              <label for="needforsleep"><img src="assets/img/memesimg/Dark/needforsleep.png"></label><br>
+          </div>
+          </div>
+      </div>
+  </div>
+  <div class="question">
+
+    <h4>Which one do you like the most?</h4>
+    <div class="formcontainer">
+        <div class="forminput">
+          <div class="input2images"> 
+            <input type="radio" name="q3" value="3" id="obama">
+            <label for="obama"><img src="assets/img/memesimg/Childish/obama.png"></label><br>
+            <input type="radio" name="q3" value="6" id="ringmom">
+            <label class="ringmom" for="ringmom"><img class="ringmom" src="assets/img/memesimg/Awkward/ringmom.png"></label><br>
+            <input type="radio" name="q3" value="9" id="priest">
+            <label for="priest"><img src="assets/img/memesimg/Dark/priest.png"></label><br>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="question">
+
+        <h4>Which one do you like the most?</h4>
+        <div class="formcontainer">
+            <div class="forminput">
+              <div class="input2images"> 
+                <input type="radio" name="q4" value="3" id="zoo" required>
+                <label for="zoo"><img src="assets/img/memesimg/Childish/zoo.png"></label><br>
+                <input type="radio" name="q4" value="6" id="spongebob">
+                <label class="spongebob" for="spongebob"><img class="spongebob" src="assets/img/memesimg/Awkward/spongebob.png"></label><br>
+                <input type="radio" name="q4" value="9" id="pussyonfire" >
+                <label for="pussyonfire"><img src="assets/img/memesimg/Dark/pussyonfire.png"></label><br>
+                <input type="text" name="outcomeInput">
+            </div>
+            </div>
+        </div>
+    </div>
+    <br>
+<div class="divsubmit">         
+    <input id="submitbutton" type="submit" value="Verstuur">
+</div>
+
+</form>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

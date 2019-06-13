@@ -13,9 +13,9 @@
 <div class="containfeed">
   <% profiles.forEach(function (profile) { %>
     <section>
-      <a href="/matchprofile/<%= profile._id %>">
+      <a href="/profile/<%= profile._id %>">
         <div class="avatar">
-          <img src="/upload/<%= profile.file %>" alt="img">
+          <img src="<%= profile.profilePic %>" alt="img">
         </div>
         <h2 class="addname"><%= profile.name %> </h2>
       </a>
