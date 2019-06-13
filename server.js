@@ -68,6 +68,23 @@ app.get('/memetest', (req, res) => {
   randommeme()
   res.render('pages/memetest', { memesrc: memesrc })
 })
+app.get('/update', function(req, res){
+  res.render('pages/update', {user: req.session.user});
+})
+
+// routing van de pagina's //
+app.get('/', index);
+app.use(express.static('public'));
+app.use(express.static('upload'));
+app.use(loginTest);
+app.use(addRegis);
+app.use(profile);
+app.use(matches);
+app.use(deleteUser);
+app.use(logOut);
+app.use(updateUser);
+
+
 app.post('/profile/:id', addRegis);
 // app.get('/memecategory', memeCategory);
 app.post('/meme', saveMeme)
