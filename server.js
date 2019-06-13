@@ -50,13 +50,13 @@ app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
 
-
-
+// Standard routes
+app.get('/profile', (req, res) => res.redirect(`/profile/${req.session.user._id}`));
 app.get('/matchprofile', redirectFeed);
 app.get('/list', listPage);
-app.get('/feed', feedList)
+app.get('/feed', feedList);
 app.get('/register', register);
-app.get('/login', login)
+app.get('/login', login);
 app.get('/matchprofile/:id', getmatch);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
