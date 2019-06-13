@@ -11,7 +11,7 @@
        
   
 function calculateType(event){
-    event.preventDefault();
+    // event.preventDefault();
   // console.log("test submit")
   var option1 = document.querySelector('input[name="q1"]:checked').value
   var option2 = document.querySelector('input[name="q2"]:checked').value

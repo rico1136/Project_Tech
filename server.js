@@ -9,7 +9,6 @@ const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const fetch = require('node-fetch');
 
-
 require('dotenv').config(); // gegeven voor de mongodb server
 
 
@@ -45,6 +44,7 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
+const memeTest = require('./controls/memetest.js');
 
 // routing van de pagina's //
 app.get('/', index);
@@ -54,6 +54,7 @@ app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
 app.use(matches);
+app.use(memeTest);
 
 // Standard routes
 app.get('/profile', (req, res) => res.redirect(`/profile/${req.session.user._id}`));
@@ -87,9 +88,9 @@ function memetest(req, res, next) {
   res.render('pages/memetest');
 }
 
+
 function login(req, res) {
   res.render('pages/login');
-
 }
 
 function ownProfile(req, res) {

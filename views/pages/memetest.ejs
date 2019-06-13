@@ -9,7 +9,7 @@
 <body class="feed">
 <% include ../partials/navbar %>
   <h1>Meme test!</h1>
-  <form class="memetest" action="/" method="post">
+  <form class="memetest" method="post">
     <div class="question">
 
         <h4>Which one do you like the most?</h4>
@@ -64,13 +64,13 @@
         <div class="formcontainer">
             <div class="forminput">
               <div class="input2images"> 
-                <input type="radio" name="q4" value="3" id="zoo">
+                <input type="radio" name="q4" value="3" id="zoo" required>
                 <label for="zoo"><img src="assets/img/memesimg/Childish/zoo.png"></label><br>
                 <input type="radio" name="q4" value="6" id="spongebob">
                 <label class="spongebob" for="spongebob"><img class="spongebob" src="assets/img/memesimg/Awkward/spongebob.png"></label><br>
-                <input type="radio" name="q4" value="9" id="pussyonfire">
+                <input type="radio" name="q4" value="9" id="pussyonfire" >
                 <label for="pussyonfire"><img src="assets/img/memesimg/Dark/pussyonfire.png"></label><br>
-                <input type="text" name="outcomeInput" hidden>
+                <input type="text" name="outcomeInput">
             </div>
             </div>
         </div>
