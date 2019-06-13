@@ -45,16 +45,9 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
-
-// routing van de pagina's //
-app.get('/', index);
-app.use(express.static('public'));
-app.use(express.static('upload'));
-app.use(loginTest);
-app.use(addRegis);
-app.use(profile);
-app.use(matches);
-
+const deleteUser = require('./controls/deleteUser.js');
+const logOut = require('./controls/logOut.js');
+const updateUser = require('./controls/update.js');
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -67,6 +60,23 @@ app.get('/memetest', (req, res) => {
   randommeme()
   res.render('pages/memetest', { memesrc: memesrc })
 })
+app.get('/update', function(req, res){
+  res.render('pages/update', {user: req.session.user});
+})
+
+// routing van de pagina's //
+app.get('/', index);
+app.use(express.static('public'));
+app.use(express.static('upload'));
+app.use(loginTest);
+app.use(addRegis);
+app.use(profile);
+app.use(matches);
+app.use(deleteUser);
+app.use(logOut);
+app.use(updateUser);
+
+
 app.post('/profile/:id', addRegis);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
