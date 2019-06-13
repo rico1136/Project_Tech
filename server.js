@@ -48,7 +48,8 @@ const matches = require('./controls/matches.js');
 const deleteUser = require('./controls/deleteUser.js');
 const logOut = require('./controls/logOut.js');
 const updateUser = require('./controls/update.js');
-const memeCategory = require('./controls/memeCategory.js')
+const memeCategory = require('./controls/memeCategory.js');
+const User = require('./controls/userschema');
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -80,6 +81,7 @@ app.use(memeCategory)
 
 
 app.post('/profile/:id', addRegis);
+app.post('/meme', saveMeme);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -176,9 +178,6 @@ const randommeme = () => {
 function saveMeme(req, res) {
   const id = req.session.user._id;
   let memesrc = req.body.src;
-  console.log('line: 158 -> ' + id)
-  console.log(memesrc)
-  res.send(req.body.src)
   User.findOne({ _id: id }, (err, foundObject) => {
     if (err) {
       console.log(err)
@@ -188,9 +187,7 @@ function saveMeme(req, res) {
         console.log('User not found in database')
         res.status(404).send()
       } else {
-        console.log(foundObject)
         foundObject.memes.push(memesrc)
-        console.log(foundObject)
         foundObject.save((err, updatedObject) => {
           if (err) {
             console.log(err)
