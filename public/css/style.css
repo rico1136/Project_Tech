@@ -4,7 +4,6 @@
   position: relative;
   display: block;
   font-size: 1.2em;
-  background: #D75555;
   color: white;
   font-weight: 200;
   font-family: Quicksand;
@@ -42,7 +41,8 @@ body.one section.logo {
 
 body.one .button {
   margin: auto;
-  text-align: center; }
+  text-align: center;
+background: none; }
   body.one .button .login {
     border-radius: 2em;
     width: 10em;
