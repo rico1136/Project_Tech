@@ -164,6 +164,7 @@ function saveMeme(req, res) {
   let memesrc = req.body.src;
   console.log('line: 158 -> ' + id)
   console.log(memesrc)
+  res.send(req.body.src)
   User.findOne({ _id: id }, (err, foundObject) => {
     if (err) {
       console.log(err)
