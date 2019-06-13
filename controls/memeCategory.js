@@ -18,9 +18,8 @@ router.get('/memecategory', function (req, res, next){
 
 router.post('/memecategory',function (req, res) { // when / gets post method
     console.log('new memetest data');
-    console.log(req.body);
     var memeCategory = req.body.outcomeInput; // gets input from form bucketlist
-    console.log(memeCategory + 'het werkt'); // log in to the console
+    console.log(memeCategory); // log in to the console
     //  Profile.updateOne({}, { profileType: type });
     User.updateOne({ _id: req.session.user._id, },{ memeCategory : memeCategory }, function(err) {
    
