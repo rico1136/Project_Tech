@@ -671,6 +671,13 @@ body.user {
         height: auto;
       }
     }
+    form {
+      input {
+        &:first-of-type {
+          display:none;
+        }
+      }
+    }
   }
 }
 

@@ -8,7 +8,7 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const fetch = require('node-fetch');
-
+const User = require('./controls/userschema')
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
@@ -65,7 +65,7 @@ app.get('/memetest', (req, res) => {
   res.render('pages/memetest', { memesrc: memesrc })
 })
 app.post('/profile/:id', addRegis);
-app.post('/profile/meme', saveMeme)
+app.post('/meme', saveMeme)
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
@@ -154,9 +154,36 @@ const randommeme = () => {
 };
 
 function saveMeme(req, res) {
-  console.log(req.body)
-  res.redirect('memetest')
-}
+  const id = req.session.user._id;
+  let memesrc = req.body.src;
+  console.log('line: 158 -> ' + id)
+  console.log(memesrc)
+  res.send(req.body.src)
+  User.findOne({ _id: id }, (err, foundObject) => {
+    if (err) {
+      console.log(err)
+      res.status(500).send()
+    } else {
+      if (!foundObject) {
+        console.log('User not found in database')
+        res.status(404).send()
+      } else {
+        console.log(foundObject)
+        foundObject.memes.push(memesrc)
+        console.log(foundObject)
+        foundObject.save((err, updatedObject) => {
+          if (err) {
+            console.log(err)
+            res.status(500).send()
+          } else {
+            console.log('user saved' + updatedObject)
+            res.status(200).send()
+          }
+        })
+      }
+    }
+  })
+} 
 
 ////////////////////////////////////////////////////
 

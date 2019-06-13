@@ -506,6 +506,9 @@ body.user {
     width: 100%;
     height: auto; }
 
+.meme_favorite main form input:first-of-type {
+  display: none; }
+
 @media only screen and (min-width: 48.0625em) and (max-width: 100em) {
   body {
     width: 50em; }

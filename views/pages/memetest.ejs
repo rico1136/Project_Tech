@@ -6,10 +6,11 @@
 <body class="meme_favorite">
   <% include ../partials/navbar %>
   <main>
-    <form action="/profile/meme">
       <div>
-        <img src="<%= memesrc %>" alt="">
-      </div>
+          <img src="<%= memesrc %>" alt="">
+        </div>
+    <form action="/meme" type="post" method="POST">
+        <input type="text" id="src" name="src" value="<%= memesrc %>">
         <input type="submit">
     </form>
   </main>
