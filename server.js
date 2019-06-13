@@ -7,35 +7,17 @@ const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-f
 const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
-<<<<<<< HEAD
 const validator = require('express-validator');
 const fetch = require('node-fetch');
-=======
->>>>>>> dev
+
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
 
 // ---- CMD-BT Slides MongoDB ---//
 
-<<<<<<< HEAD
-// var db = null;
-// var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
-
-// mongo.MongoClient.connect(url, {
-//   useNewUrlParser: true
-// }, function(err, client) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('You now have access to ' + url);
-//   }
-//   db = client.db(process.env.DB_NAME)
-// })
-
-=======
 var db = null;
->>>>>>> dev
+
 
 mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
 var db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
@@ -80,15 +62,11 @@ app.get('/feed', feedList);
 app.get('/register', register);
 app.get('/login', login);
 app.get('/matchprofile/:id', getmatch);
-<<<<<<< HEAD
 app.get('/memetest', (req, res) => {
   randommeme()
   res.render('pages/memetest', { memesrc: memesrc })
 })
 app.post('/profile/:id', addRegis);
-
-=======
->>>>>>> dev
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);
