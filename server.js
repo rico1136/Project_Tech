@@ -44,7 +44,7 @@ const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
 const matches = require('./controls/matches.js');
-const memeTest = require('./controls/memetest.js');
+const memeTest = require('./controls/memeCategory.js');
 
 // routing van de pagina's //
 app.get('/', index);
