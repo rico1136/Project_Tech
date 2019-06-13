@@ -29,6 +29,7 @@ router.post('/register', upload.single('profilePic'), function (req, res, next) 
   newuser.sex = req.body.sex
   newuser.email = req.body.email
   newuser.password = req.body.password
+  newuser.profilePic = req.file.path
   newuser.memeCategory = req.body.memeCategory
 
   newuser.save(function (err, savedUser) {
