@@ -6,7 +6,6 @@ const session = require('express-session'); //https://www.npmjs.com/package/expr
 router.post('/memetest',function (req, res) { // when / gets post method
     console.log('new memetest data');
     console.log(req.body);
-// berekeningboiii(req.body);
     var memeCategory = req.body.outcomeInput; // gets input from form bucketlist
     console.log(memeCategory + 'het werkt'); // log in to the console
     //  Profile.updateOne({}, { profileType: type });
@@ -19,7 +18,5 @@ router.post('/memetest',function (req, res) { // when / gets post method
       }
    });
    });
-function berekeningboiii(){
 
-}
    module.exports = router;
