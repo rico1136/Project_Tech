@@ -27,7 +27,7 @@ function calculateType(event){
     type = "Childish";
   }
   else if(outcome > 19 && outcome < 30){
-  type = "akward"
+  type = "Akward"
   }
   else {
   type = "Dark Humor"
@@ -36,7 +36,7 @@ function calculateType(event){
   outcomeInput.value= type
   };
   
-    var bucketForm = document.querySelector(".buckettest")
-    bucketForm.addEventListener("submit", calculateType);
+    var memetestForm = document.querySelector(".memetest")
+    memetestForm.addEventListener("submit", calculateType);
     
     
