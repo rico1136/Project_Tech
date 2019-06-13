@@ -10,7 +10,6 @@ router.post('/login', function (req, res, next) {
     }else {
       req.session.user = currentUser;
       res.redirect(`/profile/${req.session.user._id}`)
-      console.log(req.session.user)
     }
   });
 });

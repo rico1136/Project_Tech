@@ -7,7 +7,6 @@ const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-f
 const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
-const validator = require('express-validator');
 const fetch = require('node-fetch');
 
 
@@ -45,6 +44,7 @@ app.use(bodyParser.urlencoded({
 const loginTest = require('./controls/logindata.js');
 const addRegis = require('./controls/register.js');
 const profile = require('./controls/profile.js');
+const matches = require('./controls/matches.js');
 
 // routing van de pagina's //
 app.get('/', index);
@@ -53,6 +53,7 @@ app.use(express.static('upload'))
 app.use(loginTest);
 app.use(addRegis);
 app.use(profile);
+app.use(matches);
 
 // Standard routes
 app.get('/profile', (req, res) => res.redirect(`/profile/${req.session.user._id}`));

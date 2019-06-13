@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+  <title>feedmatches</title>
+</head>
+
+<body class="feed">
+<% include ../partials/navbar %>
+<h1>Matches for you</h1>
+<a href="/list" class="genrelink">Sarcastic</a>
+<div class="containfeed">
+  <% profiles.forEach(function (profile) { %>
+    <section>
+      <a href="/matchprofile/<%= profile._id %>">
+        <div class="avatar">
+          <img src="/upload/<%= profile.file %>" alt="img">
+        </div>
+        <h2 class="addname"><%= profile.name %> </h2>
+      </a>
+    </section>
+  <% }); %>
+</div>
+<script src="../js/index.js"></script>
+</body>
+
+</html>
