@@ -2,6 +2,21 @@ $primarycolor: #D75555;
 $secondary: #F66C96;
 $blue: #4EA8D9;
 
+// Standard styles
+.button {
+  padding: 0.5em;
+  border-radius: 5em;
+  position: relative;
+  display: block;
+  font-size: 1.2em;
+  background: #D75555;
+  color: white;
+  font-weight: 200;
+  font-family: Quicksand;
+  transition: ease 200ms;
+  text-align: center;
+}
+
 body {
   margin: auto;
   padding: 0;

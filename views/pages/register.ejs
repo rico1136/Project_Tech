@@ -18,15 +18,15 @@
         Om gebruik te maken van deze app dient u de volgende gegevens in te vullen.
       </article>
     </section>
-    <form method="post" enctype="multipart/form-data">
+    <form method="POST" action="/register" enctype="multipart/form-data">
       <fieldset>
         <legend>Personal</legend>
         <label for="name">name</label>
         <input type="text" name="name" id="name" placeholder="Ruben" value="" required>
         <label for="age">age</label>
         <input type="text" name="age" id="age" required>
-        <label for="state">sex</label>
-        <select id="state" name="state"  required>
+        <label for="sex">sex</label>
+        <select id="sex" name="sex"  required>
           <option value="man">man</option>
           <option value="woman">woman</option>
         </select>
@@ -35,14 +35,12 @@
       <fieldset>
         <legend>Log-in</legend>
         <label for="email">email</label>
-        <input type="email" name="email" id="email" placeholder="abc@gmail.com" value="" required>
-        <label for="pass">password</label>
-        <input type="password" name="password" id="pass" placeholder="****" value="" required>
-        <label for="re-pass">repeat password</label>
-        <input type="password" name="password" id="re-pass" placeholder="****" value="" required>
+        <input type="email" name="email" id="email" placeholder="abc@gmail.com" required>
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" placeholder="****" required>
       </fieldset>
-      <label for="file">Add picture</label>
-      <input type="file" name="file" id="file" class="inputfile" accept=img/*>
+      <label for="profilePic">Add picture</label>
+      <input type="file" name="profilePic" id="profilePic" class="inputfile" accept="img/*">
 
       <button class="meldaan" type="submit">start looking</button>
 

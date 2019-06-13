@@ -7,11 +7,12 @@
 
   <div class="user-prof">
     <div class="prof-cont">
-      <% if (data.file) { %>
-      <img src="/upload/<%= data.file %>" alt="img">
+      <% if (data.profilePic) { %>
+      <img src="<%= data.profilePic %>" alt="img">
       <% } %>
     </div>
-    <div><a href="/">log out</a></div>
+    <div><a href="/edit">edit</a></div>
+    <div><a href="/logout">log out</a></div>
   </div>
   <section class="user-bio">
     <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
@@ -31,7 +32,7 @@
     <li> Dark</li>
   </ul>
   <label for="file">Add more</label>
-  <form method="post" enctype="multipart/form-data">  
+  <form method="POST" enctype="multipart/form-data">  
     <input type='file' name='image' />
   </form>
 
@@ -52,6 +53,8 @@
   </div>
   <div id="add">
     <a href=/add>add here</a> </div> <% include tail.ejs %>
+    <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
+
 </body>
 
 

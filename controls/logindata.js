@@ -1,40 +1,18 @@
-const express  = require('express');
-const app = express();
+const express = require('express');
 const router = express.Router();
-const mongo = require('mongodb'); //https://www.mongodb.com/
+const User = require('../controls/userschema');
+const session = require('express-session'); //https://www.npmjs.com/package/express-session
 
-
-
-router.post('/login', function(req, res, next) { // hulp van bas
-  const password = req.body.password;
-  const email = req.body.email;
-  db.collection('account').findOne({
-    email: req.body.email,
-    password: req.body.password
-  }, done);
-
-  function done(err, data) {
-    if (!data) {
-      res.status(404).send('Email of wachtwoordt wordt niet herkend')
-    } else {
-      if(email === data.email){
-        req.session.user = {name: data._id}
-        res.redirect('feed')
-      }else{
-        res.status(401).send('Account wordt niet herkend')
-      }
-      req.session.save
+router.post('/login', function (req, res, next) {
+  User.findOne({email: req.body.email, password: req.body.password}, function (err, currentUser) {
+    if (err) {
+      next(err)
+    }else {
+      req.session.user = currentUser;
+      res.redirect(`/profile/${req.session.user._id}`)
+      console.log(req.session.user)
     }
-  }
-  console.log(password)
-  // req.session.user = accounts[0].name;
-  // if(req.session.user) {
-  //   res.render('pages/login');  
-  // } else {
-  //   res.redirect(401).send('Geen session!')
-  // }
-  // console.log(req.session);
-}
-)
+  });
+});
 
-module.exports=router;
+module.exports = router;
