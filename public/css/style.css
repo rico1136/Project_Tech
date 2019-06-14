@@ -583,7 +583,8 @@ body.user {
       body.user .meme-slider div img {
         border-radius: 8px;
         height: 10em;
-        width: auto; }
+        width: auto;
+        margin: 5px; }
 
 .meme_favorite main div {
   overflow-y: scroll;
