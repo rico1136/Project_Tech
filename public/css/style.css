@@ -22,11 +22,12 @@ body {
   color: black; }
   body a {
     text-decoration: none;
-    color: black;
+    color: #F66C96;
     font-weight: 500; }
   body span {
     font-weight: 600;
-    color: #F66C96; }
+    color: #F66C96;
+    margin-right: 0.2em; }
 
 body.one .containlogo {
   position: relative;
