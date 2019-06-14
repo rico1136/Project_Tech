@@ -443,6 +443,11 @@ form.buckettest {
   margin-bottom: 5em;
 }
 
+body div.pusher {
+  height: 6em;
+  width: auto;
+}
+
 #submitbutton{
 line-height: 4em;
 width: 11em;
