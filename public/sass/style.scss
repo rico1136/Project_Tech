@@ -663,7 +663,11 @@ body.user {
     overflow-y: hidden;
     display: flex;
     margin-bottom: 2em;
-    div {
+    input {
+      display: none;
+    }
+    button {
+      border: 0;
       background-position: center;
       background-size: cover;
       img {
