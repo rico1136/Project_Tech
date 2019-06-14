@@ -30,7 +30,7 @@
   <ul>
     <li><%= data.memeCategory%></li>
   </ul>
-  <a href='/memecategory'>Klik hier om de test opnieuw te doen.</a>
+ <p>Klik <a href='/memecategory'>hier</a> om de test opnieuw te doen.</p>
 </section>
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
@@ -39,7 +39,7 @@
   <% if (data.memes){ %>
     <div class="meme-slider">
     <% data.memes.forEach(function (meme) { %>
-        <div style="background-image:url('');"><img src="<%=meme%>" alt=""></div>
+        <div><img src="<%=meme%>" alt=""></div>
     <% }) %>
     </div>
   <% } %>
