@@ -8,7 +8,8 @@
   font-weight: 200;
   font-family: Quicksand;
   transition: ease 200ms;
-  text-align: center; }
+  text-align: center;
+}
 
 body {
   margin: auto;
@@ -19,67 +20,90 @@ body {
   display: block;
   position: relative;
   font-family: Quicksand;
-  color: black; }
-  body a {
-    text-decoration: none;
-    color: #F66C96;
-    font-weight: 500; }
-  body span {
-    font-weight: 600;
-    color: #F66C96;
-    margin-right: 0.2em; }
+  color: black;
+}
+
+body a {
+  text-decoration: none;
+  color: #F66C96;
+  font-weight: 500;
+}
+
+body span {
+  font-weight: 600;
+  color: #F66C96;
+  margin-right: 0.2em;
+}
 
 body.one .containlogo {
   position: relative;
-  top: 22%; }
+  top: 22%;
+}
 
 body.one section.logo {
   width: 13em;
   margin: 0 auto;
-  text-align: center; }
-  body.one section.logo h1 {
-    font-size: 1.4em; }
+  text-align: center;
+}
+
+body.one section.logo h1 {
+  font-size: 1.4em;
+}
 
 body.one .button {
   margin: auto;
   text-align: center;
-background: none; }
-  body.one .button .login {
-    border-radius: 2em;
-    width: 10em;
-    height: 3em;
-    transition: 400ms ease; }
-    body.one .button .login:hover {
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-      color: black; }
-  body.one .button .registreren {
-    border-radius: 2em;
-    padding: 0.4em;
-    margin: 1em;
-    background: #c7c2e0;
-    width: 7em;
-    color: white;
-    padding: 1em;
-    border: solid 0.1em #e0e0e0;
-    transition: ease 400ms; }
-    body.one .button .registreren:hover {
-      background: #876FEE;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-    body.one .button .registreren a {
-      color: white;
-      width: 2em; }
+  background: none;
+}
+
+body.one .button .login {
+  border-radius: 2em;
+  width: 10em;
+  height: 3em;
+  transition: 400ms ease;
+}
+
+body.one .button .login:hover {
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+  color: black;
+}
+
+body.one .button .registreren {
+  border-radius: 2em;
+  padding: 0.4em;
+  margin: 1em;
+  background: #c7c2e0;
+  width: 7em;
+  color: white;
+  padding: 1em;
+  border: solid 0.1em #e0e0e0;
+  transition: ease 400ms;
+}
+
+body.one .button .registreren:hover {
+  background: #876FEE;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+body.one .button .registreren a {
+  color: white;
+  width: 2em;
+}
 
 body.one section.regis {
   margin: 0 auto;
   text-align: center;
-  width: 20em; }
-  body.one section.regis article {
-    margin: 2em; }
+  width: 20em;
+}
+
+body.one section.regis article {
+  margin: 2em;
+}
 
 body.one .tryme {
   line-height: 4em;
@@ -89,89 +113,119 @@ body.one .tryme {
   border-radius: 20em;
   text-align: center;
   margin: auto auto 2em;
-  transition: ease 200ms; }
-  body.one .tryme a {
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold; }
-    body.one .tryme a::after {
-      content: url("../assets/logo/heart.svg");
-      height: 0.5em;
-      width: 0.5em;
-      display: inline-block;
-      position: relative;
-      top: 0.3em; }
-  body.one .tryme:hover {
-    background-color: #D75555;
-    cursor: pointer;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+  transition: ease 200ms;
+}
+
+body.one .tryme a {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+body.one .tryme a::after {
+  content: url("../assets/logo/heart.svg");
+  height: 0.5em;
+  width: 0.5em;
+  display: inline-block;
+  position: relative;
+  top: 0.3em;
+}
+
+body.one .tryme:hover {
+  background-color: #D75555;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
 
 .login,
 body.regis {
-  width: 25em; }
-  .login .reg,
-  .login p,
-  body.regis .reg,
-  body.regis p {
-    margin-bottom: 1em;
-    text-align: center; }
-  .login form,
-  body.regis form {
-    padding-bottom: 2em;
-    margin: auto auto 4em; }
-    .login form fieldset,
-    body.regis form fieldset {
-      border: solid white 0.12em; }
-      .login form fieldset label,
-      body.regis form fieldset label {
-        width: 100%;
-        display: block;
-        margin: 0.5em; }
-      .login form fieldset input,
-      body.regis form fieldset input {
-        padding: 0.5em;
-        width: 90%; }
-  .login .meldaan,
-  body.regis .meldaan {
-    width: 8em;
-    padding: 0.5em;
-    border-radius: 5em;
-    margin: 0.3em;
-    position: relative;
-    display: block;
-    font-size: 1.2em;
-    background: #D75555;
-    color: white;
-    font-weight: 200;
-    font-family: Quicksand;
-    transition: ease 200ms;
-    margin-top: 1em;
-    text-align: center;
-    float: right; }
-    .login .meldaan::after,
-    body.regis .meldaan::after {
-      content: " >";
-      font-size: 1em; }
-    .login .meldaan:hover,
-    body.regis .meldaan:hover {
-      cursor: pointer;
-      background: green;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-    .login .meldaan:hover::after,
-    body.regis .meldaan:hover::after {
-      color: #F66C96; }
-  .login .file,
-  body.regis .file {
-    display: block; }
+  width: 25em;
+}
+
+.login .reg,
+.login p,
+body.regis .reg,
+body.regis p {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.login form,
+body.regis form {
+  padding-bottom: 2em;
+  margin: auto auto 4em;
+}
+
+.login form fieldset,
+body.regis form fieldset {
+  border: solid white 0.12em;
+}
+
+.login form fieldset label,
+body.regis form fieldset label {
+  width: 100%;
+  display: block;
+  margin: 0.5em;
+}
+
+.login form fieldset input,
+body.regis form fieldset input {
+  padding: 0.5em;
+  width: 90%;
+}
+
+.login .meldaan,
+body.regis .meldaan {
+  width: 8em;
+  padding: 0.5em;
+  border-radius: 5em;
+  margin: 0.3em;
+  position: relative;
+  display: block;
+  font-size: 1.2em;
+  background: #D75555;
+  color: white;
+  font-weight: 200;
+  font-family: Quicksand;
+  transition: ease 200ms;
+  margin-top: 1em;
+  text-align: center;
+  float: right;
+}
+
+.login .meldaan::after,
+body.regis .meldaan::after {
+  content: " >";
+  font-size: 1em;
+}
+
+.login .meldaan:hover,
+body.regis .meldaan:hover {
+  cursor: pointer;
+  background: green;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+.login .meldaan:hover::after,
+body.regis .meldaan:hover::after {
+  color: #F66C96;
+}
+
+.login .file,
+body.regis .file {
+  display: block;
+}
 
 body.swipe h1 {
-  text-align: center; }
+  text-align: center;
+}
 
 body.swipe .contain {
   width: 25em;
   height: 30em;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 body.swipe .picture {
   object-fit: scale-down;
@@ -184,22 +238,27 @@ body.swipe .picture {
   transform: translateY(2em);
   z-index: -1;
   border-radius: 2em;
-  border: solid mediumpurple 0.2em; }
-  body.swipe .picture img {
-    max-height: 90%;
-    max-width: 90%;
-    margin-top: 4em; }
+  border: solid mediumpurple 0.2em;
+}
+
+body.swipe .picture img {
+  max-height: 90%;
+  max-width: 90%;
+  margin-top: 4em;
+}
 
 body.swipe .containyesno {
   top: 7em;
   position: relative;
   display: block;
   margin: 0 auto;
-  right: 0.5em; }
+  right: 0.5em;
+}
 
 body.swipe img {
   max-width: 100%;
-  max-height: 100%; }
+  max-height: 100%;
+}
 
 body.swipe .redo {
   width: 2em;
@@ -208,7 +267,8 @@ body.swipe .redo {
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-5em); }
+  transform: translateX(6em) translateY(-5em);
+}
 
 body.swipe .no {
   width: 4em;
@@ -216,16 +276,19 @@ body.swipe .no {
   border-radius: 10em;
   float: left;
   position: relative;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
 
 body.swipe .yes {
   height: 4em;
   border-radius: 30em;
-  transform: translateX(6em) translateY(-4em); }
+  transform: translateX(6em) translateY(-4em);
+}
 
 body.chatpage div.cont_yesno {
   margin-top: -3em;
-  margin-bottom: 5em; }
+  margin-bottom: 5em;
+}
 
 body.chatpage section.accept {
   height: 4.2em;
@@ -236,14 +299,19 @@ body.chatpage section.accept {
   transition: ease 200ms;
   display: block;
   position: relative;
-  float: right; }
-  body.chatpage section.accept img {
-    margin: 1em 0 0 1em; }
-  body.chatpage section.accept:hover {
-    background-color: #D75555;
-    cursor: pointer;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
-    padding-left: 6; }
+  float: right;
+}
+
+body.chatpage section.accept img {
+  margin: 1em 0 0 1em;
+}
+
+body.chatpage section.accept:hover {
+  background-color: #D75555;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+  padding-left: 6;
+}
 
 body.chatpage section.decline {
   border-radius: 0 20em 20em 0;
@@ -254,31 +322,40 @@ body.chatpage section.decline {
   transition: ease 200ms;
   display: block;
   position: relative;
-  float: left; }
-  body.chatpage section.decline img {
-    width: 2em;
-    margin: 1em;
-    float: right; }
-  body.chatpage section.decline:hover {
-    background-color: #D75555;
-    padding-left: 6em;
-    cursor: pointer;
-    box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
+  float: left;
+}
+
+body.chatpage section.decline img {
+  width: 2em;
+  margin: 1em;
+  float: right;
+}
+
+body.chatpage section.decline:hover {
+  background-color: #D75555;
+  padding-left: 6em;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
 
 body.chatpage section.profile {
   width: 100%;
   height: 50%;
-  display: block; }
-  body.chatpage section.profile img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%; }
+  display: block;
+}
+
+body.chatpage section.profile img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 body.chatpage section.info {
   display: block;
   text-align: left;
   position: relative;
-  padding: 0.4em; }
+  padding: 0.4em;
+}
 
 body.chatpage div.addmeme {
   margin-left: 2em;
@@ -288,19 +365,24 @@ body.chatpage div.addmeme {
   flex-wrap: wrap;
   justify-content: space-around;
   float: left;
-  color: white; }
-  body.chatpage div.addmeme .sendmeme {
-    width: 10em;
-    height: 10em;
-    border-radius: 2em;
-    background: #ededed;
-    margin: 0.3em;
-    padding: 0.08em;
-    object-fit: contain; }
-    body.chatpage div.addmeme .sendmeme img {
-      width: 100%;
-      height: 100%;
-      border-radius: 2em; }
+  color: white;
+}
+
+body.chatpage div.addmeme .sendmeme {
+  width: 10em;
+  height: 10em;
+  border-radius: 2em;
+  background: #ededed;
+  margin: 0.3em;
+  padding: 0.08em;
+  object-fit: contain;
+}
+
+body.chatpage div.addmeme .sendmeme img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+}
 
 nav {
   margin: 0 auto;
@@ -311,22 +393,31 @@ nav {
   left: 0;
   background: #e4e4e4;
   width: 100%;
-  z-index: 1; }
-  nav ul {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-  nav li {
-    list-style-type: none;
-    width: 2em; }
-    nav li:hover {
-      cursor: pointer; }
-    nav li img {
-      max-width: 100%;
-      max-height: 100%; }
+  z-index: 1;
+}
+
+nav ul {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+nav li {
+  list-style-type: none;
+  width: 2em;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+nav li img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 body.list section {
   display: flex;
@@ -334,109 +425,138 @@ body.list section {
   margin: 0 auto;
   text-align: center;
   justify-content: space-evenly;
-  margin-bottom: 7em; }
-  body.list section h1 {
-    width: 100%;
-    display: block; }
-  body.list section .category {
-    object-fit: cover;
-    width: 45%;
-    height: 50%;
-    top: -4em;
-    border-radius: 0.3em;
-    margin: 0.2em; }
-    body.list section .category img {
-      object-fit: cover;
-      width: 96%;
-      height: 50%;
-      top: -4em;
-      border-radius: 0.3em; }
-    body.list section .category h2 {
-      overflow-wrap: break-word;
-      text-align: center;
-      color: #5f5f5f;
-      word-wrap: break-word;
-      background: #9b9b9b36;
-      border-radius: 0.2em;
-      padding: 0.3em; }
+  margin-bottom: 7em;
+}
+
+body.list section h1 {
+  width: 100%;
+  display: block;
+}
+
+body.list section .category {
+  object-fit: cover;
+  width: 45%;
+  height: 50%;
+  top: -4em;
+  border-radius: 0.3em;
+  margin: 0.2em;
+}
+
+body.list section .category img {
+  object-fit: cover;
+  width: 96%;
+  height: 50%;
+  top: -4em;
+  border-radius: 0.3em;
+}
+
+body.list section .category h2 {
+  overflow-wrap: break-word;
+  text-align: center;
+  color: #5f5f5f;
+  word-wrap: break-word;
+  background: #9b9b9b36;
+  border-radius: 0.2em;
+  padding: 0.3em;
+}
 
 body.feed {
   color: white;
   text-align: center;
-  padding: 0.1em; }
-  body.feed h1 {
-    color: #D75555;
-    margin-left: 0.3em;
-    font-size: 1em; }
-  body.feed a.genrelink {
-    background: #D75555;
-    border-radius: 1em;
-    padding: 0.5em;
-    color: white;
-    transition: 200ms ease; }
-    body.feed a.genrelink:hover {
-      cursor: pointer;
-      box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23); }
-  body.feed div.containfeed {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 2em; }
-  body.feed .avatar img {
-    height: 8em;
-    width: 8em;
-    object-fit: cover;
-    border-radius: 1em 1em 0 0; }
-  body.feed section {
-    width: 8em;
-    transition: 200ms ease;
-    border-radius: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1em;
-    background-color: white; }
-    body.feed section:hover {
-      cursor: pointer;
-      box-shadow: 2px 4px 0 2px #c9c9c9; }
-  body.feed h2 {
-    font-size: 0.8em;
-    font-weight: 100;
-    flex: 100%;
-    color: white;
-    display: inline-block;
-    position: relative;
-    top: -1em;
-    padding: 0.5em;
-    background: #4EA8D9;
-    width: 9em;
-    border-radius: 0 0 0.5em 0.5em; }
-   
+  padding: 0.1em;
+}
 
-    .question {
-    max-width: 600px;
-      width: 100%;
-      background: #49A7DB;
-      color: white;
-      width: 80%;
-      box-sizing: border-box;
-      display: block;
-      margin: 0 auto;
-      position: relative;
-      border-radius: 15px;
-      padding: 3em;
-      margin-bottom: 2em;
-      box-shadow: -3px 3px 10px 0px rgba(0,0,0,0.31);
-  }
-.question:nth-of-type(2){
-background:#D75555;
+body.feed h1 {
+  color: #D75555;
+  margin-left: 0.3em;
+  font-size: 1em;
 }
-.question:nth-of-type(3){
-background: #876BF1;
+
+body.feed a.genrelink {
+  background: #D75555;
+  border-radius: 1em;
+  padding: 0.5em;
+  color: white;
+  transition: 200ms ease;
 }
-.question:nth-of-type(4){
-background: #F86A95;
-margin-bottom: 2em;
+
+body.feed a.genrelink:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
+}
+
+body.feed div.containfeed {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2em;
+}
+
+body.feed .avatar img {
+  height: 8em;
+  width: 8em;
+  object-fit: cover;
+  border-radius: 1em 1em 0 0;
+}
+
+body.feed section {
+  width: 8em;
+  transition: 200ms ease;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em;
+  background-color: white;
+}
+
+body.feed section:hover {
+  cursor: pointer;
+  box-shadow: 2px 4px 0 2px #c9c9c9;
+}
+
+body.feed h2 {
+  font-size: 0.8em;
+  font-weight: 100;
+  flex: 100%;
+  color: white;
+  display: inline-block;
+  position: relative;
+  top: -1em;
+  padding: 0.5em;
+  background: #4EA8D9;
+  width: 9em;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+
+.question {
+  max-width: 600px;
+  width: 100%;
+  background: #49A7DB;
+  color: white;
+  width: 80%;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  padding: 3em;
+  margin-bottom: 2em;
+  box-shadow: -3px 3px 10px 0px rgba(0, 0, 0, 0.31);
+}
+
+.question:nth-of-type(2) {
+  background: #D75555;
+}
+
+.question:nth-of-type(3) {
+  background: #876BF1;
+}
+
+.question:nth-of-type(4) {
+  background: #F86A95;
+  margin-bottom: 2em;
 }
 
 form.buckettest {
@@ -448,189 +568,242 @@ body div.pusher {
   width: auto;
 }
 
-#submitbutton{
-line-height: 4em;
-width: 11em;
-height: 4em;
-background: #D75555;
-color: #fff;
-font-size: 10pt;
-font-weight: bolder;
-border-radius: 10px;
-text-align: center;
-margin: auto auto 2em;
-transition: ease 200ms;
+#submitbutton {
+  line-height: 4em;
+  width: 11em;
+  height: 4em;
+  background: #D75555;
+  color: #fff;
+  font-size: 10pt;
+  font-weight: bolder;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto auto 2em;
+  transition: ease 200ms;
 }
 
-        .question input[type="radio"] {
-          display:none;
-      } 
+.question input[type="radio"] {
+  display: none;
+}
 
-      .question label img {
-        margin-bottom: 1em;
-      }
+.question label img {
+  margin-bottom: 1em;
+}
 
-      .question input[type="radio"]:checked+label img {
-        border: solid 10px green;
-        box-sizing: border-box;
-    }
+.question input[type="radio"]:checked+label img {
+  border: solid 10px green;
+  box-sizing: border-box;
+}
 
-    .question input[type="radio"]:not(:checked)+label img{
-      border: solid 10px white;
-      box-sizing: border-box;
-    } 
-    .question input[type="radio"]:not(:checked)+label img:hover{
-      box-shadow: 2px 4px 2px 2px #ffffff70;
-    } 
-    
+.question input[type="radio"]:not(:checked)+label img {
+  border: solid 10px white;
+  box-sizing: border-box;
+}
+
+.question input[type="radio"]:not(:checked)+label img:hover {
+  box-shadow: 2px 4px 2px 2px #ffffff70;
+}
+
 label img {
-  max-width: 100%;}        
+  max-width: 100%;
+}
 
 body.chatmatch {
-  width: 100%; }
-  body.chatmatch section.match {
-    background: #D75555;
-    color: white;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    padding: 1em;
-    height: 12em; }
-    body.chatmatch section.match div.prof_match {
-      float: left;
-      margin: 1em; }
-      body.chatmatch section.match div.prof_match img {
-        width: 7em;
-        height: 7em;
-        border-radius: 100%;
-        object-fit: cover;
-        max-width: 100%;
-        max-height: 100%; }
-  body.chatmatch section.chat_list {
-    width: 100%;
-    padding: 1em; }
-    body.chatmatch section.chat_list h2 {
-      display: block;
-      width: 100%;
-      font-size: 1em;
-      font-weight: 200; }
-    body.chatmatch section.chat_list .prof_chat {
-      display: block;
-      float: left; }
-    body.chatmatch section.chat_list .cont_chatprof {
-      width: 100%;
-      float: left; }
-    body.chatmatch section.chat_list img {
-      width: 5em;
-      height: 5em;
-      border-radius: 100%;
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%; }
-    body.chatmatch section.chat_list div.chat {
-      background: lightblue;
-      height: 4em;
-      width: 13em;
-      border-radius: 10em;
-      transform: translateX(6em);
-      text-align: left; }
-      body.chatmatch section.chat_list div.chat h4.name {
-        font-size: 0.8em;
-        position: absolute;
-        transform: translateX(2em) translateY(-0.8em); }
-      body.chatmatch section.chat_list div.chat p.chat_text {
-        font-size: 0.7em;
-        transform: translateX(2em) translateY(1.5em);
-        width: 17em;
-        float: left;
-        position: absolute; }
+  width: 100%;
+}
+
+body.chatmatch section.match {
+  background: #D75555;
+  color: white;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  padding: 1em;
+  height: 12em;
+}
+
+body.chatmatch section.match div.prof_match {
+  float: left;
+  margin: 1em;
+}
+
+body.chatmatch section.match div.prof_match img {
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.chatmatch section.chat_list {
+  width: 100%;
+  padding: 1em;
+}
+
+body.chatmatch section.chat_list h2 {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+body.chatmatch section.chat_list .prof_chat {
+  display: block;
+  float: left;
+}
+
+body.chatmatch section.chat_list .cont_chatprof {
+  width: 100%;
+  float: left;
+}
+
+body.chatmatch section.chat_list img {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.chatmatch section.chat_list div.chat {
+  background: lightblue;
+  height: 4em;
+  width: 13em;
+  border-radius: 10em;
+  transform: translateX(6em);
+  text-align: left;
+}
+
+body.chatmatch section.chat_list div.chat h4.name {
+  font-size: 0.8em;
+  position: absolute;
+  transform: translateX(2em) translateY(-0.8em);
+}
+
+body.chatmatch section.chat_list div.chat p.chat_text {
+  font-size: 0.7em;
+  transform: translateX(2em) translateY(1.5em);
+  width: 17em;
+  float: left;
+  position: absolute;
+}
 
 body.user {
   width: 100%;
-  padding: 1em; }
-  body.user div.user-prof {
-    text-align: center; }
-    body.user div.user-prof img {
-      width: 10em;
-      height: 10em;
-      border-radius: 100%;
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%; }
-  body.user .cont-meme {
-    display: flex;
-    flex-wrap: wrap; }
-    body.user .cont-meme div.addmeme .sendmeme {
-      width: 8em;
-      height: 8em;
-      border-radius: 2em;
-      background: #ededed;
-      margin: 0.3em;
-      padding: 0.08em;
-      object-fit: contain; }
-      body.user .cont-meme div.addmeme .sendmeme img {
-        width: 100%;
-        height: 100%;
-        border-radius: 2em; }
-  body.user .meme-slider {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-    margin-bottom: 2em; }
-    body.user .meme-slider div {
-      background-position: center;
-      background-size: cover; }
-      body.user .meme-slider div img {
-        border-radius: 8px;
-        height: 10em;
-        width: auto;
-        margin: 5px; }
+  padding: 1em;
+}
+
+body.user div.user-prof {
+  text-align: center;
+}
+
+body.user div.user-prof img {
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.user .cont-meme {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body.user .cont-meme div.addmeme .sendmeme {
+  width: 8em;
+  height: 8em;
+  border-radius: 2em;
+  background: #ededed;
+  margin: 0.3em;
+  padding: 0.08em;
+  object-fit: contain;
+}
+
+body.user .cont-meme div.addmeme .sendmeme img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+}
+
+body.user .meme-slider {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  margin-bottom: 2em;
+}
+
+body.user .meme-slider div {
+  background-position: center;
+  background-size: cover;
+}
+
+body.user .meme-slider div img {
+  border-radius: 8px;
+  height: 10em;
+  width: auto;
+  margin: 5px;
+}
 
 .meme_favorite main div {
   overflow-y: scroll;
-  max-height: 30em; }
-  .meme_favorite main div.showmeme img {
-    width: 100%;
-    height: auto; }
+  max-height: 30em;
+}
 
-    .dislikememe, .likememe {
-      background-color: #49A7DB;
-      height: auto;
-      width: 80px;
-      padding: 1em;
-      border-radius: 0px 30px 30px 00px;
-      display: block;
-      margin: auto 0 0 0;
-      border: none;
-  }
-  .likebox {
-    display: flex;
-    width: 100%;
-  }
+.meme_favorite main div.showmeme img {
+  width: 100%;
+  height: auto;
+}
 
-  body.meme_favorite p {
-    display: table;
-    margin: 0 auto;
-    font-size: 14pt;
-    font-weight: bold;
-  }
-  .likememe {
-    background: #F86A95;
-    border-radius: 30px 0 0 30px;
-    width: 112px;
-    margin: 0 0 0 auto;
-  }
+.dislikememe,
+.likememe {
+  background-color: #49A7DB;
+  height: auto;
+  width: 80px;
+  padding: 1em;
+  border-radius: 0px 30px 30px 00px;
+  display: block;
+  margin: auto 0 0 0;
+  border: none;
+}
 
-  .likememe img {
-    height: 50px;
-    width: 50px;
-  }
-  
+.likebox {
+  display: flex;
+  width: 100%;
+}
+
+body.meme_favorite p {
+  display: table;
+  margin: 0 auto;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.likememe {
+  background: #F86A95;
+  border-radius: 30px 0 0 30px;
+  width: 112px;
+  margin: 0 0 0 auto;
+}
+
+.likememe img {
+  height: 50px;
+  width: 50px;
+}
+
 .meme_favorite main form input:first-of-type {
-  display: none; }
+  display: none;
+}
 
 @media only screen and (min-width: 48.0625em) and (max-width: 100em) {
   body {
-    width: 50em; }
+    width: 50em;
+  }
+
   nav {
-    display: none; } }
+    display: none;
+  }
+}
