@@ -589,10 +589,43 @@ body.user {
 .meme_favorite main div {
   overflow-y: scroll;
   max-height: 30em; }
-  .meme_favorite main div img {
+  .meme_favorite main div.showmeme img {
     width: 100%;
     height: auto; }
 
+    .dislikememe, .likememe {
+      background-color: #49A7DB;
+      height: auto;
+      width: 80px;
+      padding: 1em;
+      border-radius: 0px 30px 30px 00px;
+      display: block;
+      margin: auto 0 0 0;
+      border: none;
+  }
+  .likebox {
+    display: flex;
+    width: 100%;
+  }
+
+  body.meme_favorite p {
+    display: table;
+    margin: 0 auto;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  .likememe {
+    background: #F86A95;
+    border-radius: 30px 0 0 30px;
+    width: 112px;
+    margin: 0 0 0 auto;
+  }
+
+  .likememe img {
+    height: 50px;
+    width: 50px;
+  }
+  
 .meme_favorite main form input:first-of-type {
   display: none; }
 
