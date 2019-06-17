@@ -8,7 +8,7 @@ const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const fetch = require('node-fetch');
-
+var router = express.Router();
 
 require('dotenv').config(); // gegeven voor de mongodb server
 
@@ -93,8 +93,14 @@ function redirectProfile(req,res){
 }
 
 function index(req, res) {
-  res.render('pages/index');
+if(!req.session.user){
+ 
+    res.render("pages/index");
 }
+
+
+}
+
 
 function register(req, res, next) {
   res.render('pages/register');
