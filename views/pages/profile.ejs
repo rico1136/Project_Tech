@@ -30,7 +30,7 @@
   <ul>
     <li><%= data.memeCategory%></li>
   </ul>
-  <a href='/memecategory'>Klik hier om de test opnieuw te doen.</a>
+ <p>Klik <a href='/memecategory'>hier</a> om de test opnieuw te doen.</p>
 </section>
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
@@ -50,8 +50,10 @@
     </div>
   <% } %>
   <div id="add">
-    <a href=/memetest>add here</a> </div> <% include tail.ejs %>
+   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> </div> <% include tail.ejs %>
     <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
+    <div class='pusher'></div>
+
 
 </body>
 
