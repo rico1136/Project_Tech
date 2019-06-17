@@ -1,1 +1,1 @@
-web : npm start dev
+web : node bin/www
