@@ -69,4 +69,4 @@ app.get('/', (req, res) => {
 app.use((req,res)=> {res.status(404).render('pages/404');});
 
 // Server is activated
-app.listen(port, () => console.log('De server is geactiveerd!'));
+app.listen(3000, () => console.log('De server is geactiveerd!'));
