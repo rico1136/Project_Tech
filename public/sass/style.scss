@@ -639,7 +639,6 @@ body.user {
   .cont-meme {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 8em;
 
     div.addmeme {
       .sendmeme {
@@ -659,7 +658,43 @@ body.user {
       }
     }
   }
+  .meme-slider {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    margin-bottom: 2em;
+    div {
+      background-position: center;
+      background-size: cover;
+      img {
+        border-radius: 8px;
+        height: 10em;
+        width: auto;
+      }
+    }
+  }
 }
+
+.meme_favorite {
+  main {
+    div {
+      overflow-y: scroll;
+      max-height: 30em;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    form {
+      input {
+        &:first-of-type {
+          display:none;
+        }
+      }
+    }
+  }
+}
+
 // --------- Mediaqueries ------------//
 @media only screen and (min-width: 48.0625em) and (max-width:100em) {
   body {

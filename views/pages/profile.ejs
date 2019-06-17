@@ -7,11 +7,12 @@
 
   <div class="user-prof">
     <div class="prof-cont">
-      <% if (data.file) { %>
-      <img src="/upload/<%= data.file %>" alt="img">
+      <% if (data.profilePic) { %>
+      <img src="<%= data.profilePic %>" alt="img">
       <% } %>
     </div>
-    <div><a href="/">log out</a></div>
+    <div><a href="/update">edit</a></div>
+    <div><a href="/logout">log out</a></div>
   </div>
   <section class="user-bio">
     <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
@@ -24,34 +25,30 @@
       Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
     </p>
   </section>
-  <h3>Your laughs</h3>
+  <section>
+  <h3>Meme category</h3>
   <ul>
-    <li> Obscure/absurd</li>
-    <li> Sarcastic</li>
-    <li> Dark</li>
+    <li><%= data.memeCategory%></li>
   </ul>
-  <label for="file">Add more</label>
-  <form method="post" enctype="multipart/form-data">  
-    <input type='file' name='image' />
-  </form>
-
+ <p>Klik <a href='/memecategory'>hier</a> om de test opnieuw te doen.</p>
+</section>
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
-  <div class="cont-meme">
-    <div class="addmeme">
-      <div class="sendmeme">
-        <img src="/assets/img/memes/1.jpg" alt="">
-      </div>
+  <h3>Your memes</h3>
+  <% if (data.memes){ %>
+    <div class="meme-slider">
+    <% data.memes.forEach(function (meme) { %>
+        <div><img src="<%=meme%>" alt=""></div>
+    <% }) %>
     </div>
-    <div class="addmeme">
-      <div class="sendmeme">
-        <img src="/assets/img/categorie/sarcastic.jpg" alt="">
-      </div>
-    </div>
-  </div>
+  <% } %>
   <div id="add">
-    <a href=/add>add here</a> </div> <% include tail.ejs %>
+   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> </div> <% include tail.ejs %>
+    <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
+    <div class='pusher'></div>
+
+
 </body>
 
 

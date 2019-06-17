@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<% include ../partials/head %>
+  <title>Memetest</title>
+</head>
+
+<body class="meme_favorite">
+  <% include ../partials/navbar %>
+  <main>
+      <div class='showmeme'>
+          <img src="<%= memesrc %>" alt="">
+        </div>
+    <form action="/meme" type="post" method="POST">
+        <input type="text" id="src" name="src" value="<%= memesrc %>">
+        <!-- <input type="submit"> -->
+        <div class='likebox'>
+        <a href='/memetest' class="dislikememe"><img src='/assets/logo/dislike.svg'></a>
+        <button type="submit" class="likememe"><img src='/assets/logo/heart.svg'></button>
+      </div>
+      <p>Do you like this meme?</p>
+    </form>
+  </main>
+  <% include tail.ejs %>
+</body>
+
+</html>

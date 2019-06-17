@@ -5,10 +5,10 @@ const router = express.Router()
 to the login page.  */
 
 router.get('/logout', (req, res) => {
-  req.session.destroy()
-  console.log('Succesfully logged out')
-  res.redirect('/login')
-  res.status(200).send()
+ req.session.destroy()
+ console.log('Succesfully logged out')
+ res.redirect('/')
+ res.status(200).send()
 })
 
 module.exports = router

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../partials/head %>
+<title>register</title>
+
+<body class="regis">
+  <div class="containlogo">
+    <section class="logo">
+      <!-- <img src="./assets/logo/logo.svg" alt="logojome"> -->
+      <a href="/"><img class="jomelogo" src="../assets/logo/jome.svg" alt="logojome"></a>
+      <p>True love through laughs</p>
+    </section>
+
+    <section class="reg">
+      <h2>Edit</h2>
+    </section>
+    <form method="POST" action="/updateFunction">
+      <fieldset>
+        <legend>Personal</legend>
+        <label for="name">name</label>
+        <input type="text" name="name" id="name" placeholder="<%= user.name %>">
+        <label for="age">age</label>
+        <input type="text" name="age" id="age" placeholder="<%= user.age %>">
+        <label for="sex">sex</label>
+        <select id="sex" name="sex"  >
+          <option value="man">man</option>
+          <option value="woman">woman</option>
+        </select>
+
+      </fieldset>
+      <fieldset>
+        <legend>Log-in</legend>
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" placeholder="<%= user.name %>">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" placeholder="<%= user.password %>">
+      </fieldset>
+      <label for="profilePic">Add picture</label>
+      <input type="file" name="profilePic" id="profilePic" class="inputfile" accept="img/*">
+
+      <button class="meldaan" type="submit">Update</button>
+
+    </form>
+
+    <% include tail.ejs %>
+</body>
+
+</html>
