@@ -687,6 +687,10 @@ body.user .meme-slider img {
   width: auto;
 }
 
+body.user .meme-slider img {
+  cursor: pointer;
+}
+
 .meme_favorite main div {
   overflow-y: scroll;
   max-height: 30em;
