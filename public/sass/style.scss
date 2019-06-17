@@ -663,14 +663,33 @@ body.user {
     overflow-y: hidden;
     display: flex;
     margin-bottom: 2em;
-    div {
-      background-position: center;
-      background-size: cover;
-      img {
-        border-radius: 8px;
-        height: 10em;
-        width: auto;
+    input {
+      display: none;
+    }
+    form {
+      position: relative;
+      margin-left: .5em;
+      button {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        background: none;
+        border: 0;
+        img {
+          width: 1.5em;
+          height: auto;
+          background-color: #e6e6e6;
+          border-radius: 50%;
+          transition: all .3s;
+          padding: .5em;
+          opacity: .8;
+        }
       }
+    }
+    img {
+      border-radius: 8px;
+      height: 10em;
+      width: auto;
     }
   }
 }

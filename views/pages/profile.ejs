@@ -37,9 +37,15 @@
 
   <h3>Your memes</h3>
   <% if (data.memes){ %>
-    <div class="meme-slider">
+    <div class="meme-slider" method="POST" action="/delete">
     <% data.memes.forEach(function (meme) { %>
-        <div><img src="<%=meme%>" alt=""></div>
+      <form action="/delete" method="POST">
+        <input type="text" name="meme" id="meme" value="<%=meme%>">
+        <button type="submit">
+          <img src="/assets/icons/waste-bin.svg" alt="waste bin">
+        </button>
+        <img src="<%=meme%>" alt="">
+      </form>
     <% }) %>
     </div>
   <% } %>
