@@ -3,12 +3,8 @@ const app = express();
 const port = process.env.PORT ||  3000;
 const dotenv = require('dotenv'); //https://www.npmjs.com/package/dotenv
 const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
-const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-find
-const mongo = require('mongodb'); //https://www.mongodb.com/
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
-const fetch = require('node-fetch');
-const User = require('./controls/userschema');
 
 // Setup static folders
 app.use(express.static('public'));
