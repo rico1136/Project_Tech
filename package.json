@@ -7,11 +7,13 @@
     "start": "node server.js",
     "test": "testing",
     "dev": "nodemon server.js",
-    "build": "node-sass --watch public/sass -o public/css"
   },
   "repository": {
     "type": "git",
     "url": "Project_Tech"
+  },
+  "engines": {
+    "node": "12.1.0"
   },
   "keywords": [
     "dating"
