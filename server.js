@@ -1,10 +1,12 @@
 const express = require('express'); //https://expressjs.com/
 const app = express();
-const port = process.env.PORT ||  3000;
 const dotenv = require('dotenv'); //https://www.npmjs.com/package/dotenv
 const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
 const mongoose = require('mongoose'); //https://www.npmjs.com/package/mongoose
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
+
+const port = process.env.PORT ||  3000;
+
 
 // Setup static folders
 app.use(express.static('public'));
