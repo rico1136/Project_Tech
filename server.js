@@ -95,10 +95,9 @@ function redirectProfile(req,res){
 }
 
 function index(req, res) {
-if(!req.session.user){
+
  
     res.render("pages/index");
-}
 
 
 }
