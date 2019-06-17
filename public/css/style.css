@@ -505,7 +505,8 @@ body.user {
     body.user .meme-slider input {
       display: none; }
     body.user .meme-slider form {
-      position: relative; }
+      position: relative;
+      margin-left: .5em; }
       body.user .meme-slider form button {
         position: absolute;
         top: 0.5em;
