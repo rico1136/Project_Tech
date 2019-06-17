@@ -68,9 +68,7 @@ app.get('/update', function(req, res){
 })
 
 // routing van de pagina's //
-app.get('/', function(req, res){
-  res.redirect('/index');
-});
+app.get('/', index);
 app.use(express.static('public'));
 app.use(express.static('upload'));
 app.use(loginTest);
