@@ -73,11 +73,14 @@ npm run dev
 
 
 ## Our features
-1. Register / login page
-2. Get a category of your humour, this way you can match with people who like the same memes
-3. Your own dynamic profile page
-4. Add memes to your profile which are being fetched by an API
-5. Match with other users
+- Register
+- Log-in
+- Session
+- Meme-category-form
+- Edit profile
+- Meme-Api
+- Matches based on category
+- Log-out
 
 ## Usage
 Start the application
