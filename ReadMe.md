@@ -81,6 +81,7 @@ npm run dev
 - Meme-Api
 - Matches based on category
 - Log-out
+- Delete profile
 
 ## Usage
 Start the application
