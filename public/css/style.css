@@ -699,6 +699,7 @@ body.user p a {
   padding: .2em;
   border-radius: .3em;
   font-weight: 800;
+  cursor: pointer;
 }
 
 .meme_favorite main div {
