@@ -1,6 +1,6 @@
 const express = require('express'); //https://expressjs.com/
 const app = express();
-const port = process.env.PORT ||  "3000";
+const port = process.env.PORT ||  3000;
 const dotenv = require('dotenv'); //https://www.npmjs.com/package/dotenv
 const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
 const arrayFind = require('array-find'); //https://www.npmjs.com/package/array-find
