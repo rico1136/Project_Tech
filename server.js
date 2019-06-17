@@ -61,8 +61,8 @@ app.use(memeCategory);
 app.use(deleteMeme);
 app.use(memeFetcher);
 // --> Show index
-app.get('/', (req, res) => {
-  res.render('pages/index')
+app.get('/', function (req, res) {
+  res.render('pages/index.ejs')
 });
 
 // errors

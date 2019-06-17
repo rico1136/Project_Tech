@@ -2,12 +2,9 @@
   "name": "memedatingapp",
   "version": "2.0.0",
   "description": "Dating app ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "testing",
-    "dev": "nodemon server.js",
-    "build": "node-sass --watch public/sass -o public/css"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
