@@ -4,9 +4,7 @@
   "description": "Dating app ",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "testing",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

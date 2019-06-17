@@ -62,7 +62,7 @@ app.use(deleteMeme);
 app.use(memeFetcher);
 // --> Show index
 app.get('/', (req, res) => {
-  res.render('pages/index')
+  res.render('pages/index.ejs')
 });
 
 // errors
