@@ -79,6 +79,15 @@ npm run dev
 4. Add memes to your profile which are being fetched by an API
 5. Match with other users
 
+## Usage
+To compile SASS to CSS
+```
+npm run build
+```
+To run nodemon (nodemon will run server.js each time the file changes)
+```
+npm run dev
+```
 
 # MIT
 [MIT](https://github.com/rico1136/Project_Tech/blob/master/LICENSE)
