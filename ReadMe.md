@@ -80,6 +80,10 @@ npm run dev
 5. Match with other users
 
 ## Usage
+Start the application
+```
+node server.js
+```
 To compile SASS to CSS
 ```
 npm run build
@@ -88,6 +92,16 @@ To run nodemon (nodemon will run server.js each time the file changes)
 ```
 npm run dev
 ```
+## Keep up to date
+Make sure you pull the repository once in a while since we are still working on this project, you can do this by using ```git pull```
 
-# MIT
+## Contributors
+When having problems, you can contact one of our teammembers:
+- [Coen Mathijssen](https://github.com/Coenmathijssen/blok-TECH/tree/master/Backend/myapp)
+- [Rico Zethof](https://github.com/rico1136)
+- [Giovanni Kaaijk](https://github.com/GiovanniKaaijk)
+- [Joan Padolina](https://github.com/joanpadolina)
+- [Harm van Verseveld](https://github.com/harmvv)
+
+# License
 [MIT](https://github.com/rico1136/Project_Tech/blob/master/LICENSE)
