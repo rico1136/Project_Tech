@@ -44,7 +44,8 @@ freeTime: String
 memeCategory: String
 ```
 Example:
-<img src="https://github.com/rico1136/Project_Tech/blob/master/documentatie/ss-database.png" width="400" height="auto"/>
+
+<img src="https://github.com/rico1136/Project_Tech/blob/master/documentatie/screenshot-database.png" width="800" height="auto"/>
 
 ## Installation
 
