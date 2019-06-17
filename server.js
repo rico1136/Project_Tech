@@ -50,6 +50,7 @@ const logOut = require('./controls/logOut.js');
 const updateUser = require('./controls/update.js');
 const memeCategory = require('./controls/memeCategory.js');
 const User = require('./controls/userschema');
+const deleteMeme = require('./controls/deleteMeme');
 // Standard routes
 app.get('/profile', redirectProfile);
 app.get('/matchprofile', redirectFeed);
@@ -82,6 +83,7 @@ app.use(memeCategory)
 
 app.post('/profile/:id', addRegis);
 app.post('/meme', saveMeme);
+app.post('/delete', deleteMeme);
 // leest de form en slaat het op in een js code
 app.use(errNotFound);
 app.listen(port, servermsg);

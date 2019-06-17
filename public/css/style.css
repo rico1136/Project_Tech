@@ -504,14 +504,26 @@ body.user {
     margin-bottom: 2em; }
     body.user .meme-slider input {
       display: none; }
-    body.user .meme-slider button {
-      border: 0;
-      background-position: center;
-      background-size: cover; }
-      body.user .meme-slider button img {
-        border-radius: 8px;
-        height: 10em;
-        width: auto; }
+    body.user .meme-slider form {
+      position: relative; }
+      body.user .meme-slider form button {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        background: none;
+        border: 0; }
+        body.user .meme-slider form button img {
+          width: 1.5em;
+          height: auto;
+          background-color: #e6e6e6;
+          border-radius: 50%;
+          transition: all .3s;
+          padding: .5em;
+          opacity: .8; }
+    body.user .meme-slider img {
+      border-radius: 8px;
+      height: 10em;
+      width: auto; }
 
 .meme_favorite main div {
   overflow-y: scroll;

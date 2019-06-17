@@ -7,9 +7,11 @@ app.use(bodyParser.urlencoded({
     extended: true
   })); 
 app.post('/delete', deleteMeme)
-function deleteMeme(req, res, i) {
+
+
+function deleteMeme(req, res) {
     const id = req.session.user._id;
-    console.log(i);
+    const meme = req.body.meme
     User.findOne({ _id: id }, (err, foundObject) => {
       if (err) {
         console.log(err)
@@ -19,18 +21,24 @@ function deleteMeme(req, res, i) {
           console.log('User not found in database')
           res.status(404).send()
         } else {
-        //   foundObject.memes.push(memesrc)
-        //   foundObject.save((err, updatedObject) => {
-        //     if (err) {
-        //       console.log(err)
-        //       res.status(500).send()
-        //     } else {
-        //       console.log('user saved' + updatedObject)
-        //       res.status(200).send()
-        //       res.redirect('memetest')
-        //     }
-        //   })
+            const memesrc = foundObject.memes.indexOf(meme);
+            if(memesrc > -1) {
+                foundObject.memes.splice(memesrc, 1);
+                console.log(foundObject.memes)
+            }
+            foundObject.save((err, updatedObject) => {
+                if (err) {
+                console.log(err)
+                res.status(500).send()
+                } else {
+                console.log('user saved' + updatedObject)
+                res.status(200).send()
+                res.redirect('profile')
+                }
+            })
         }
       }
     })
   } 
+
+module.exports = deleteMeme;

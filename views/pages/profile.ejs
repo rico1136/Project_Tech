@@ -40,10 +40,11 @@
     <div class="meme-slider" method="POST" action="/delete">
     <% data.memes.forEach(function (meme) { %>
       <form action="/delete" method="POST">
-        <input type="text" value="<%=meme%>">
+        <input type="text" name="meme" id="meme" value="<%=meme%>">
         <button type="submit">
-            <img src="<%=meme%>" alt="">
+          <img src="/assets/icons/waste-bin.svg" alt="waste bin">
         </button>
+        <img src="<%=meme%>" alt="">
       </form>
     <% }) %>
     </div>
