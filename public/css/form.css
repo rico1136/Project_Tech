@@ -1,0 +1,76 @@
+body.regis {
+  width: 25em;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  background: #4EA8D9;
+}
+label, legend{
+      display: none;
+}
+
+body.regis .name-form,
+body.regis .age-form,
+body.regis .sex-form,
+body.regis .email-form,
+body.regis .pass-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2.5em;
+  width: 25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: .5em;
+  transition: all 0.5s ease;
+  background: white;
+}
+
+body.regis .name-form i,
+body.regis .age-form i,
+body.regis .sex-form i,
+body.regis .email-form i,
+body.regis .pass-form i {
+  padding: .9em;
+  cursor: pointer;
+}
+
+body.regis .name-form input,
+body.regis .age-form input,
+body.regis .sex-form input,
+body.regis .email-form input,
+body.regis .pass-form input {
+  background: none;
+  border: none;
+  flex: 1;
+  height: 100%;
+  outline: none;
+}
+
+body.regis div.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 50%);
+}
+
+body.regis div.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) translateX(1%);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateX(3%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translateX(1%);
+  }
+}

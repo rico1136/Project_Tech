@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <% include ../partials/head %>
+
 <body class="user">
   <% include ../partials/navbar %>
 
@@ -36,6 +37,9 @@
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
   <h3>Your memes</h3>
+  <div id="add">
+   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> 
+ </div>
   <% if (data.memes){ %>
     <div class="meme-slider" method="POST" action="/delete">
     <% data.memes.forEach(function (meme) { %>
@@ -49,8 +53,9 @@
     <% }) %>
     </div>
   <% } %>
-  <div id="add">
-   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> </div> <% include tail.ejs %>
+
+ 
+  <% include tail.ejs %>
     <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
     <div class='pusher'></div>
 

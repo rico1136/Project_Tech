@@ -2,6 +2,7 @@
 <html lang="en">
 
 <% include ../partials/head %>
+<!-- <link rel="stylesheet" href="../css/form.css"> -->
 <title>register</title>
 
 <body class="regis">
@@ -19,34 +20,63 @@
       </article>
     </section>
     <form method="POST" action="/register" enctype="multipart/form-data">
-      <fieldset>
-        <legend>Personal</legend>
-        <label for="name">name</label>
-        <input type="text" name="name" id="name" placeholder="Ruben" value="" required>
-        <label for="age">age</label>
-        <input type="text" name="age" id="age" required>
-        <label for="sex">sex</label>
-        <select id="sex" name="sex"  required>
-          <option value="man">man</option>
-          <option value="woman">woman</option>
-        </select>
+      <legend>Login</legend>
+            <div class="name-form">
 
-      </fieldset>
-      <fieldset>
-        <legend>Log-in</legend>
-        <label for="email">email</label>
-        <input type="email" name="email" id="email" placeholder="abc@gmail.com" required>
-        <label for="password">password</label>
-        <input type="password" name="password" id="password" placeholder="****" required>
-      </fieldset>
-      <label for="profilePic">Add picture</label>
-      <input type="file" name="profilePic" id="profilePic" class="inputfile" accept="img/*">
+              <label for="name">name</label>
+              <i class="fas fa-user"></i>
+              <input type="text" name="name" id="name" placeholder="naam" value="" required>
+              <i class="fas fa-angle-right"></i>
 
-      <button class="meldaan" type="submit">start looking</button>
+            </div>
+            <div class="age-form inactive">
+
+              <label for="age">age</label>
+              <i class="fas fa-birthday-cake"></i>
+              <input type="number" name="age" id="age" placeholder="leeftijd" required>
+              <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="sex-form inactive">
+
+              <label for="state">sex</label>
+              <i class="fas fa-venus-mars"></i>
+              <select id="state" name="state" required>
+                <option value="choose" placeholder="man/vrouw">Kies geslacht</option>
+                <option value="man" name="man">man</option>
+
+                <option value="woman" name="woman">woman</option>
+
+              </select>
+              <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="email-form inactive">
+              <label for="email">email</label>
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="email" value="" required>
+              <i class="fas fa-angle-right"></i>
+            </div>
+
+            <div class="pass-form inactive">
+              <label for="pass">password</label>
+              <i class="fas fa-key"></i>
+              <input type="password" name="password" id="pass" placeholder="****" value="" required>
+              <i class="fas fa-angle-right"></i>
+
+            </div>
+
+            <div class="pass-form inactive">
+              <label for="file">Add picture</label>
+              <input type="file" name="profilePic" id="file" class="inputfile" accept=img/*> 
+              <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="pass-form2 inactive">
+              <button class="meldaan" type="submit">start looking</button>
+            </div>
 
     </form>
 
     <% include tail.ejs %>
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

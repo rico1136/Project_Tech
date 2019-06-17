@@ -13,7 +13,6 @@ body.regis .button {
 }
 
 /* insert styling to all body */
-
 body {
   margin: auto;
   padding: 0;
@@ -38,7 +37,6 @@ body span {
 }
 
 /* styling only for the home page */
-
 body.one .containlogo {
   position: relative;
   top: 22%;
@@ -141,12 +139,9 @@ body.one .tryme:hover {
 }
 
 /* register page styling */
-
-
 body.regis {
   width: 25em;
 }
-
 
 body.regis .reg,
 body.regis p {
@@ -158,18 +153,18 @@ body.regis form {
   padding-bottom: 2em;
   margin: auto auto 4em;
 }
-
-body.regis form fieldset {
-  border: solid white 0.12em;
+body.regis form label {
+  display: block;
 }
 
-body.regis form fieldset label {
+
+body.regis form label {
   width: 100%;
   display: block;
-  margin: 0.5em;
+  margin: 0.5em; 
 }
 
-body.regis form fieldset input {
+body.regis form input {
   padding: 0.5em;
   width: 90%;
 }
@@ -203,7 +198,6 @@ body.regis .meldaan:hover {
   box-shadow: 0 0.5em 0 -0.3em rgba(0, 0, 0, 0.23);
 }
 
-
 body.regis .meldaan:hover::after {
   color: #F66C96;
 }
@@ -211,8 +205,8 @@ body.regis .meldaan:hover::after {
 body.regis .file {
   display: block;
 }
-/* styling for swipe */
 
+/* styling for swipe */
 body.swipe h1 {
   text-align: center;
 }
@@ -611,6 +605,7 @@ body.chatmatch section.chat_list div.chat p.chat_text {
 body.user {
   width: 100%;
   padding: 1em;
+  height: 100vh;
 }
 
 body.user div.user-prof {
@@ -671,6 +666,17 @@ body.user .meme-slider form button {
   border: 0;
 }
 
+body.user .delete {
+  display: block;
+  position: absolute;
+  background: #ca4f4f;
+  top: 0;
+  padding: .4em;
+  right: 0;
+  border-radius: 1em;
+  color: white;
+}
+
 body.user .meme-slider form button img {
   width: 1.5em;
   height: auto;
@@ -685,6 +691,14 @@ body.user .meme-slider img {
   border-radius: 8px;
   height: 10em;
   width: auto;
+}
+
+body.user p a {
+  background: cadetblue;
+  color: white;
+  padding: .2em;
+  border-radius: .3em;
+  font-weight: 800;
 }
 
 .meme_favorite main div {
