@@ -1,4 +1,4 @@
-# Memeapp
+# Jokes on me
 
 A dating app for the ones seeking for a partner. A good partner is who you share intimate things with but the most important is a good laugh together.
 
