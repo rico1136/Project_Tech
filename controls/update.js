@@ -48,6 +48,14 @@ router.post('/updateFunction', (req, res) => {
       }
     }
   })
-})
+});
+
+router.get('/update', (req, res) => {
+  if (!req.session.user){
+    res.redirect('/login');
+    return
+  }
+  res.render('pages/update', {user: req.session.user});
+});
 
 module.exports = router;
