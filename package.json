@@ -32,8 +32,5 @@
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
     "slug": "^1.1.0"
-  },
-  "devDependencies": {
-    "node-sass": "^4.12.0"
   }
 }
