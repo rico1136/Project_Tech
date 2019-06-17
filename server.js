@@ -30,7 +30,7 @@ require('dotenv').config(); // gegeven voor de mongodb server
 
 // ---- Connection to the database ---//
 let db = null;
-mongoose.connect("mongodb+srv://harm:buckettest@buckettest-pw7xg.mongodb.net/Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
+mongoose.connect("mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASS+"@"+process.env.DB_HOST+"Memedatingapp?retryWrites=true&w=majority",{ useNewUrlParser: true })
 db = mongoose.connection; // here i make a connection with mongodb my host, username and pw are in the .env file
 db.once('open', () => {
   console.log("connected mongodb")
@@ -69,4 +69,4 @@ app.get('/', function (req, res) {
 app.use((req,res)=> {res.status(404).render('pages/404');});
 
 // Server is activated
-app.listen(3000, () => console.log('De server is geactiveerd!'));
+app.listen(port, () => console.log('De server is geactiveerd!'));
