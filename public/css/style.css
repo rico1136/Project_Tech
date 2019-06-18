@@ -765,6 +765,10 @@ body.meme_favorite p {
   min-height: 50px;
 }
 
+fieldset {
+  border:none;
+}
+
 .meme_favorite main form input:first-of-type {
   display: none;
 }
