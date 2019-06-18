@@ -23,14 +23,14 @@ router.post('/memetest', (req, res) => {
                         return
                     }
                 }
-                foundObject.memes.push(memesrc)
+                foundObject.memes.push(memesrc);
                 foundObject.save((err, updatedObject) => {
                     if (err) {
-                        console.log(err)
+                        console.log(err);
                         res.status(500).send()
                     } else {
                         console.log('user saved' + updatedObject)
-                        res.status(200).send()
+                        res.status(200).send();
                         res.redirect('memetest')
                     }
                 })
@@ -38,24 +38,17 @@ router.post('/memetest', (req, res) => {
         }
     })
 });
-
 router.get('/memetest', (req, res) => {
     if (!req.session.user){
         res.redirect('/login');
         return
     }
-    randommeme();
-    res.render('pages/memetest', { memesrc: memesrc })
-});
-
-let memesrc = 'https://i.redd.it/jtxgfmm95h331.jpg'; //placeholder
-const randommeme = () => {
     fetch('https://meme-api.herokuapp.com/gimme')
         .then(res => res.json())
         .then(json => {
-            memesrc = json.url;
-            return memesrc;
+            let memesrc = json.url;
+            res.render('pages/memetest', { memesrc: memesrc })
         });
-};
+});
 
 module.exports = router;
