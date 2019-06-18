@@ -106,6 +106,7 @@ When having problems, you can contact one of our teammembers:
 - [Giovanni Kaaijk](https://github.com/GiovanniKaaijk)
 - [Joan Padolina](https://github.com/joanpadolina)
 - [Harm van Verseveld](https://github.com/harmvv)
+- [Vince Kaars](https://github.com/VinceKaars)
 
 # License
 [MIT](https://github.com/rico1136/Project_Tech/blob/master/LICENSE)
