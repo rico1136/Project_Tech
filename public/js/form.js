@@ -4,7 +4,7 @@ console.log('enhanced form')
 // https://www.youtube.com/watch?v=wc5k2AMPED0
 
 let labels = document.querySelectorAll('label');
-for (var i = 0; i < labels.length; i++) {
+for (let i = 0; i < labels.length; i++) {
   labels[i].style.display= 'none';
 }
 // https://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript

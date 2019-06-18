@@ -9,6 +9,7 @@ router.post('/login', (req, res, next) => {
     password: req.body.password
   }, (err, currentUser) => {
     if (err) {
+      res.redirect('/register');
       next(err)
     } else {
       req.session.user = currentUser;
