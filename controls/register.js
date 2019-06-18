@@ -5,6 +5,8 @@ const multer = require('multer'); //https://www.npmjs.com/package/multer
 const slug = require('slug'); //https://www.npmjs.com/package/slug
 const user = require('./userschema')
 const path = require('path');
+const bcrypt = require('bcrypt');
+const saltRounds = 11;
 
 let storage = multer.diskStorage({
     destination:  (req, file, cb) => {
@@ -22,14 +24,16 @@ const upload = multer({ storage:storage })
 //   let id = slug(req.body.name).toLowerCase()
 //   // ---- account toevoegen aan collectie moongo Compass ----//
 router.post('/register', upload.single('profilePic'), (req, res, next) => {
+    const hash = bcrypt.hashSync(req.body.password, saltRounds);
+
     const newuser = new user();
     newuser.name = req.body.name;
     newuser.age = req.body.age;
     newuser.sex = req.body.sex;
     newuser.email = req.body.email;
-    newuser.password = req.body.password;
+    newuser.password = hash;
     newuser.profilePic = req.file ? ('/upload/' + req.file.filename) : null,
-        newuser.memeCategory = req.body.memeCategory;
+    newuser.memeCategory = req.body.memeCategory;
 
     newuser.save( (err, savedUser) => {
         if (err) {
