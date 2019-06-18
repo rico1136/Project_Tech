@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../controls/userschema');
 const fetch = require('node-fetch');
 
-router.post('/meme', (req, res) => {
+router.post('/memetest', (req, res) => {
     const id = req.session.user._id;
     let memesrc = req.body.src;
     User.findOne({ _id: id }, (err, foundObject) => {
