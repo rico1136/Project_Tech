@@ -1,69 +1,69 @@
 <!DOCTYPE html>
-<html lang=“nl”>
+<html lang="nl">
 
 <% include ../partials/head %>
 
-<body class=“user”>
- <% include ../partials/navbar %>
+<body class="user">
+  <% include ../partials/navbar %>
 
- <div class=“user-prof”>
-   <div class=“prof-cont”>
-     <% if (data.profilePic) { %>
-     <img src=“<%= data.profilePic %>” alt=“img”>
-     <% } %>
-   </div>
- </div>
- <section class=“user-bio”>
-   <h1 id=“username”><span id=“age”><%= data.age%></span><%= data.name %></h1>
-   <p>
-     Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
-   </p>
-   <h2>Vrije tijd</h2>
-   <p>
-     Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
-   </p>
- </section>
- <section>
- <h3>Meme category</h3>
- <ul>
-   <li><%= data.memeCategory%></li>
- </ul>
+  <div class="user-prof">
+    <div class="prof-cont">
+      <% if (data.profilePic) { %>
+      <img src="<%= data.profilePic %>" alt="img">
+      <% } %>
+    </div>
+  </div>
+  <section class="user-bio">
+    <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
+    <p>
+      Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
+    </p>
+    <h2>Vrije tijd</h2>
+    <p>
+      Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
+    </p>
+  </section>
+  <section>
+  <h3>Meme category</h3>
+  <ul>
+    <li><%= data.memeCategory%></li>
+  </ul>
 </section>
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
- <h3>Memes</h3>
- <div id=“add”>
-</div>
- <% if (data.memes){ %>
-   <div class=“meme-slider” method=“POST” action=“/delete”>
-   <% data.memes.forEach(function (meme) { %>
-     <form action=“/delete” method=“POST”>
-       <img src=“<%=meme%>” alt=“”>
-     </form>
-   <% }) %>
-   </div>
- <% } %>
+  <h3>Memes</h3>
+  <div id="add">
+ </div>
+  <% if (data.memes){ %>
+    <div class="meme-slider" method="POST" action="/delete">
+    <% data.memes.forEach(function (meme) { %>
+      <form action="/delete" method="POST">
+        <img src="<%=meme%>" alt="">
+      </form>
+    <% }) %>
+    </div>
+  <% } %>
 
 
- <% include tail.ejs %>
+  <% include tail.ejs %>
 
 
- <% if (liked === false) { %>
-   <form class=“hidden-input” action=“/like” method=“POST”>
-       <input type=“text” name=“id” value=“<%=data._id%>“>
-       <button type=“submit”>Like</button>
-   </form>
-   <% } %>
- <% if (liked === true) { %>
-   <form class=“hidden-input” action=“/dislike” method=“POST”>
-       <input type=“text” value=“<%=data._id%>” name=“userid”>
-       <button type=“submit”>Dislike</button>
-   </form>
-   <p>Jullie hebben elkaar geliked</p>
-   <p>Neem contact op! :)</p>
-   <a href=“mailto:<%= data.email %>“>Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
- <% } %>
+  <% if (liked === false) { %>
+    <form class="hidden-input" action="/like" method="POST">
+        <input type="text" name="id" value="<%=data._id%>">
+        <button type="submit">Like</button>
+    </form>
+    <% } %>
+  <% if (liked === true) { %>
+    <form class="hidden-input" action="/dislike" method="POST">
+        <input type="text" value="<%=data._id%>" name="userid">
+        <button type="submit">Dislike</button>
+    </form>
+    <p>Jullie hebben elkaar geliked</p>
+    <p>Neem contact op! :)</p>
+    <a href="mailto:<%= data.email %>">Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
+  <% } %>
 </body>
 
 
