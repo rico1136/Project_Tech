@@ -1,18 +1,21 @@
 console.log('enhanced form')
 
+// loop through the label and hide them all
+// https://www.youtube.com/watch?v=wc5k2AMPED0
+
 let labels = document.querySelectorAll('label');
 for (var i = 0; i < labels.length; i++) {
   labels[i].style.display= 'none';
 }
 // https://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript
-// only when there is a javascript  run this
+// only when there is a javascript  run this css
 document.getElementsByTagName("head")[0].insertAdjacentHTML(
     "beforeend",
     "<link rel=\"stylesheet\" href=\"css/form.css\" />");
 
 
 function animatedForm() {
-  const nextArrow = document.querySelectorAll('.fa-angle-right');
+  const nextArrow = document.querySelectorAll('.fa-angle-right'); 
 
   nextArrow.forEach(nextArr => {
     nextArr.addEventListener('click', () => {
@@ -45,6 +48,8 @@ function animatedForm() {
     });
   });
 }
+
+// validation of every input
 
 function validFile(file) {
   if (file.value) {
