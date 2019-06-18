@@ -48,7 +48,7 @@ router.post('/register', upload.single('profilePic'), (req, res, next) => {
     })
 });
 
-router.get('/register', (req, res, ) => {
+router.get('/register', (req, res ) => {
     res.render('pages/register');
 });
 
