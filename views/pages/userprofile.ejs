@@ -4,7 +4,6 @@
 <% include ../partials/head %>
 
 <body class="user">
-  <% include ../partials/navbar %>
 
   <div class="user-prof">
     <div class="prof-cont">
@@ -49,22 +48,23 @@
  
   <% include tail.ejs %>
    
- 
+ <h2>Like?</h2>
   <% if (liked === false) { %>
     <form class="hidden-input" action="/like" method="POST">
         <input type="text" name="id" value="<%=data._id%>">
-        <button type="submit">Like</button>
+        <button type="submit"><img src='/assets/logo/heart.svg'></button>
     </form>
     <% } %>
   <% if (liked === true) { %>
     <form class="hidden-input" action="/dislike" method="POST">
         <input type="text" value="<%=data._id%>" name="userid">
-        <button type="submit">Dislike</button>
+        <button type="submit"><img src='/assets/logo/dislike.svg'></button>
     </form>
     <p>Jullie hebben elkaar geliked</p>
     <p>Neem contact op! :)</p>
     <a href="mailto:<%= data.email %>">Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
   <% } %>
+  <% include ../partials/navbar %>
 </body>
 
 

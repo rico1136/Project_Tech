@@ -747,6 +747,15 @@ body.meme_favorite p {
   font-size: 14pt;
   font-weight: bold;
 }
+
+form.hidden-input button {
+  border: none;
+  background: #f66c96;
+  padding: 1em;
+  border-radius: 80px;
+  box-shadow: 1px 1px 1px #00000091;
+  margin-bottom: 1em;
+}
 .showmeme {
   min-height: 30em;
 }
