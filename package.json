@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "heroku": "git push heroku master && heroku restart"
+    "heroku": "git push heroku master && heroku restart",
+    "debuggingCommit": "git add . && git commit -m 'debugging' && git push"
   },
   "repository": {
     "type": "git",
