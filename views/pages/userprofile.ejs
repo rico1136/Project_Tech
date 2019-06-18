@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<% include ../partials/head %>
+
+<body class="user">
+  <% include ../partials/navbar %>
+
+  <div class="user-prof">
+    <div class="prof-cont">
+      <% if (data.profilePic) { %>
+      <img src="<%= data.profilePic %>" alt="img">
+      <% } %>
+    </div>
+    <div><a href="/update">edit</a></div>
+    <div><a href="/logout">log out</a></div>
+  </div>
+  <section class="user-bio">
+    <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
+    <p>
+      Soms verlies ik de tijd wanneer ik aan het scrollen ben door 9gag of twitter. Maar dat is niet erg, want ik lach veel!
+    </p>
+    <h2>Vrije tijd</h2>
+    <p>
+
+      Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
+    </p>
+  </section>
+  <section>
+  <h3>Meme category</h3>
+  <ul>
+    <li><%= data.memeCategory%></li>
+  </ul>
+ <p>Klik <a href='/memecategory'>hier</a> om de test opnieuw te doen.</p>
+</section>
+
+<!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
+
+  <h3>Your memes</h3>
+  <div id="add">
+   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> 
+ </div>
+  <% if (data.memes){ %>
+    <div class="meme-slider" method="POST" action="/delete">
+    <% data.memes.forEach(function (meme) { %>
+      <form action="/delete" method="POST">
+        <input type="text" name="meme" id="meme" value="<%=meme%>">
+        <button type="submit">
+          <img src="/assets/icons/waste-bin.svg" alt="waste bin">
+        </button>
+        <img src="<%=meme%>" alt="">
+      </form>
+    <% }) %>
+    </div>
+  <% } %>
+
+ 
+  <% include tail.ejs %>
+    <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
+    <div class='pusher'></div>
+  <% if (liked === false) { %>
+    <form action="/like" method="POST">
+        <input type="text" name="id" value="<%=data._id%>">
+        <button type="submit">Like</button>
+    </form>
+    <% } %>
+  <% if (liked === true) { %>
+    <p>Jullie hebben elkaar al geliked</p>
+  <% } %>
+</body>
+
+
+</html>
