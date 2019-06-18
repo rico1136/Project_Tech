@@ -5,10 +5,10 @@ const session = require('express-session'); //https://www.npmjs.com/package/expr
 const bcrypt = require('bcrypt');
 const saltRounds = 11;
 
-router.post('/login', function (req, res, next) {
+router.post('/login', (req, res, next) => {
   User.findOne({
     email: req.body.email
-  }, function (err, currentUser) {
+  }, (err, currentUser) => {
     console.log(currentUser)
     console.log(req.body.password)
     let password = bcrypt.compareSync(req.body.password, currentUser.password);
