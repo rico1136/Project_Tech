@@ -50,7 +50,7 @@
   <% include tail.ejs %>
     <div class='pusher'></div>
   <% if (liked === false) { %>
-    <form action="/like" method="POST">
+    <form class="hidden-input" action="/like" method="POST">
         <input type="text" name="id" value="<%=data._id%>">
         <button type="submit">Like</button>
     </form>
