@@ -22,7 +22,7 @@ router.post('/login', (req, res, next) => {
   });
 });
 
-router.get('/login', (req, res, ) => {
+router.get('/login', (req, res ) => {
   res.render('pages/login');
 });
 
