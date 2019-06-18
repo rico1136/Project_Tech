@@ -702,6 +702,10 @@ body.user p a {
   cursor: pointer;
 }
 
+#age {
+  margin-right: 0.2em;
+}
+
 .meme_favorite main div {
   overflow-y: scroll;
   max-height: 30em;
