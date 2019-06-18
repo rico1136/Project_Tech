@@ -33,7 +33,6 @@ router.post('/like', (req, res) => {
                         console.log(err)
                         res.status(500).send()
                     } else {
-                        console.log('user saved' + updatedObject)
                         res.status(200).send()
                         res.redirect('/matches')
                     }
