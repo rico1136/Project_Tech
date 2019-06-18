@@ -646,7 +646,6 @@ body.user .meme-slider {
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
-  margin-bottom: 2em;
 }
 
 body.user .meme-slider input {
@@ -668,11 +667,12 @@ body.user .meme-slider form button {
 
 body.user .delete {
   display: block;
-  position: absolute;
   background: #ca4f4f;
   top: 0;
   padding: .4em;
-  right: 0;
+  display: table;
+  margin: 1em auto 1em auto;
+  padding: 12px;
   border-radius: 1em;
   color: white;
 }
@@ -694,13 +694,12 @@ body.user .meme-slider img {
 }
 
 body.user p a {
-  background: cadetblue;
-  color: white;
-  padding: .2em;
+  color: #f66c96;
   border-radius: .3em;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
 }
+
 
 #age {
   margin-right: 0.2em;
@@ -748,6 +747,10 @@ body.meme_favorite p {
   font-size: 14pt;
   font-weight: bold;
 }
+.showmeme {
+  min-height: 30em;
+}
+
 
 .likememe {
   background: #F86A95;
@@ -765,6 +768,9 @@ body.meme_favorite p {
   display: none;
 }
 
+.pusher {
+  min-height: 64px;
+}
 fieldset {
   border:none;
 }
