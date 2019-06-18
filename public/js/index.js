@@ -1,15 +1,15 @@
-// const nameUser = document.getElementById('username')
-// const ageUser = document.getElementById('age')
-// const nameInput = document.querySelector('name')
-// 
-// 
-// 
-// console.log(nameUser)
-// console.log(nameInput)
-// console.log(ageUser)
+const nameUser = document.getElementById('username')
+const ageUser = document.getElementById('age')
+const nameInput = document.querySelector('name')
+
+
+
+console.log(nameUser)
+console.log(nameInput)
+console.log(ageUser)
 
        
-  
+
 function calculateType(event){
     // event.preventDefault();
   // console.log("test submit")
@@ -35,8 +35,8 @@ function calculateType(event){
   console.log(type)
   outcomeInput.value= type
   };
-  
+
     var memetestForm = document.querySelector(".memetest")
     memetestForm.addEventListener("submit", calculateType);
-    
+
     
