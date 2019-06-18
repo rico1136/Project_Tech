@@ -18,14 +18,14 @@
     <form method="POST" action="/updateFunction">
       <fieldset>
         <legend>Personal</legend>
-        <label for="name">name</label>
+        <label for="name">naam</label>
         <input type="text" name="name" id="name" placeholder="<%= user.name %>">
-        <label for="age">age</label>
+        <label for="age">leeftijd</label>
         <input type="text" name="age" id="age" placeholder="<%= user.age %>">
-        <label for="sex">sex</label>
+        <label for="sex">geslacht</label>
         <select id="sex" name="sex"  >
           <option value="man">man</option>
-          <option value="woman">woman</option>
+          <option value="woman">vrouw</option>
         </select>
 
       </fieldset>
@@ -33,13 +33,13 @@
         <legend>Log-in</legend>
         <label for="email">email</label>
         <input type="email" name="email" id="email" placeholder="<%= user.name %>">
-        <label for="password">password</label>
+        <label for="password">wachtwoord</label>
         <input type="password" name="password" id="password" placeholder="<%= user.password %>">
       </fieldset>
-      <label for="profilePic">Add picture</label>
+      <label for="profilePic">Kies afbeelding</label>
       <input type="file" name="profilePic" id="profilePic" class="inputfile" accept="img/*">
 
-      <button class="meldaan" type="submit">Update</button>
+      <button class="meldaan" type="submit">Wijzig</button>
 
     </form>
 
