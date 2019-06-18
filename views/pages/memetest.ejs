@@ -7,7 +7,6 @@
 </head>
 
 <body class="meme_favorite">
-  <% include ../partials/navbar %>
   <main>
       <div class='showmeme'>
           <img src="<%= memesrc %>" alt="">
@@ -23,6 +22,9 @@
     </form>
   </main>
   <% include tail.ejs %>
+  <footer>
+    <% include ../partials/navbar %>
+  </footer>
 </body>
 
 </html>
