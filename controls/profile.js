@@ -36,18 +36,24 @@ router.get('/userprofile/:id', (req, res) => {
         if (err) {
             throw(err);
         } else {
-            for(let x = 0;x<req.session.user.likes.length;x++){
-                if(req.session.user.likes[x] == profile._id ){
-                    for(let i = 0;i<profile.likes.length;i++){
-                        if(profile.likes[i] == req.session.user._id) {
-                            like = true;
-                        }
-                    }
+            User.findOne({_id: req.session.user._id}, (err, userProfile) => {
+                if (err) {
+                    throw(err);
                 } else {
-                    like = false;
+                        for(let x = 0;x<userProfile.likes.length;x++){
+                            if(userProfile.likes[x] == profile._id ){
+                                for(let i = 0;i<profile.likes.length;i++){
+                                    if(profile.likes[i] == userProfile._id) {
+                                        like = true;
+                                    }
+                                }
+                            } else {
+                                like = false;
+                            }
+                        }
+                    res.render('pages/userprofile', {data: profile, user: userProfile, liked: like})
                 }
-            }
-            res.render('pages/userprofile', {data: profile, user: req.session.user, liked: like})
+            })
         }
     });
 });

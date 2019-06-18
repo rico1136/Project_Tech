@@ -12,8 +12,6 @@
       <img src="<%= data.profilePic %>" alt="img">
       <% } %>
     </div>
-    <div><a href="/update">edit</a></div>
-    <div><a href="/logout">log out</a></div>
   </div>
   <section class="user-bio">
     <h1 id="username"><span id="age"><%= data.age%></span><%= data.name %></h1>
@@ -31,23 +29,17 @@
   <ul>
     <li><%= data.memeCategory%></li>
   </ul>
- <p>Klik <a href='/memecategory'>hier</a> om de test opnieuw te doen.</p>
 </section>
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
   <h3>Your memes</h3>
   <div id="add">
-   <p>Klik <a href=/memetest>hier</a> om meme's toe te voegen aan je profiel.</p> 
  </div>
   <% if (data.memes){ %>
     <div class="meme-slider" method="POST" action="/delete">
     <% data.memes.forEach(function (meme) { %>
       <form action="/delete" method="POST">
-        <input type="text" name="meme" id="meme" value="<%=meme%>">
-        <button type="submit">
-          <img src="/assets/icons/waste-bin.svg" alt="waste bin">
-        </button>
         <img src="<%=meme%>" alt="">
       </form>
     <% }) %>
@@ -56,7 +48,6 @@
 
  
   <% include tail.ejs %>
-    <a href="/delete" class="delete" type="submit" value="submit">Verwijder account</a>
     <div class='pusher'></div>
   <% if (liked === false) { %>
     <form action="/like" method="POST">
@@ -65,10 +56,14 @@
     </form>
     <% } %>
   <% if (liked === true) { %>
-    <p>Jullie hebben elkaar al geliked</p>
-    
+    <form class="hidden-input" action="/dislike" method="POST">
+        <input type="text" value="<%=data._id%>" name="userid">
+        <button type="submit">Dislike</button>
+    </form>
+    <p>Jullie hebben elkaar geliked</p>
+    <p>Neem contact op! :)</p>
+    <a href="mailto:<%= data.email %>">Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
   <% } %>
-  <a href="mailto:<%= data.email %>">Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
 </body>
 
 
