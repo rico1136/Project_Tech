@@ -4,6 +4,7 @@
 <% include ../partials/head %>
 
 <body class="user">
+  <% include ../partials/navbar %>
 
   <div class="user-prof">
     <div class="prof-cont">
@@ -19,6 +20,7 @@
     </p>
     <h2>Vrije tijd</h2>
     <p>
+
       Mijn vrijetijd besteeds ik graag buiten in de zon of sneeuw. Ik loop graag met mijn honden maar ik kan ook heel lang binnen blijven met mijn kat MIAUW.
     </p>
   </section>
@@ -31,7 +33,7 @@
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
-  <h3>Memes</h3>
+  <h3>Your memes</h3>
   <div id="add">
  </div>
   <% if (data.memes){ %>
@@ -46,24 +48,22 @@
 
  
   <% include tail.ejs %>
-   
- <h2>Like?</h2>
+    <div class='pusher'></div>
   <% if (liked === false) { %>
     <form class="hidden-input" action="/like" method="POST">
         <input type="text" name="id" value="<%=data._id%>">
-        <button type="submit"><img src='/assets/logo/heart.svg'></button>
+        <button type="submit">Like</button>
     </form>
     <% } %>
   <% if (liked === true) { %>
     <form class="hidden-input" action="/dislike" method="POST">
         <input type="text" value="<%=data._id%>" name="userid">
-        <button type="submit"><img src='/assets/logo/dislike.svg'></button>
+        <button type="submit">Dislike</button>
     </form>
     <p>Jullie hebben elkaar geliked</p>
     <p>Neem contact op! :)</p>
     <a href="mailto:<%= data.email %>">Stuur mij een berichtje op dit adres<3 <%= data.email %> </a>
   <% } %>
-  <% include ../partials/navbar %>
 </body>
 
 
