@@ -15,11 +15,11 @@ body.regis .sex-form,
 body.regis .email-form,
 body.regis .pass-form {
   position: absolute;
-  top: 50%;
+  top: 22em;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 2.5em;
-  width: 25em;
+  width: 22em;
   display: flex;
   justify-content: space-between;
   align-items: center;
