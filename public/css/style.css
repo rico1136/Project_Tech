@@ -760,6 +760,13 @@ form.hidden-input button {
   min-height: 30em;
 }
 
+body.regis form input {
+  border: 0;
+  border-bottom: 1px solid rgba(96,96,96,0.4);
+  }
+  body.regis .meldaan {
+  border: 1px solid rgba(96,96,96,0.4);
+  }
 
 .likememe {
   background: #F86A95;
