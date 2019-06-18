@@ -761,10 +761,6 @@ body.meme_favorite p {
   width: 50px;
 }
 
-#add p {
-  min-height: 50px;
-}
-
 fieldset {
   border:none;
 }
