@@ -32,7 +32,7 @@
 
 <!-- https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/ -->
 
-  <h3>Your memes</h3>
+  <h3>Memes</h3>
   <div id="add">
  </div>
   <% if (data.memes){ %>
@@ -47,7 +47,8 @@
 
  
   <% include tail.ejs %>
-    <div class='pusher'></div>
+   
+ 
   <% if (liked === false) { %>
     <form class="hidden-input" action="/like" method="POST">
         <input type="text" name="id" value="<%=data._id%>">
