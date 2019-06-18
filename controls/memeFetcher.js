@@ -15,6 +15,14 @@ router.post('/memetest', (req, res) => {
                 console.log('User not found in database')
                 res.status(404).send()
             } else {
+                for(let i =0; i<foundObject.memes.length;i++) {
+                    if(memesrc == foundObject.memes[i]){
+                        console.log('You already liked this meme');
+                        res.status(200).send()
+                        res.redirect('memetest')
+                        return
+                    }
+                }
                 foundObject.memes.push(memesrc);
                 foundObject.save((err, updatedObject) => {
                     if (err) {
