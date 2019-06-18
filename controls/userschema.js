@@ -17,6 +17,7 @@ let userSchema = new mongoose.Schema({
   profilePic: String,
   memeCategory: String,
   memes: [],
+  likes: [],
 });
 
 let User = mongoose.model('account', userSchema);

@@ -48,7 +48,7 @@ const updateUser = require('./controls/update.js');
 const memeCategory = require('./controls/memeCategory.js');
 const deleteMeme = require('./controls/deleteMeme.js');
 const memeFetcher = require('./controls/memeFetcher.js');
-
+const like = require('./controls/liking.js');
 // routing van de pagina's //
 app.use(loginTest);
 app.use(addRegis);
@@ -60,6 +60,7 @@ app.use(updateUser);
 app.use(memeCategory);
 app.use(deleteMeme);
 app.use(memeFetcher);
+app.use(like);
 // --> Show index
 app.get('/', function (req, res) {
   res.render('pages/index.ejs')
