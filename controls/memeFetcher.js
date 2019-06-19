@@ -23,17 +23,18 @@ router.post('/memetest', (req, res) => {
                         return
                     }
                 }
-                foundObject.memes.push(memesrc);
-                foundObject.save((err, updatedObject) => {
-                    if (err) {
-                        console.log(err);
-                        res.status(500).send()
-                    } else {
-                        console.log('user saved' + updatedObject)
-                        res.status(200).send();
-                        res.redirect('memetest')
-                    }
-                })
+                foundObject.memes.push(memesrc).then(
+                    foundObject.save((err, updatedObject) => {
+                        if (err) {
+                            console.log(err);
+                            res.status(500).send()
+                        } else {
+                            console.log('user saved' + updatedObject)
+                            res.status(200).send();
+                            res.redirect('memetest')
+                        }
+                    })
+                )
             }
         }
     })
